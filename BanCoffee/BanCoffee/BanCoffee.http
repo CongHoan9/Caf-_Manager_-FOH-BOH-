@@ -1,0 +1,6 @@
+@BanCoffee_HostAddress = http://localhost:5227
+
+GET {{BanCoffee_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
