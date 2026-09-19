@@ -1,0 +1,47 @@
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\net6.0\DAL.dll
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\net6.0\Model.dll
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\net6.0\Model.pdb
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\DAL.dll
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\bin\Debug\net6.0\DAL.dll
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\bin\Debug\net6.0\Model.dll
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\bin\Debug\net6.0\Model.pdb
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.sourcelink.json
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.Up2Date
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.dll
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\bin\Debug\net6.0\DAL.dll
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\bin\Debug\net6.0\Model.dll
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\bin\Debug\net6.0\Model.pdb
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.sourcelink.json
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.csproj.Up2Date
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.dll
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Teaching\Phát triển phần mềm hướng dịch vụ\Demo\BanOto\DAL\obj\Debug\net6.0\ref\DAL.dll

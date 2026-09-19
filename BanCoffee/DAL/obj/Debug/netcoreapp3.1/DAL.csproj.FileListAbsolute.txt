@@ -1,0 +1,37 @@
+F:\net core\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+F:\net core\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+F:\net core\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+F:\net core\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+F:\net core\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+F:\net core\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+F:\net core\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+F:\net core\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
+F:\net core\BanOto\DAL\bin\Debug\netcoreapp3.1\Model.dll
+F:\net core\BanOto\DAL\bin\Debug\netcoreapp3.1\Model.pdb
+F:\net core\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+F:\net core\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\Model.dll
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\Model.pdb
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+G:\OneDrive\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\Model.dll
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\bin\Debug\netcoreapp3.1\Model.pdb
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.AssemblyReference.cache
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+D:\Teaching\Web API\Sinh vien\BanOto\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
