@@ -32,9 +32,10 @@ namespace BLL
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new(ClaimTypes.Name, user.Hoten ?? string.Empty),
+                    new(ClaimTypes.Name, user.hoten ?? string.Empty),
                     new(ClaimTypes.StreetAddress, user.diachi ?? string.Empty),
-                    new(ClaimTypes.Role, user.role ?? Role.Staff)
+                    new(ClaimTypes.Role, user.role ?? Role.Staff),
+                    new(ClaimTypes.NameIdentifier, user.user_id ?? string.Empty)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -61,9 +62,52 @@ namespace BLL
             return _res.Update(model);
         }
 
+        public List<UserModel> GetAll()
+        {
+            var lst = _res.GetAll(); lst.ForEach(u => u.matkhau = null); return lst;
+        }
+
+        public bool ChangePassword(string userId, string oldPassword, string newPassword)
+        {
+            return _res.ChangePassword(userId, oldPassword, newPassword);
+        }
+
+        public bool CheckExists(string taikhoan)
+        {
+            return _res.CheckExists(taikhoan);
+        }
+
         public List<UserModel> Search(int pageIndex, int pageSize, out long total, string hoten, string taikhoan)
         {
-            return _res.Search(pageIndex, pageSize, out total, hoten, taikhoan);
+            var lst = _res.Search(pageIndex, pageSize, out total, hoten, taikhoan); lst.ForEach(u => u.matkhau = null); return lst;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

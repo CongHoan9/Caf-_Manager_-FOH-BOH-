@@ -30,7 +30,21 @@ namespace BLL
                 lstChilds[i].type = (childs == null || childs.Count == 0) ? "leaf" : "";
                 lstChilds[i].children = childs;
             }
-            return lstChilds.OrderBy(s => s.seq_num).ToList();
+            return [.. lstChilds.OrderBy(s => s.seq_num)];
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
