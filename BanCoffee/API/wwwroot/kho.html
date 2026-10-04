@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Kho - BanCoffee</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <div id="wrapper" class="d-flex">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center p-3 text-white text-decoration-none" href="dashboard.html">
+                <div class="sidebar-brand-text mx-3 fs-4 font-weight-bold">BanCoffee</div>
+            </a>
+            <hr class="sidebar-divider my-0 bg-white opacity-25">
+            <li class="nav-item"><a class="nav-link" href="dashboard.html">Tổng quan</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Quản lý Bán hàng</div>
+            <li class="nav-item"><a class="nav-link" href="hoadon.html">Hóa Đơn</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Sản phẩm (Menu)</a></li>
+            <li class="nav-item"><a class="nav-link" href="tables.html">Bàn (Khu vực)</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Nội bộ</div>
+            <li class="nav-item active admin-only"><a class="nav-link" href="kho.html">Kho (Nguyên Liệu)</a></li>
+            <li class="nav-item"><a class="nav-link" href="lichlam.html">Ca làm &amp; Lịch làm</a></li>
+            <li class="nav-item admin-only"><a class="nav-link" href="users.html">Tài khoản &amp; Nhân viên</a></li>
+        </ul>
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow px-4">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <span class="me-2 d-none d-lg-inline text-gray-600 small" id="userDropdownName">Loading...</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in">
+                            <a class="dropdown-item" href="#" id="btnLogout">Đăng xuất</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid px-4">
+                <h1 class="h3 mb-4 text-gray-800">Quản lý Kho (Nguyên Liệu)</h1>
+
+                <!-- Thống kê nhanh -->
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-start border-primary border-4 shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="text-xs fw-bold text-primary text-uppercase mb-1">Số loại nguyên liệu</div>
+                                <div class="h5 mb-0 fw-bold" id="statTong">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-start border-success border-4 shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="text-xs fw-bold text-success text-uppercase mb-1">Tổng giá trị tồn kho</div>
+                                <div class="h5 mb-0 fw-bold" id="statGiaTri">0 đ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-start border-danger border-4 shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="text-xs fw-bold text-danger text-uppercase mb-1">Sắp hết hàng (tồn &le; <span id="lblNguong">10</span>)</div>
+                                <div class="h5 mb-0 fw-bold" id="statSapHet">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex flex-wrap gap-2 justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold text-primary">Danh sách tồn kho</h6>
+                        <div class="d-flex gap-2">
+                            <input type="text" class="form-control form-control-sm" id="txtSearch" placeholder="Tìm theo tên nguyên liệu..." style="width: 240px;">
+                            <select class="form-select form-select-sm" id="cboLoc" style="width: 160px;">
+                                <option value="all">Tất cả</option>
+                                <option value="low">Sắp hết hàng</option>
+                                <option value="out">Hết hàng</option>
+                            </select>
+                            <button class="btn btn-primary btn-sm text-nowrap admin-only" id="btnAdd">+ Thêm nguyên liệu</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover align-middle" id="khoTable" width="100%" cellspacing="0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Tên nguyên liệu</th>
+                                        <th>Đơn vị</th>
+                                        <th class="text-end">Tồn kho</th>
+                                        <th class="text-end">Giá nhập</th>
+                                        <th class="text-end">Giá trị tồn</th>
+                                        <th>Nhập cuối</th>
+                                        <th>Trạng thái</th>
+                                        <th class="admin-only" style="width: 200px;">Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td colspan="8" class="text-center">Đang tải dữ liệu...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Thêm / Sửa nguyên liệu -->
+    <div class="modal fade" id="nlModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nlModalLabel">Thêm nguyên liệu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="nguyen_lieu_id">
+                    <div class="mb-3">
+                        <label class="form-label">Tên nguyên liệu *</label>
+                        <input type="text" class="form-control" id="ten_nguyen_lieu" maxlength="150">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Đơn vị *</label>
+                            <input type="text" class="form-control" id="don_vi" list="dsDonVi" maxlength="30" placeholder="kg, lít, hộp...">
+                            <datalist id="dsDonVi">
+                                <option value="kg"></option>
+                                <option value="g"></option>
+                                <option value="lít"></option>
+                                <option value="ml"></option>
+                                <option value="hộp"></option>
+                                <option value="lon"></option>
+                                <option value="chai"></option>
+                                <option value="gói"></option>
+                            </datalist>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Số lượng tồn</label>
+                            <input type="number" class="form-control" id="so_luong_ton" min="0" step="any" value="0">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Giá nhập (VNĐ / đơn vị)</label>
+                        <input type="number" class="form-control" id="gia_nhap" min="0" step="any" value="0">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="btnSaveNL">Lưu lại</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Nhập kho -->
+    <div class="modal fade" id="nhapModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nhập kho: <span id="lblNhapTen" class="text-primary"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="nhap_id">
+                    <p class="text-muted small mb-3">Tồn hiện tại: <strong id="lblNhapTon">0</strong></p>
+                    <div class="mb-3">
+                        <label class="form-label">Số lượng nhập thêm *</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="nhap_so_luong" min="0" step="any">
+                            <span class="input-group-text" id="lblNhapDonVi"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Giá nhập mới (để trống = giữ giá cũ)</label>
+                        <input type="number" class="form-control" id="nhap_gia" min="0" step="any">
+                    </div>
+                    <div class="alert alert-info py-2 small mb-0">
+                        Tồn sau nhập: <strong id="lblTonSauNhap">0</strong> &middot; Thành tiền lô nhập: <strong id="lblThanhTienNhap">0 đ</strong>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-success" id="btnSaveNhap">Xác nhận nhập</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/kho.js"></script>
+</body>
+</html>

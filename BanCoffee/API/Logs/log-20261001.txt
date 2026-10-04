@@ -1,0 +1,1302 @@
+2026-10-01 08:45:34.282 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-10-01 08:45:34.456 +07:00 [DBG] Hosting starting
+2026-10-01 08:45:34.490 +07:00 [INF] User profile is available. Using 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-01 08:45:34.503 +07:00 [DBG] Reading data from file 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys\key-5676f560-b125-417c-a9b8-fa957d2340a9.xml'.
+2026-10-01 08:45:34.554 +07:00 [DBG] Found key {5676f560-b125-417c-a9b8-fa957d2340a9}.
+2026-10-01 08:45:34.572 +07:00 [DBG] Considering key {5676f560-b125-417c-a9b8-fa957d2340a9} with expiration date 2026-12-28 12:25:05Z as default key.
+2026-10-01 08:45:34.575 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 08:45:34.577 +07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-10-01 08:45:34.579 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 08:45:34.582 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-10-01 08:45:34.583 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-10-01 08:45:34.585 +07:00 [DBG] Using key {5676f560-b125-417c-a9b8-fa957d2340a9} as the default key.
+2026-10-01 08:45:34.586 +07:00 [DBG] Key ring with default key {5676f560-b125-417c-a9b8-fa957d2340a9} was loaded during application startup.
+2026-10-01 08:45:34.596 +07:00 [DBG] Middleware loaded
+2026-10-01 08:45:34.604 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14911 B).
+2026-10-01 08:45:34.610 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-10-01 08:45:34.699 +07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-10-01 08:45:34.703 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-10-01 08:45:34.722 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=null, __ASPNETCORE_BROWSER_TOOLS=true
+2026-10-01 08:45:34.729 +07:00 [DBG] Loaded hosting startup assembly API
+2026-10-01 08:45:34.729 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-10-01 08:45:34.729 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-10-01 08:45:34.729 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-10-01 08:45:34.742 +07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 08:45:34.743 +07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 08:45:34.777 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger - null null
+2026-10-01 08:45:34.777 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/Users/login - application/json 57
+2026-10-01 08:45:34.805 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:45:34.860 +07:00 [DBG] Hosting started
+2026-10-01 08:45:34.881 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/login'
+2026-10-01 08:45:34.882 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.Login (API)' with route pattern 'api/Users/login' is valid for the request path '/api/Users/login'
+2026-10-01 08:45:34.886 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.Login (API)'
+2026-10-01 08:45:35.135 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:45:35.137 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:45:35.143 +07:00 [INF] Executing endpoint 'API.Controllers.UsersController.Login (API)'
+2026-10-01 08:45:35.168 +07:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Model.AuthenticateModel) on controller API.Controllers.UsersController (API).
+2026-10-01 08:45:35.170 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:45:35.170 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:45:35.170 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:45:35.170 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:45:35.170 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:45:35.173 +07:00 [DBG] Executing controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 08:45:35.176 +07:00 [DBG] Executed controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 08:45:35.186 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.AuthenticateModel' ...
+2026-10-01 08:45:35.188 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.AuthenticateModel' using the name '' in request data ...
+2026-10-01 08:45:35.189 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:45:35.217 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.AuthenticateModel'
+2026-10-01 08:45:35.217 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.AuthenticateModel'.
+2026-10-01 08:45:35.218 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.AuthenticateModel'.
+2026-10-01 08:45:35.218 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.AuthenticateModel' ...
+2026-10-01 08:45:35.228 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.AuthenticateModel'.
+2026-10-01 08:45:35.491 +07:00 [DBG] Connection ID "18374686510541701130" disconnecting.
+2026-10-01 08:45:35.499 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - null null
+2026-10-01 08:45:35.498 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger - 301 null null 722.5763ms
+2026-10-01 08:45:35.565 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-10-01 08:45:35.570 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-10-01 08:45:35.594 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-10-01 08:45:35.605 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-10-01 08:45:35.606 +07:00 [DBG] Connection ID "18302628899323904002" disconnecting.
+2026-10-01 08:45:35.606 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - 200 null text/html;charset=utf-8 106.5524ms
+2026-10-01 08:45:35.620 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui-bundle.js - null null
+2026-10-01 08:45:35.626 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-01 08:45:35.628 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui-standalone-preset.js - null null
+2026-10-01 08:45:35.630 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui.css - null null
+2026-10-01 08:45:35.633 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-10-01 08:45:35.635 +07:00 [DBG] Connection ID "18158513711248048129" disconnecting.
+2026-10-01 08:45:35.636 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - 200 14911 application/javascript; charset=utf-8 9.0693ms
+2026-10-01 08:45:35.637 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-10-01 08:45:35.643 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-10-01 08:45:35.645 +07:00 [DBG] Connection ID "18014398518877224962" disconnecting.
+2026-10-01 08:45:35.647 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui.css - 200 143821 text/css 16.9518ms
+2026-10-01 08:45:35.660 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-10-01 08:45:35.669 +07:00 [DBG] Connection ID "18302628899323904004" disconnecting.
+2026-10-01 08:45:35.671 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui-standalone-preset.js - 200 319705 text/javascript 42.5088ms
+2026-10-01 08:45:35.704 +07:00 [DBG] Connection ID "18230571300991008777" disconnecting.
+2026-10-01 08:45:35.706 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui-bundle.js - 200 1079362 text/javascript 86.3059ms
+2026-10-01 08:45:35.721 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - null null
+2026-10-01 08:45:35.844 +07:00 [DBG] Connection ID "18302628899323904006" disconnecting.
+2026-10-01 08:45:35.844 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - 200 null text/javascript; charset=UTF-8 123.0907ms
+2026-10-01 08:45:35.970 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - null null
+2026-10-01 08:45:36.086 +07:00 [DBG] Connection ID "18014398518877224964" disconnecting.
+2026-10-01 08:45:36.086 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.2089ms
+2026-10-01 08:45:36.680 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:45:36.684 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:45:36.684 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:45:36.684 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:45:36.686 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:45:36.688 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-01 08:45:36.725 +07:00 [INF] Executed action API.Controllers.UsersController.Login (API) in 1541.3837ms
+2026-10-01 08:45:36.726 +07:00 [INF] Executed endpoint 'API.Controllers.UsersController.Login (API)'
+2026-10-01 08:45:36.726 +07:00 [DBG] Connection ID "18374686493361831944" disconnecting.
+2026-10-01 08:45:36.726 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/Users/login - 200 null application/json; charset=utf-8 1950.9332ms
+2026-10-01 08:48:12.734 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/Users/create-user1 - application/json 209
+2026-10-01 08:48:12.736 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:48:12.742 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/create-user1'
+2026-10-01 08:48:12.749 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.CreateUser1 (API)' with route pattern 'api/Users/create-user1' is valid for the request path '/api/Users/create-user1'
+2026-10-01 08:48:12.750 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.CreateUser1 (API)'
+2026-10-01 08:48:12.756 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:48:12.756 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:48:12.763 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:48:12.764 +07:00 [INF] Executing endpoint 'API.Controllers.UsersController.CreateUser1 (API)'
+2026-10-01 08:48:12.769 +07:00 [INF] Route matched with {action = "CreateUser1", controller = "Users"}. Executing controller action with signature Model.UserModel CreateUser1(Model.UserModel) on controller API.Controllers.UsersController (API).
+2026-10-01 08:48:12.769 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:48:12.769 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:48:12.769 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:48:12.770 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:48:12.770 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:48:12.770 +07:00 [DBG] Executing controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 08:48:12.772 +07:00 [DBG] Executed controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 08:48:12.773 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.UserModel' ...
+2026-10-01 08:48:12.773 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.UserModel' using the name '' in request data ...
+2026-10-01 08:48:12.773 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:48:12.785 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.UserModel'
+2026-10-01 08:48:12.785 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.UserModel'.
+2026-10-01 08:48:12.785 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.UserModel'.
+2026-10-01 08:48:12.785 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.UserModel' ...
+2026-10-01 08:48:12.788 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.UserModel'.
+2026-10-01 08:48:12.846 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:48:12.847 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:48:12.847 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:48:12.847 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:48:12.847 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:48:12.847 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.UserModel'.
+2026-10-01 08:48:12.853 +07:00 [INF] Executed action API.Controllers.UsersController.CreateUser1 (API) in 82.9299ms
+2026-10-01 08:48:12.853 +07:00 [INF] Executed endpoint 'API.Controllers.UsersController.CreateUser1 (API)'
+2026-10-01 08:48:12.854 +07:00 [DBG] Connection ID "18230571305285976068" disconnecting.
+2026-10-01 08:48:12.854 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/Users/create-user1 - 200 null application/json; charset=utf-8 119.5875ms
+2026-10-01 08:51:05.412 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/Users/delete-user - application/json 53
+2026-10-01 08:51:05.414 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:51:05.414 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/delete-user'
+2026-10-01 08:51:05.415 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.DeleteUser (API)' with route pattern 'api/Users/delete-user' is valid for the request path '/api/Users/delete-user'
+2026-10-01 08:51:05.415 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.DeleteUser (API)'
+2026-10-01 08:51:05.428 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:51:05.428 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:51:05.431 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:51:05.434 +07:00 [INF] Executing endpoint 'API.Controllers.UsersController.DeleteUser (API)'
+2026-10-01 08:51:05.437 +07:00 [INF] Route matched with {action = "DeleteUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteUser(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.UsersController (API).
+2026-10-01 08:51:05.437 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:51:05.437 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:51:05.437 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:51:05.437 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:51:05.437 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:51:05.437 +07:00 [DBG] Executing controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 08:51:05.438 +07:00 [DBG] Executed controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 08:51:05.439 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:51:05.439 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 08:51:05.439 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:51:05.441 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 08:51:05.441 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:51:05.441 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:51:05.442 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:51:05.444 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:51:05.481 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2026-10-01 08:51:05.482 +07:00 [INF] Executed action API.Controllers.UsersController.DeleteUser (API) in 44.2365ms
+2026-10-01 08:51:05.482 +07:00 [INF] Executed endpoint 'API.Controllers.UsersController.DeleteUser (API)'
+2026-10-01 08:51:05.484 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/Users/delete-user - 200 null null 71.6442ms
+2026-10-01 08:51:05.484 +07:00 [DBG] Connection ID "18302628890733969425" disconnecting.
+2026-10-01 08:52:03.503 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/CaLam/create - application/json 95
+2026-10-01 08:52:03.504 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:52:03.504 +07:00 [DBG] 1 candidate(s) found for the request path '/api/CaLam/create'
+2026-10-01 08:52:03.504 +07:00 [DBG] Endpoint 'API.Controllers.CaLamController.Create (API)' with route pattern 'api/CaLam/create' is valid for the request path '/api/CaLam/create'
+2026-10-01 08:52:03.504 +07:00 [DBG] Request matched endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:03.505 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:52:03.505 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:52:03.505 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:52:03.533 +07:00 [INF] Executing endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:03.539 +07:00 [INF] Route matched with {action = "Create", controller = "CaLam"}. Executing controller action with signature Model.CaLamModel Create(Model.CaLamModel) on controller API.Controllers.CaLamController (API).
+2026-10-01 08:52:03.540 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:52:03.540 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:52:03.540 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:52:03.540 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:52:03.540 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:52:03.540 +07:00 [DBG] Executing controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:52:03.541 +07:00 [DBG] Executed controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:52:03.541 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CaLamModel' ...
+2026-10-01 08:52:03.542 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CaLamModel' using the name '' in request data ...
+2026-10-01 08:52:03.542 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:52:03.561 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.CaLamModel'
+2026-10-01 08:52:03.561 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:03.561 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:03.561 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CaLamModel' ...
+2026-10-01 08:52:03.563 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:03.588 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:52:03.588 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:52:03.588 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:52:03.588 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:52:03.588 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:52:03.589 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.CaLamModel'.
+2026-10-01 08:52:03.593 +07:00 [INF] Executed action API.Controllers.CaLamController.Create (API) in 53.2583ms
+2026-10-01 08:52:03.593 +07:00 [INF] Executed endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:03.594 +07:00 [DBG] Connection ID "18086456112915152901" disconnecting.
+2026-10-01 08:52:03.594 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/CaLam/create - 200 null application/json; charset=utf-8 90.3842ms
+2026-10-01 08:52:35.546 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/CaLam/create - application/json 97
+2026-10-01 08:52:35.547 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:52:35.548 +07:00 [DBG] 1 candidate(s) found for the request path '/api/CaLam/create'
+2026-10-01 08:52:35.549 +07:00 [DBG] Endpoint 'API.Controllers.CaLamController.Create (API)' with route pattern 'api/CaLam/create' is valid for the request path '/api/CaLam/create'
+2026-10-01 08:52:35.549 +07:00 [DBG] Request matched endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:35.550 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:52:35.550 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:52:35.550 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:52:35.550 +07:00 [INF] Executing endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:35.550 +07:00 [INF] Route matched with {action = "Create", controller = "CaLam"}. Executing controller action with signature Model.CaLamModel Create(Model.CaLamModel) on controller API.Controllers.CaLamController (API).
+2026-10-01 08:52:35.551 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:52:35.551 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:52:35.551 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:52:35.551 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:52:35.551 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:52:35.551 +07:00 [DBG] Executing controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:52:35.552 +07:00 [DBG] Executed controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:52:35.552 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CaLamModel' ...
+2026-10-01 08:52:35.553 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CaLamModel' using the name '' in request data ...
+2026-10-01 08:52:35.553 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:52:35.553 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.CaLamModel'
+2026-10-01 08:52:35.553 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:35.553 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:35.553 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CaLamModel' ...
+2026-10-01 08:52:35.553 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:35.582 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:52:35.582 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:52:35.582 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:52:35.582 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:52:35.582 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:52:35.582 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.CaLamModel'.
+2026-10-01 08:52:35.582 +07:00 [INF] Executed action API.Controllers.CaLamController.Create (API) in 31.3054ms
+2026-10-01 08:52:35.582 +07:00 [INF] Executed endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:35.582 +07:00 [DBG] Connection ID "18374686510541701132" disconnecting.
+2026-10-01 08:52:35.583 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/CaLam/create - 200 null application/json; charset=utf-8 36.1742ms
+2026-10-01 08:52:59.301 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/CaLam/create - application/json 95
+2026-10-01 08:52:59.301 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:52:59.301 +07:00 [DBG] 1 candidate(s) found for the request path '/api/CaLam/create'
+2026-10-01 08:52:59.301 +07:00 [DBG] Endpoint 'API.Controllers.CaLamController.Create (API)' with route pattern 'api/CaLam/create' is valid for the request path '/api/CaLam/create'
+2026-10-01 08:52:59.301 +07:00 [DBG] Request matched endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:59.302 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:52:59.302 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:52:59.303 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:52:59.303 +07:00 [INF] Executing endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:59.303 +07:00 [INF] Route matched with {action = "Create", controller = "CaLam"}. Executing controller action with signature Model.CaLamModel Create(Model.CaLamModel) on controller API.Controllers.CaLamController (API).
+2026-10-01 08:52:59.303 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:52:59.303 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:52:59.304 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:52:59.304 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:52:59.304 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:52:59.304 +07:00 [DBG] Executing controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:52:59.305 +07:00 [DBG] Executed controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:52:59.305 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CaLamModel' ...
+2026-10-01 08:52:59.305 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CaLamModel' using the name '' in request data ...
+2026-10-01 08:52:59.306 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:52:59.306 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.CaLamModel'
+2026-10-01 08:52:59.306 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:59.306 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:59.306 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CaLamModel' ...
+2026-10-01 08:52:59.306 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CaLamModel'.
+2026-10-01 08:52:59.311 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:52:59.311 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:52:59.311 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:52:59.311 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:52:59.311 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:52:59.311 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.CaLamModel'.
+2026-10-01 08:52:59.311 +07:00 [INF] Executed action API.Controllers.CaLamController.Create (API) in 7.0575ms
+2026-10-01 08:52:59.311 +07:00 [INF] Executed endpoint 'API.Controllers.CaLamController.Create (API)'
+2026-10-01 08:52:59.311 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/CaLam/create - 200 null application/json; charset=utf-8 10.7522ms
+2026-10-01 08:53:20.891 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/api/CaLam/get-all - application/json null
+2026-10-01 08:53:20.891 +07:00 [DBG] The request path  does not match the path filter
+2026-10-01 08:53:20.891 +07:00 [DBG] 1 candidate(s) found for the request path '/api/CaLam/get-all'
+2026-10-01 08:53:20.891 +07:00 [DBG] Endpoint 'API.Controllers.CaLamController.GetAll (API)' with route pattern 'api/CaLam/get-all' is valid for the request path '/api/CaLam/get-all'
+2026-10-01 08:53:20.891 +07:00 [DBG] Request matched endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 08:53:20.892 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:53:20.892 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:53:20.892 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:53:20.893 +07:00 [INF] Executing endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 08:53:20.894 +07:00 [INF] Route matched with {action = "GetAll", controller = "CaLam"}. Executing controller action with signature System.Collections.Generic.List`1[Model.CaLamModel] GetAll() on controller API.Controllers.CaLamController (API).
+2026-10-01 08:53:20.895 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:53:20.895 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:53:20.895 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:53:20.895 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:53:20.895 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:53:20.895 +07:00 [DBG] Executing controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:53:20.895 +07:00 [DBG] Executed controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:53:20.917 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:53:20.917 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:53:20.917 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:53:20.917 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:53:20.917 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:53:20.917 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Model.CaLamModel, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-01 08:53:20.919 +07:00 [INF] Executed action API.Controllers.CaLamController.GetAll (API) in 24.016ms
+2026-10-01 08:53:20.919 +07:00 [INF] Executed endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 08:53:20.919 +07:00 [DBG] Connection ID "18086456112915152903" disconnecting.
+2026-10-01 08:53:20.919 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/api/CaLam/get-all - 200 null application/json; charset=utf-8 28.6906ms
+2026-10-01 08:55:13.134 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/api/Users/get-all - null null
+2026-10-01 08:55:13.134 +07:00 [DBG] The request path  does not match the path filter
+2026-10-01 08:55:13.134 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/get-all'
+2026-10-01 08:55:13.134 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.GetAll (API)' with route pattern 'api/Users/get-all' is valid for the request path '/api/Users/get-all'
+2026-10-01 08:55:13.134 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.GetAll (API)'
+2026-10-01 08:55:13.135 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-10-01 08:55:13.136 +07:00 [DBG] Policy authentication schemes  did not succeed
+2026-10-01 08:55:13.137 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-10-01 08:55:13.141 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-10-01 08:55:13.144 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/api/Users/get-all - 401 null null 9.9952ms
+2026-10-01 08:55:13.144 +07:00 [DBG] Connection ID "18302628890733969427" disconnecting.
+2026-10-01 08:55:59.839 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/api/Users/get-all - null null
+2026-10-01 08:55:59.839 +07:00 [DBG] The request path  does not match the path filter
+2026-10-01 08:55:59.839 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/get-all'
+2026-10-01 08:55:59.839 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.GetAll (API)' with route pattern 'api/Users/get-all' is valid for the request path '/api/Users/get-all'
+2026-10-01 08:55:59.839 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.GetAll (API)'
+2026-10-01 08:55:59.840 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:55:59.840 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:55:59.840 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:55:59.841 +07:00 [INF] Executing endpoint 'API.Controllers.UsersController.GetAll (API)'
+2026-10-01 08:55:59.843 +07:00 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Collections.Generic.List`1[Model.UserModel] GetAll() on controller API.Controllers.UsersController (API).
+2026-10-01 08:55:59.843 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:55:59.843 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:55:59.843 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:55:59.843 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:55:59.843 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:55:59.843 +07:00 [DBG] Executing controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 08:55:59.844 +07:00 [DBG] Executed controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 08:55:59.863 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:55:59.863 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:55:59.863 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:55:59.863 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:55:59.863 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:55:59.863 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Model.UserModel, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-01 08:55:59.865 +07:00 [INF] Executed action API.Controllers.UsersController.GetAll (API) in 21.715ms
+2026-10-01 08:55:59.865 +07:00 [INF] Executed endpoint 'API.Controllers.UsersController.GetAll (API)'
+2026-10-01 08:55:59.865 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/api/Users/get-all - 200 null application/json; charset=utf-8 26.6236ms
+2026-10-01 08:56:17.357 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/create - application/json 177
+2026-10-01 08:56:17.358 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:56:17.358 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/create'
+2026-10-01 08:56:17.358 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Create (API)' with route pattern 'api/LichLamViec/create' is valid for the request path '/api/LichLamViec/create'
+2026-10-01 08:56:17.359 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Create (API)'
+2026-10-01 08:56:17.360 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:56:17.360 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:56:17.360 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:56:17.360 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Create (API)'
+2026-10-01 08:56:17.362 +07:00 [INF] Route matched with {action = "Create", controller = "LichLamViec"}. Executing controller action with signature Model.LichLamViecModel Create(Model.LichLamViecModel) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 08:56:17.362 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:56:17.362 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:56:17.362 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:56:17.362 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:56:17.362 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:56:17.362 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:56:17.363 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:56:17.364 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.LichLamViecModel' ...
+2026-10-01 08:56:17.364 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.LichLamViecModel' using the name '' in request data ...
+2026-10-01 08:56:17.364 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:56:17.366 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.LichLamViecModel'
+2026-10-01 08:56:17.367 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.LichLamViecModel'.
+2026-10-01 08:56:17.367 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.LichLamViecModel'.
+2026-10-01 08:56:17.367 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.LichLamViecModel' ...
+2026-10-01 08:56:17.368 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.LichLamViecModel'.
+2026-10-01 08:56:17.379 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:56:17.379 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:56:17.379 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:56:17.379 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:56:17.380 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:56:17.380 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.LichLamViecModel'.
+2026-10-01 08:56:17.382 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Create (API) in 19.0333ms
+2026-10-01 08:56:17.382 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Create (API)'
+2026-10-01 08:56:17.382 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/create - 200 null application/json; charset=utf-8 24.3623ms
+2026-10-01 08:57:08.480 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 103
+2026-10-01 08:57:08.480 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:57:08.481 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 08:57:08.481 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 08:57:08.481 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:57:08.494 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:57:08.494 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:57:08.494 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:57:08.494 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:57:08.497 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 08:57:08.530 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:57:08.530 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:57:08.530 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:57:08.530 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:57:08.530 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:57:08.530 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:57:08.531 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:57:08.531 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:57:08.531 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 08:57:08.532 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:57:08.532 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 08:57:08.532 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:57:08.532 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:57:08.532 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:57:08.540 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:57:08.555 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 24.7671ms
+2026-10-01 08:57:08.556 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:57:08.557 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method21(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 08:57:08.610 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 130.5919ms
+2026-10-01 08:57:08.610 +07:00 [DBG] Connection ID "18302628890733969429" disconnecting.
+2026-10-01 08:57:27.356 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 139
+2026-10-01 08:57:27.357 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:57:27.357 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 08:57:27.357 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 08:57:27.357 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:57:27.358 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:57:27.358 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:57:27.358 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:57:27.358 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:57:27.358 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 08:57:27.358 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:57:27.358 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:57:27.358 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:57:27.358 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:57:27.358 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:57:27.358 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:57:27.359 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:57:27.359 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:57:27.359 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 08:57:27.359 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:57:27.360 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 08:57:27.360 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:57:27.360 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:57:27.360 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:57:27.360 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:57:27.360 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 1.9875ms
+2026-10-01 08:57:27.361 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:57:27.361 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method21(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 08:57:27.365 +07:00 [DBG] Connection ID "18086456112915152907" disconnecting.
+2026-10-01 08:57:27.365 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 8.2266ms
+2026-10-01 08:57:51.423 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/api/CaLam/get-all - null null
+2026-10-01 08:57:51.424 +07:00 [DBG] The request path  does not match the path filter
+2026-10-01 08:57:51.424 +07:00 [DBG] 1 candidate(s) found for the request path '/api/CaLam/get-all'
+2026-10-01 08:57:51.424 +07:00 [DBG] Endpoint 'API.Controllers.CaLamController.GetAll (API)' with route pattern 'api/CaLam/get-all' is valid for the request path '/api/CaLam/get-all'
+2026-10-01 08:57:51.424 +07:00 [DBG] Request matched endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 08:57:51.425 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-10-01 08:57:51.425 +07:00 [DBG] Policy authentication schemes  did not succeed
+2026-10-01 08:57:51.425 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-10-01 08:57:51.426 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-10-01 08:57:51.426 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/api/CaLam/get-all - 401 null null 2.5146ms
+2026-10-01 08:57:51.426 +07:00 [DBG] Connection ID "18086456112915152909" disconnecting.
+2026-10-01 08:58:08.696 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/api/CaLam/get-all - null null
+2026-10-01 08:58:08.696 +07:00 [DBG] The request path  does not match the path filter
+2026-10-01 08:58:08.696 +07:00 [DBG] 1 candidate(s) found for the request path '/api/CaLam/get-all'
+2026-10-01 08:58:08.696 +07:00 [DBG] Endpoint 'API.Controllers.CaLamController.GetAll (API)' with route pattern 'api/CaLam/get-all' is valid for the request path '/api/CaLam/get-all'
+2026-10-01 08:58:08.696 +07:00 [DBG] Request matched endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 08:58:08.696 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:58:08.696 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:58:08.696 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:58:08.696 +07:00 [INF] Executing endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 08:58:08.696 +07:00 [INF] Route matched with {action = "GetAll", controller = "CaLam"}. Executing controller action with signature System.Collections.Generic.List`1[Model.CaLamModel] GetAll() on controller API.Controllers.CaLamController (API).
+2026-10-01 08:58:08.697 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:58:08.697 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:58:08.697 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:58:08.697 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:58:08.697 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:58:08.697 +07:00 [DBG] Executing controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:58:08.697 +07:00 [DBG] Executed controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 08:58:08.704 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 08:58:08.704 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 08:58:08.704 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 08:58:08.704 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 08:58:08.704 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 08:58:08.704 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Model.CaLamModel, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-01 08:58:08.705 +07:00 [INF] Executed action API.Controllers.CaLamController.GetAll (API) in 8.0736ms
+2026-10-01 08:58:08.705 +07:00 [INF] Executed endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 08:58:08.705 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/api/CaLam/get-all - 200 null application/json; charset=utf-8 9.4164ms
+2026-10-01 08:58:17.152 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 175
+2026-10-01 08:58:17.152 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:58:17.152 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 08:58:17.152 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 08:58:17.153 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:17.153 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:58:17.153 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:58:17.153 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:58:17.153 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:17.153 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 08:58:17.154 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:58:17.154 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:58:17.154 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:58:17.154 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:58:17.154 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:58:17.154 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:58:17.154 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:58:17.154 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:58:17.154 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 08:58:17.154 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:58:17.155 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 08:58:17.155 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:17.155 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:17.155 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:58:17.155 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:17.156 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 1.9733ms
+2026-10-01 08:58:17.156 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:17.156 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method21(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 08:58:17.159 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 6.7932ms
+2026-10-01 08:58:41.980 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 08:58:41.980 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:58:41.980 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 08:58:41.980 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 08:58:41.981 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:41.981 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:58:41.981 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:58:41.981 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:58:41.981 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:41.982 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 08:58:41.982 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:58:41.982 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:58:41.982 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:58:41.982 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:58:41.982 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:58:41.982 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:58:41.982 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:58:41.983 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:58:41.983 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 08:58:41.983 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:58:41.983 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 08:58:41.983 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:41.983 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:41.983 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:58:41.983 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:41.983 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 1.7197ms
+2026-10-01 08:58:41.984 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:41.984 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method21(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 08:58:41.986 +07:00 [DBG] Connection ID "18374686510541701134" disconnecting.
+2026-10-01 08:58:41.986 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 5.8003ms
+2026-10-01 08:58:54.179 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 169
+2026-10-01 08:58:54.179 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:58:54.179 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 08:58:54.180 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 08:58:54.180 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:54.180 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:58:54.180 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:58:54.180 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:58:54.180 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:54.180 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 08:58:54.180 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:58:54.180 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:58:54.180 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:58:54.180 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:58:54.180 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:58:54.180 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:58:54.180 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:58:54.180 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:58:54.180 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 08:58:54.181 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:58:54.181 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 08:58:54.181 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:54.181 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:54.181 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:58:54.181 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:58:54.182 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 1.9262ms
+2026-10-01 08:58:54.182 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:58:54.183 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method21(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 08:58:54.185 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 5.9946ms
+2026-10-01 08:58:54.186 +07:00 [DBG] Connection ID "18086456112915152915" disconnecting.
+2026-10-01 08:59:05.026 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 08:59:05.026 +07:00 [DBG] POST requests are not supported
+2026-10-01 08:59:05.027 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 08:59:05.027 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 08:59:05.027 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:59:05.028 +07:00 [INF] Successfully validated the token.
+2026-10-01 08:59:05.028 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 08:59:05.028 +07:00 [DBG] Authorization was successful.
+2026-10-01 08:59:05.028 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:59:05.028 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 08:59:05.029 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 08:59:05.029 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 08:59:05.029 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 08:59:05.030 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 08:59:05.030 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 08:59:05.030 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:59:05.030 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 08:59:05.031 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:59:05.031 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 08:59:05.031 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 08:59:05.032 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 08:59:05.032 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:59:05.032 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:59:05.032 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 08:59:05.032 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 08:59:05.033 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 2.968ms
+2026-10-01 08:59:05.033 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 08:59:05.033 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method21(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 08:59:05.037 +07:00 [DBG] Connection ID "18014398531762126849" disconnecting.
+2026-10-01 08:59:05.037 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 10.5029ms
+2026-10-01 09:05:25.793 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-10-01 09:05:25.852 +07:00 [DBG] Hosting starting
+2026-10-01 09:05:25.861 +07:00 [INF] User profile is available. Using 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-01 09:05:25.868 +07:00 [DBG] Reading data from file 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys\key-5676f560-b125-417c-a9b8-fa957d2340a9.xml'.
+2026-10-01 09:05:25.875 +07:00 [DBG] Found key {5676f560-b125-417c-a9b8-fa957d2340a9}.
+2026-10-01 09:05:25.881 +07:00 [DBG] Considering key {5676f560-b125-417c-a9b8-fa957d2340a9} with expiration date 2026-12-28 12:25:05Z as default key.
+2026-10-01 09:05:25.895 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:05:25.896 +07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-10-01 09:05:25.902 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:05:25.911 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-10-01 09:05:25.911 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-10-01 09:05:25.915 +07:00 [DBG] Using key {5676f560-b125-417c-a9b8-fa957d2340a9} as the default key.
+2026-10-01 09:05:25.916 +07:00 [DBG] Key ring with default key {5676f560-b125-417c-a9b8-fa957d2340a9} was loaded during application startup.
+2026-10-01 09:05:25.940 +07:00 [DBG] Middleware loaded
+2026-10-01 09:05:25.950 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14911 B).
+2026-10-01 09:05:25.960 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-10-01 09:05:26.202 +07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-10-01 09:05:26.213 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-10-01 09:05:26.281 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=null, __ASPNETCORE_BROWSER_TOOLS=true
+2026-10-01 09:05:26.291 +07:00 [DBG] Loaded hosting startup assembly API
+2026-10-01 09:05:26.291 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-10-01 09:05:26.291 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-10-01 09:05:26.291 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-10-01 09:05:26.310 +07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:05:26.311 +07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:05:26.425 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - null null
+2026-10-01 09:05:26.433 +07:00 [DBG] Hosting started
+2026-10-01 09:05:26.653 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-10-01 09:05:26.659 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-10-01 09:05:26.716 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-10-01 09:05:26.718 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-10-01 09:05:26.720 +07:00 [DBG] Connection ID "18302628890733969431" disconnecting.
+2026-10-01 09:05:26.722 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - 200 null text/html;charset=utf-8 297.4929ms
+2026-10-01 09:05:27.027 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-01 09:05:27.027 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - null null
+2026-10-01 09:05:27.030 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-10-01 09:05:27.030 +07:00 [DBG] Connection ID "18302628886439002117" disconnecting.
+2026-10-01 09:05:27.037 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - 200 14911 application/javascript; charset=utf-8 3.0854ms
+2026-10-01 09:05:27.191 +07:00 [DBG] Connection ID "18086456112915152917" disconnecting.
+2026-10-01 09:05:27.192 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - 200 null text/javascript; charset=UTF-8 164.8233ms
+2026-10-01 09:05:27.604 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - null null
+2026-10-01 09:05:27.649 +07:00 [DBG] Connection ID "18302628899323904008" disconnecting.
+2026-10-01 09:05:27.649 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.9613ms
+2026-10-01 09:05:29.296 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 09:05:29.304 +07:00 [DBG] POST requests are not supported
+2026-10-01 09:05:29.356 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 09:05:29.357 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 09:05:29.358 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:05:29.731 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:05:29.732 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:05:29.739 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:05:29.740 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:05:29.793 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 09:05:29.795 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:05:29.796 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:05:29.796 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:05:29.796 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:05:29.797 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:05:29.799 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:05:29.802 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:05:29.808 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:05:29.810 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 09:05:29.812 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 09:05:29.832 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 09:05:29.832 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:05:29.832 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:05:29.832 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:05:29.837 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:05:29.865 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 65.2396ms
+2026-10-01 09:05:29.866 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:05:29.871 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 09:05:29.941 +07:00 [DBG] Connection ID "18230571296696041482" disconnecting.
+2026-10-01 09:05:29.941 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 645.1077ms
+2026-10-01 09:05:35.043 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 09:05:35.064 +07:00 [DBG] POST requests are not supported
+2026-10-01 09:05:35.067 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 09:05:35.067 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 09:05:35.067 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:05:35.093 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:05:35.093 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:05:35.095 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:05:35.095 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:05:35.098 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 09:05:35.098 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:05:35.098 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:05:35.098 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:05:35.098 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:05:35.098 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:05:35.098 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:05:35.099 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:05:35.104 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:05:35.104 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 09:05:35.104 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 09:05:35.105 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 09:05:35.105 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:05:35.105 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:05:35.105 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:05:35.105 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:05:35.106 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 7.6384ms
+2026-10-01 09:05:35.106 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:05:35.106 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 09:05:35.126 +07:00 [DBG] Connection ID "18374686506246733835" disconnecting.
+2026-10-01 09:05:35.126 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 82.9002ms
+2026-10-01 09:07:08.940 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-10-01 09:07:09.001 +07:00 [DBG] Hosting starting
+2026-10-01 09:07:09.008 +07:00 [INF] User profile is available. Using 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-01 09:07:09.014 +07:00 [DBG] Reading data from file 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys\key-5676f560-b125-417c-a9b8-fa957d2340a9.xml'.
+2026-10-01 09:07:09.020 +07:00 [DBG] Found key {5676f560-b125-417c-a9b8-fa957d2340a9}.
+2026-10-01 09:07:09.028 +07:00 [DBG] Considering key {5676f560-b125-417c-a9b8-fa957d2340a9} with expiration date 2026-12-28 12:25:05Z as default key.
+2026-10-01 09:07:09.029 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:07:09.030 +07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-10-01 09:07:09.031 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:07:09.033 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-10-01 09:07:09.034 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-10-01 09:07:09.034 +07:00 [DBG] Using key {5676f560-b125-417c-a9b8-fa957d2340a9} as the default key.
+2026-10-01 09:07:09.035 +07:00 [DBG] Key ring with default key {5676f560-b125-417c-a9b8-fa957d2340a9} was loaded during application startup.
+2026-10-01 09:07:09.041 +07:00 [DBG] Middleware loaded
+2026-10-01 09:07:09.042 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14911 B).
+2026-10-01 09:07:09.044 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-10-01 09:07:09.069 +07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-10-01 09:07:09.070 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-10-01 09:07:09.073 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=null, __ASPNETCORE_BROWSER_TOOLS=true
+2026-10-01 09:07:09.074 +07:00 [DBG] Loaded hosting startup assembly API
+2026-10-01 09:07:09.074 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-10-01 09:07:09.075 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-10-01 09:07:09.075 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-10-01 09:07:09.081 +07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:07:09.081 +07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:07:09.090 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - null null
+2026-10-01 09:07:09.138 +07:00 [DBG] Hosting started
+2026-10-01 09:07:09.191 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-10-01 09:07:09.195 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-10-01 09:07:09.224 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-10-01 09:07:09.227 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-10-01 09:07:09.229 +07:00 [DBG] Connection ID "18374686510541701136" disconnecting.
+2026-10-01 09:07:09.233 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - 200 null text/html;charset=utf-8 141.4255ms
+2026-10-01 09:07:09.238 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-01 09:07:09.244 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-10-01 09:07:09.244 +07:00 [DBG] Connection ID "18158513719837982725" disconnecting.
+2026-10-01 09:07:09.245 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - 200 14911 application/javascript; charset=utf-8 5.841ms
+2026-10-01 09:07:09.313 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - null null
+2026-10-01 09:07:09.341 +07:00 [DBG] Connection ID "18230571296696041484" disconnecting.
+2026-10-01 09:07:09.342 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.6957ms
+2026-10-01 09:07:09.441 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - null null
+2026-10-01 09:07:09.455 +07:00 [DBG] Connection ID "18230571305285976077" disconnecting.
+2026-10-01 09:07:09.455 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.9783ms
+2026-10-01 09:07:18.645 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 09:07:18.648 +07:00 [DBG] POST requests are not supported
+2026-10-01 09:07:18.682 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 09:07:18.683 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 09:07:18.684 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:07:18.816 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:07:18.817 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:07:18.822 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:07:18.823 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:07:18.837 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 09:07:18.838 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:07:18.839 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:07:18.839 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:07:18.839 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:07:18.839 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:07:18.841 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:07:18.842 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:07:18.847 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:07:18.888 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 09:07:18.889 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 09:07:18.901 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 09:07:18.902 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:07:18.902 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:07:18.902 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:07:18.905 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:07:18.913 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 70.589ms
+2026-10-01 09:07:18.914 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:07:18.915 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Unable to cast object of type 'System.Text.Json.JsonElement' to type 'System.IConvertible'.
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 80
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 09:07:18.935 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 289.2739ms
+2026-10-01 09:07:18.935 +07:00 [DBG] Connection ID "18230571305285976079" disconnecting.
+2026-10-01 09:07:46.748 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/api/Users/get-all - null null
+2026-10-01 09:07:46.749 +07:00 [DBG] The request path  does not match the path filter
+2026-10-01 09:07:46.752 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/get-all'
+2026-10-01 09:07:46.752 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.GetAll (API)' with route pattern 'api/Users/get-all' is valid for the request path '/api/Users/get-all'
+2026-10-01 09:07:46.753 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.GetAll (API)'
+2026-10-01 09:07:46.755 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:07:46.756 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:07:46.758 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:07:46.759 +07:00 [INF] Executing endpoint 'API.Controllers.UsersController.GetAll (API)'
+2026-10-01 09:07:46.761 +07:00 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Collections.Generic.List`1[Model.UserModel] GetAll() on controller API.Controllers.UsersController (API).
+2026-10-01 09:07:46.761 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:07:46.761 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:07:46.761 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:07:46.762 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:07:46.762 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:07:46.762 +07:00 [DBG] Executing controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 09:07:46.763 +07:00 [DBG] Executed controller factory for controller API.Controllers.UsersController (API)
+2026-10-01 09:07:47.108 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 09:07:47.109 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 09:07:47.109 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 09:07:47.110 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 09:07:47.110 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 09:07:47.111 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Model.UserModel, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-01 09:07:47.123 +07:00 [INF] Executed action API.Controllers.UsersController.GetAll (API) in 360.5343ms
+2026-10-01 09:07:47.123 +07:00 [INF] Executed endpoint 'API.Controllers.UsersController.GetAll (API)'
+2026-10-01 09:07:47.123 +07:00 [DBG] Connection ID "18014398518877224969" disconnecting.
+2026-10-01 09:07:47.123 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/api/Users/get-all - 200 null application/json; charset=utf-8 374.6877ms
+2026-10-01 09:08:21.801 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/api/CaLam/get-all - null null
+2026-10-01 09:08:21.801 +07:00 [DBG] The request path  does not match the path filter
+2026-10-01 09:08:21.801 +07:00 [DBG] 1 candidate(s) found for the request path '/api/CaLam/get-all'
+2026-10-01 09:08:21.802 +07:00 [DBG] Endpoint 'API.Controllers.CaLamController.GetAll (API)' with route pattern 'api/CaLam/get-all' is valid for the request path '/api/CaLam/get-all'
+2026-10-01 09:08:21.802 +07:00 [DBG] Request matched endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 09:08:21.808 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:08:21.808 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:08:21.809 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:08:21.810 +07:00 [INF] Executing endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 09:08:21.812 +07:00 [INF] Route matched with {action = "GetAll", controller = "CaLam"}. Executing controller action with signature System.Collections.Generic.List`1[Model.CaLamModel] GetAll() on controller API.Controllers.CaLamController (API).
+2026-10-01 09:08:21.812 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:08:21.812 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:08:21.812 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:08:21.812 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:08:21.812 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:08:21.812 +07:00 [DBG] Executing controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 09:08:21.813 +07:00 [DBG] Executed controller factory for controller API.Controllers.CaLamController (API)
+2026-10-01 09:08:21.838 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 09:08:21.838 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 09:08:21.838 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 09:08:21.838 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 09:08:21.839 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 09:08:21.839 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Model.CaLamModel, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-01 09:08:21.846 +07:00 [INF] Executed action API.Controllers.CaLamController.GetAll (API) in 34.1286ms
+2026-10-01 09:08:21.846 +07:00 [INF] Executed endpoint 'API.Controllers.CaLamController.GetAll (API)'
+2026-10-01 09:08:21.847 +07:00 [DBG] Connection ID "18086456104325218307" disconnecting.
+2026-10-01 09:08:21.847 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/api/CaLam/get-all - 200 null application/json; charset=utf-8 45.9517ms
+2026-10-01 09:37:48.135 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-10-01 09:37:48.660 +07:00 [DBG] Hosting starting
+2026-10-01 09:37:48.903 +07:00 [INF] User profile is available. Using 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-01 09:37:48.932 +07:00 [DBG] Reading data from file 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys\key-5676f560-b125-417c-a9b8-fa957d2340a9.xml'.
+2026-10-01 09:37:49.134 +07:00 [DBG] Found key {5676f560-b125-417c-a9b8-fa957d2340a9}.
+2026-10-01 09:37:49.207 +07:00 [DBG] Considering key {5676f560-b125-417c-a9b8-fa957d2340a9} with expiration date 2026-12-28 12:25:05Z as default key.
+2026-10-01 09:37:49.217 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:37:49.230 +07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-10-01 09:37:49.231 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:37:49.234 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-10-01 09:37:49.236 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-10-01 09:37:49.237 +07:00 [DBG] Using key {5676f560-b125-417c-a9b8-fa957d2340a9} as the default key.
+2026-10-01 09:37:49.238 +07:00 [DBG] Key ring with default key {5676f560-b125-417c-a9b8-fa957d2340a9} was loaded during application startup.
+2026-10-01 09:37:49.263 +07:00 [DBG] Middleware loaded
+2026-10-01 09:37:49.282 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14911 B).
+2026-10-01 09:37:49.297 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-10-01 09:37:49.732 +07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-10-01 09:37:49.780 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-10-01 09:37:50.225 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=null, __ASPNETCORE_BROWSER_TOOLS=true
+2026-10-01 09:37:50.281 +07:00 [DBG] Loaded hosting startup assembly API
+2026-10-01 09:37:50.439 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-10-01 09:37:50.439 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-10-01 09:37:50.439 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-10-01 09:37:50.540 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - null null
+2026-10-01 09:37:50.646 +07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:37:50.646 +07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:37:51.486 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-10-01 09:37:51.490 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-10-01 09:37:51.566 +07:00 [DBG] Hosting started
+2026-10-01 09:37:51.580 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-10-01 09:37:51.846 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-10-01 09:37:51.852 +07:00 [DBG] Connection ID "18230571300991008783" disconnecting.
+2026-10-01 09:37:51.853 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - 200 null text/html;charset=utf-8 1313.6421ms
+2026-10-01 09:37:54.176 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-01 09:37:54.187 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-10-01 09:37:54.187 +07:00 [DBG] Connection ID "18158513698363146260" disconnecting.
+2026-10-01 09:37:54.188 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - 200 14911 application/javascript; charset=utf-8 10.9842ms
+2026-10-01 09:37:54.231 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - null null
+2026-10-01 09:37:56.447 +07:00 [DBG] Connection ID "18158513698363146262" disconnecting.
+2026-10-01 09:37:56.449 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - 200 null text/javascript; charset=UTF-8 2217.8609ms
+2026-10-01 09:37:58.513 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - null null
+2026-10-01 09:37:58.561 +07:00 [DBG] Connection ID "18158513698363146264" disconnecting.
+2026-10-01 09:37:58.561 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 47.2402ms
+2026-10-01 09:38:54.155 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 09:38:54.163 +07:00 [DBG] POST requests are not supported
+2026-10-01 09:38:54.275 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 09:38:54.276 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 09:38:54.277 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:38:54.978 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:38:54.979 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:38:55.001 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:38:55.002 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:38:55.088 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 09:38:55.096 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:38:55.101 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:38:55.109 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:38:55.109 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:38:55.109 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:38:55.115 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:38:55.121 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:38:55.150 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:38:55.152 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 09:38:55.159 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 09:38:55.200 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 09:38:55.200 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:38:55.201 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:38:55.201 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:38:55.205 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:39:10.395 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 15283.6595ms
+2026-10-01 09:39:10.395 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:39:10.399 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=377; handshake=70; [Login] initialization=11; authentication=15; [Post-Login] complete=14025; 
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DAL.Helper.DatabaseHelper.ExecuteSProcedureReturnDataTable(String& msgError, String sprocedureName, Object[] paramObjects) in C:\Users\84352\source\repos\BanCoffee\DAL\Helper\DatabaseHelper.cs:line 728
+ClientConnectionId:e35e8eae-c67f-4bb8-b074-470e22db0544
+Error Number:-2,State:0,Class:11
+   at API.Controllers.LichLamViecController.Search(Dictionary`2 formData) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\LichLamViecController.cs:line 73
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-10-01 09:39:10.480 +07:00 [DBG] Connection ID "18374686489066864652" disconnecting.
+2026-10-01 09:39:10.480 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 500 null text/plain; charset=utf-8 16324.7546ms
+2026-10-01 09:40:11.623 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-10-01 09:40:11.719 +07:00 [DBG] Hosting starting
+2026-10-01 09:40:11.734 +07:00 [INF] User profile is available. Using 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-01 09:40:11.739 +07:00 [DBG] Reading data from file 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys\key-5676f560-b125-417c-a9b8-fa957d2340a9.xml'.
+2026-10-01 09:40:11.748 +07:00 [DBG] Found key {5676f560-b125-417c-a9b8-fa957d2340a9}.
+2026-10-01 09:40:11.760 +07:00 [DBG] Considering key {5676f560-b125-417c-a9b8-fa957d2340a9} with expiration date 2026-12-28 12:25:05Z as default key.
+2026-10-01 09:40:11.762 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:40:11.764 +07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-10-01 09:40:11.765 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:40:11.768 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-10-01 09:40:11.769 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-10-01 09:40:11.771 +07:00 [DBG] Using key {5676f560-b125-417c-a9b8-fa957d2340a9} as the default key.
+2026-10-01 09:40:11.771 +07:00 [DBG] Key ring with default key {5676f560-b125-417c-a9b8-fa957d2340a9} was loaded during application startup.
+2026-10-01 09:40:11.776 +07:00 [DBG] Middleware loaded
+2026-10-01 09:40:11.781 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14911 B).
+2026-10-01 09:40:11.785 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-10-01 09:40:11.830 +07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-10-01 09:40:11.832 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-10-01 09:40:11.840 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=null, __ASPNETCORE_BROWSER_TOOLS=true
+2026-10-01 09:40:11.842 +07:00 [DBG] Loaded hosting startup assembly API
+2026-10-01 09:40:11.842 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-10-01 09:40:11.842 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-10-01 09:40:11.842 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-10-01 09:40:11.849 +07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:40:11.850 +07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:40:11.869 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - null null
+2026-10-01 09:40:11.918 +07:00 [DBG] Hosting started
+2026-10-01 09:40:12.025 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-10-01 09:40:12.034 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-10-01 09:40:12.069 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-10-01 09:40:12.073 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-10-01 09:40:12.076 +07:00 [DBG] Connection ID "18230571305285976085" disconnecting.
+2026-10-01 09:40:12.078 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - 200 null text/html;charset=utf-8 210.2277ms
+2026-10-01 09:40:12.503 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-01 09:40:12.507 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-10-01 09:40:12.508 +07:00 [DBG] Connection ID "18374686480476930061" disconnecting.
+2026-10-01 09:40:12.509 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - 200 14911 application/javascript; charset=utf-8 4.4883ms
+2026-10-01 09:40:12.517 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - null null
+2026-10-01 09:40:12.573 +07:00 [DBG] Connection ID "18374686480476930063" disconnecting.
+2026-10-01 09:40:12.575 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.9507ms
+2026-10-01 09:40:13.291 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - null null
+2026-10-01 09:40:13.327 +07:00 [DBG] Connection ID "18158513728427917313" disconnecting.
+2026-10-01 09:40:13.327 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 35.8965ms
+2026-10-01 09:40:16.886 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 09:40:16.889 +07:00 [DBG] POST requests are not supported
+2026-10-01 09:40:16.935 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 09:40:16.936 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 09:40:16.937 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:40:17.277 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:40:17.279 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:40:17.288 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:40:17.290 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:40:17.316 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 09:40:17.318 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:40:17.318 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:40:17.319 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:40:17.319 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:40:17.319 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:40:17.321 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:40:17.324 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:40:17.328 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:40:17.331 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 09:40:17.332 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 09:40:17.346 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 09:40:17.346 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:40:17.347 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:40:17.347 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:40:17.351 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:40:18.877 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 09:40:18.879 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 09:40:18.879 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 09:40:18.880 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 09:40:18.881 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 09:40:18.881 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.ResponseModel'.
+2026-10-01 09:40:18.921 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 1597.3715ms
+2026-10-01 09:40:18.921 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:40:18.922 +07:00 [DBG] Connection ID "18374686493361831947" disconnecting.
+2026-10-01 09:40:18.922 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 200 null application/json; charset=utf-8 2035.638ms
+2026-10-01 09:47:26.547 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 09:47:26.565 +07:00 [DBG] POST requests are not supported
+2026-10-01 09:47:26.579 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 09:47:26.581 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 09:47:26.584 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:47:26.609 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:47:26.609 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:47:26.616 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:47:26.617 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:47:26.636 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 09:47:26.637 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:47:26.637 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:47:26.639 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:47:26.639 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:47:26.639 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:47:26.640 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:47:26.645 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:47:26.647 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:47:26.648 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 09:47:26.649 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 09:47:26.653 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 09:47:26.653 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:47:26.653 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:47:26.653 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:47:26.653 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:47:27.274 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 09:47:27.274 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 09:47:27.274 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 09:47:27.274 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 09:47:27.274 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 09:47:27.275 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.ResponseModel'.
+2026-10-01 09:47:27.281 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 642.0443ms
+2026-10-01 09:47:27.282 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:47:27.282 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 200 null application/json; charset=utf-8 737.5371ms
+2026-10-01 09:58:14.222 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-10-01 09:58:14.416 +07:00 [DBG] Hosting starting
+2026-10-01 09:58:14.456 +07:00 [INF] User profile is available. Using 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-01 09:58:14.470 +07:00 [DBG] Reading data from file 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys\key-5676f560-b125-417c-a9b8-fa957d2340a9.xml'.
+2026-10-01 09:58:14.509 +07:00 [DBG] Found key {5676f560-b125-417c-a9b8-fa957d2340a9}.
+2026-10-01 09:58:14.537 +07:00 [DBG] Considering key {5676f560-b125-417c-a9b8-fa957d2340a9} with expiration date 2026-12-28 12:25:05Z as default key.
+2026-10-01 09:58:14.541 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:58:14.543 +07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-10-01 09:58:14.545 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-10-01 09:58:14.550 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-10-01 09:58:14.551 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-10-01 09:58:14.553 +07:00 [DBG] Using key {5676f560-b125-417c-a9b8-fa957d2340a9} as the default key.
+2026-10-01 09:58:14.554 +07:00 [DBG] Key ring with default key {5676f560-b125-417c-a9b8-fa957d2340a9} was loaded during application startup.
+2026-10-01 09:58:14.564 +07:00 [DBG] Middleware loaded
+2026-10-01 09:58:14.574 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14911 B).
+2026-10-01 09:58:14.581 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-10-01 09:58:14.691 +07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-10-01 09:58:14.695 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-10-01 09:58:14.716 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=null, __ASPNETCORE_BROWSER_TOOLS=true
+2026-10-01 09:58:14.723 +07:00 [DBG] Loaded hosting startup assembly API
+2026-10-01 09:58:14.723 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-10-01 09:58:14.723 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-10-01 09:58:14.723 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-10-01 09:58:14.734 +07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:58:14.734 +07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-10-01 09:58:14.773 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - null null
+2026-10-01 09:58:14.840 +07:00 [DBG] Hosting started
+2026-10-01 09:58:15.562 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-10-01 09:58:15.569 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-10-01 09:58:15.612 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-10-01 09:58:15.616 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-10-01 09:58:15.619 +07:00 [DBG] Connection ID "18014398523172192257" disconnecting.
+2026-10-01 09:58:15.621 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - 200 null text/html;charset=utf-8 849.993ms
+2026-10-01 09:58:16.074 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-01 09:58:16.074 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - null null
+2026-10-01 09:58:16.079 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-10-01 09:58:16.080 +07:00 [DBG] Connection ID "18014398523172192259" disconnecting.
+2026-10-01 09:58:16.081 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - 200 14911 application/javascript; charset=utf-8 6.5541ms
+2026-10-01 09:58:16.177 +07:00 [DBG] Connection ID "18374686501951766545" disconnecting.
+2026-10-01 09:58:16.179 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - 200 null text/javascript; charset=UTF-8 105.3974ms
+2026-10-01 09:58:16.844 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - null null
+2026-10-01 09:58:16.846 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/LichLamViec/search - application/json 173
+2026-10-01 09:58:16.852 +07:00 [DBG] POST requests are not supported
+2026-10-01 09:58:16.917 +07:00 [DBG] 1 candidate(s) found for the request path '/api/LichLamViec/search'
+2026-10-01 09:58:16.919 +07:00 [DBG] Endpoint 'API.Controllers.LichLamViecController.Search (API)' with route pattern 'api/LichLamViec/search' is valid for the request path '/api/LichLamViec/search'
+2026-10-01 09:58:16.920 +07:00 [DBG] Request matched endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:58:16.925 +07:00 [DBG] Connection ID "18158513698363146269" disconnecting.
+2026-10-01 09:58:16.925 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 80.4852ms
+2026-10-01 09:58:17.232 +07:00 [INF] Successfully validated the token.
+2026-10-01 09:58:17.235 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-10-01 09:58:17.242 +07:00 [DBG] Authorization was successful.
+2026-10-01 09:58:17.244 +07:00 [INF] Executing endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:58:17.298 +07:00 [INF] Route matched with {action = "Search", controller = "LichLamViec"}. Executing controller action with signature Model.ResponseModel Search(System.Collections.Generic.Dictionary`2[System.String,System.Object]) on controller API.Controllers.LichLamViecController (API).
+2026-10-01 09:58:17.301 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-10-01 09:58:17.302 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-10-01 09:58:17.302 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-10-01 09:58:17.303 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-10-01 09:58:17.303 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-10-01 09:58:17.306 +07:00 [DBG] Executing controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:58:17.308 +07:00 [DBG] Executed controller factory for controller API.Controllers.LichLamViecController (API)
+2026-10-01 09:58:17.315 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:58:17.319 +07:00 [DBG] Attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' using the name '' in request data ...
+2026-10-01 09:58:17.320 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-10-01 09:58:17.338 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+2026-10-01 09:58:17.338 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:58:17.338 +07:00 [DBG] Done attempting to bind parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:58:17.338 +07:00 [DBG] Attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' ...
+2026-10-01 09:58:17.343 +07:00 [DBG] Done attempting to validate the bound parameter 'formData' of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]'.
+2026-10-01 09:58:18.905 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-10-01 09:58:18.907 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-10-01 09:58:18.907 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-10-01 09:58:18.907 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-10-01 09:58:18.908 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-10-01 09:58:18.909 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.ResponseModel'.
+2026-10-01 09:58:18.942 +07:00 [INF] Executed action API.Controllers.LichLamViecController.Search (API) in 1634.1743ms
+2026-10-01 09:58:18.943 +07:00 [INF] Executed endpoint 'API.Controllers.LichLamViecController.Search (API)'
+2026-10-01 09:58:18.943 +07:00 [DBG] Connection ID "18230571296696041488" disconnecting.
+2026-10-01 09:58:18.943 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/LichLamViec/search - 200 null application/json; charset=utf-8 2096.9428ms
+2026-10-01 10:03:02.154 +07:00 [DBG] Hosting stopping
+2026-10-01 10:03:02.155 +07:00 [DBG] Hosting stopped

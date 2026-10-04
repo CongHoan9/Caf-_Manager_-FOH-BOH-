@@ -1,0 +1,327 @@
+2026-09-29 19:25:05.152 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-09-29 19:25:05.281 +07:00 [DBG] Hosting starting
+2026-09-29 19:25:05.294 +07:00 [INF] User profile is available. Using 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-29 19:25:05.308 +07:00 [DBG] Repository contains no viable default key. Caller should generate a key with immediate activation.
+2026-09-29 19:25:05.308 +07:00 [DBG] Policy resolution states that a new key should be added to the key ring.
+2026-09-29 19:25:05.311 +07:00 [INF] Creating key {5676f560-b125-417c-a9b8-fa957d2340a9} with creation date 2026-09-29 12:25:05Z, activation date 2026-09-29 12:25:05Z, and expiration date 2026-12-28 12:25:05Z.
+2026-09-29 19:25:05.329 +07:00 [DBG] Descriptor deserializer type for key {5676f560-b125-417c-a9b8-fa957d2340a9} is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+2026-09-29 19:25:05.336 +07:00 [DBG] No key escrow sink found. Not writing key {5676f560-b125-417c-a9b8-fa957d2340a9} to escrow.
+2026-09-29 19:25:05.343 +07:00 [DBG] Encrypting to Windows DPAPI for current user account (HOAN\84352).
+2026-09-29 19:25:05.353 +07:00 [INF] Writing data to file 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys\key-5676f560-b125-417c-a9b8-fa957d2340a9.xml'.
+2026-09-29 19:25:05.354 +07:00 [DBG] Key cache expiration token triggered by 'CreateNewKey' operation.
+2026-09-29 19:25:05.355 +07:00 [DBG] Reading data from file 'C:\Users\84352\AppData\Local\ASP.NET\DataProtection-Keys\key-5676f560-b125-417c-a9b8-fa957d2340a9.xml'.
+2026-09-29 19:25:05.372 +07:00 [DBG] Found key {5676f560-b125-417c-a9b8-fa957d2340a9}.
+2026-09-29 19:25:05.374 +07:00 [DBG] Considering key {5676f560-b125-417c-a9b8-fa957d2340a9} with expiration date 2026-12-28 12:25:05Z as default key.
+2026-09-29 19:25:05.376 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-09-29 19:25:05.376 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-09-29 19:25:05.376 +07:00 [DBG] Using key {5676f560-b125-417c-a9b8-fa957d2340a9} as the default key.
+2026-09-29 19:25:05.377 +07:00 [DBG] Key ring with default key {5676f560-b125-417c-a9b8-fa957d2340a9} was loaded during application startup.
+2026-09-29 19:25:05.380 +07:00 [DBG] Middleware loaded
+2026-09-29 19:25:05.386 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14911 B).
+2026-09-29 19:25:05.390 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-09-29 19:25:05.454 +07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-09-29 19:25:05.455 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-09-29 19:25:05.457 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=null, __ASPNETCORE_BROWSER_TOOLS=true
+2026-09-29 19:25:05.460 +07:00 [DBG] Loaded hosting startup assembly API
+2026-09-29 19:25:05.460 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-09-29 19:25:05.460 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-09-29 19:25:05.460 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-09-29 19:25:05.476 +07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-09-29 19:25:05.477 +07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-09-29 19:25:05.501 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger - null null
+2026-09-29 19:25:05.551 +07:00 [DBG] Hosting started
+2026-09-29 19:25:05.692 +07:00 [DBG] Connection ID "18302628907913838593" disconnecting.
+2026-09-29 19:25:05.696 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - null null
+2026-09-29 19:25:05.706 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger - 301 null null 207.2027ms
+2026-09-29 19:25:05.791 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-09-29 19:25:05.801 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-09-29 19:25:05.824 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-09-29 19:25:05.827 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-09-29 19:25:05.828 +07:00 [DBG] Connection ID "18158513698363146241" disconnecting.
+2026-09-29 19:25:05.828 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - 200 null text/html;charset=utf-8 132.3971ms
+2026-09-29 19:25:05.835 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui-bundle.js - null null
+2026-09-29 19:25:05.836 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-29 19:25:05.836 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui.css - null null
+2026-09-29 19:25:05.838 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui-standalone-preset.js - null null
+2026-09-29 19:25:05.842 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-09-29 19:25:05.844 +07:00 [DBG] Connection ID "18374686489066864642" disconnecting.
+2026-09-29 19:25:05.845 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - 200 14911 application/javascript; charset=utf-8 7.6667ms
+2026-09-29 19:25:05.853 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-09-29 19:25:05.855 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-09-29 19:25:05.857 +07:00 [DBG] Connection ID "18374686484771897345" disconnecting.
+2026-09-29 19:25:05.859 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui.css - 200 143821 text/css 22.6336ms
+2026-09-29 19:25:05.861 +07:00 [DBG] Connection ID "18230571296696041473" disconnecting.
+2026-09-29 19:25:05.862 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui-standalone-preset.js - 200 319705 text/javascript 23.7976ms
+2026-09-29 19:25:05.867 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-09-29 19:25:05.886 +07:00 [DBG] Connection ID "18302628890733969409" disconnecting.
+2026-09-29 19:25:05.886 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui-bundle.js - 200 1079362 text/javascript 51.226ms
+2026-09-29 19:25:05.910 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - null null
+2026-09-29 19:25:06.002 +07:00 [DBG] Connection ID "18374686493361831937" disconnecting.
+2026-09-29 19:25:06.003 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - 200 null text/javascript; charset=UTF-8 92.782ms
+2026-09-29 19:25:06.119 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - null null
+2026-09-29 19:25:06.153 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/favicon-32x32.png - null null
+2026-09-29 19:25:06.154 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-09-29 19:25:06.155 +07:00 [DBG] Connection ID "18302628907913838595" disconnecting.
+2026-09-29 19:25:06.155 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/favicon-32x32.png - 200 628 image/png 1.1553ms
+2026-09-29 19:25:06.169 +07:00 [DBG] Connection ID "18302628895028936706" disconnecting.
+2026-09-29 19:25:06.169 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 49.6705ms
+2026-09-29 19:25:18.032 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/Ban/create-ban - application/json 111
+2026-09-29 19:25:18.033 +07:00 [DBG] POST requests are not supported
+2026-09-29 19:25:18.072 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Ban/create-ban'
+2026-09-29 19:25:18.073 +07:00 [DBG] Endpoint 'API.Controllers.BanController.CreateBan (API)' with route pattern 'api/Ban/create-ban' is valid for the request path '/api/Ban/create-ban'
+2026-09-29 19:25:18.074 +07:00 [DBG] Request matched endpoint 'API.Controllers.BanController.CreateBan (API)'
+2026-09-29 19:25:18.077 +07:00 [DBG] The request has an origin header: 'https://localhost:44334'.
+2026-09-29 19:25:18.077 +07:00 [INF] CORS policy execution successful.
+2026-09-29 19:25:18.134 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-09-29 19:25:18.138 +07:00 [DBG] Policy authentication schemes  did not succeed
+2026-09-29 19:25:18.141 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-09-29 19:25:18.144 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-09-29 19:25:18.147 +07:00 [DBG] Connection ID "18302628907913838597" disconnecting.
+2026-09-29 19:25:18.147 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/Ban/create-ban - 401 null null 114.5081ms
+2026-09-29 19:25:21.405 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/Ban/create-ban - application/json 111
+2026-09-29 19:25:21.406 +07:00 [DBG] POST requests are not supported
+2026-09-29 19:25:21.409 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Ban/create-ban'
+2026-09-29 19:25:21.409 +07:00 [DBG] Endpoint 'API.Controllers.BanController.CreateBan (API)' with route pattern 'api/Ban/create-ban' is valid for the request path '/api/Ban/create-ban'
+2026-09-29 19:25:21.409 +07:00 [DBG] Request matched endpoint 'API.Controllers.BanController.CreateBan (API)'
+2026-09-29 19:25:21.410 +07:00 [DBG] The request has an origin header: 'https://localhost:44334'.
+2026-09-29 19:25:21.410 +07:00 [INF] CORS policy execution successful.
+2026-09-29 19:25:21.413 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-09-29 19:25:21.415 +07:00 [DBG] Policy authentication schemes  did not succeed
+2026-09-29 19:25:21.415 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-09-29 19:25:21.416 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-09-29 19:25:21.416 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/Ban/create-ban - 401 null null 11.4211ms
+2026-09-29 19:25:21.416 +07:00 [DBG] Connection ID "18374686506246733825" disconnecting.
+2026-09-29 19:26:52.848 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44334/api/Customer/create-item - application/json 84
+2026-09-29 19:26:52.848 +07:00 [DBG] POST requests are not supported
+2026-09-29 19:26:52.848 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Customer/create-item'
+2026-09-29 19:26:52.848 +07:00 [DBG] Endpoint 'API.Controllers.CustomerController.Create (API)' with route pattern 'api/Customer/create-item' is valid for the request path '/api/Customer/create-item'
+2026-09-29 19:26:52.849 +07:00 [DBG] Request matched endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:26:52.850 +07:00 [DBG] The request has an origin header: 'https://localhost:44334'.
+2026-09-29 19:26:52.850 +07:00 [INF] CORS policy execution successful.
+2026-09-29 19:26:52.862 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-09-29 19:26:52.864 +07:00 [INF] Executing endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:26:52.888 +07:00 [INF] Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature Model.CustomerModel Create(Model.CustomerModel) on controller API.Controllers.CustomerController (API).
+2026-09-29 19:26:52.890 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-09-29 19:26:52.890 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-09-29 19:26:52.890 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-09-29 19:26:52.890 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-09-29 19:26:52.890 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-09-29 19:26:52.892 +07:00 [DBG] Executing controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:26:52.895 +07:00 [DBG] Executed controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:26:52.900 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:26:52.902 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' using the name '' in request data ...
+2026-09-29 19:26:52.903 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-09-29 19:26:52.919 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.CustomerModel'
+2026-09-29 19:26:52.919 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:26:52.919 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:26:52.919 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:26:52.922 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:26:53.194 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-09-29 19:26:53.196 +07:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2026-09-29 19:26:53.197 +07:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2026-09-29 19:26:53.197 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-09-29 19:26:53.197 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-09-29 19:26:53.198 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-09-29 19:26:53.199 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.CustomerModel'.
+2026-09-29 19:26:53.205 +07:00 [INF] Executed action API.Controllers.CustomerController.Create (API) in 310.987ms
+2026-09-29 19:26:53.205 +07:00 [INF] Executed endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:26:53.205 +07:00 [DBG] Connection ID "18302628895028936708" disconnecting.
+2026-09-29 19:26:53.205 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44334/api/Customer/create-item - 200 null application/json; charset=utf-8 357.7136ms
+2026-09-29 19:33:13.397 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - application/json 0
+2026-09-29 19:33:13.399 +07:00 [DBG] POST requests are not supported
+2026-09-29 19:33:13.399 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Customer/create-item'
+2026-09-29 19:33:13.400 +07:00 [DBG] Endpoint 'API.Controllers.CustomerController.Create (API)' with route pattern 'api/Customer/create-item' is valid for the request path '/api/Customer/create-item'
+2026-09-29 19:33:13.400 +07:00 [DBG] Request matched endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:33:13.401 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-09-29 19:33:13.401 +07:00 [INF] Executing endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:33:13.402 +07:00 [INF] Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature Model.CustomerModel Create(Model.CustomerModel) on controller API.Controllers.CustomerController (API).
+2026-09-29 19:33:13.403 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-09-29 19:33:13.403 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-09-29 19:33:13.403 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-09-29 19:33:13.404 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-09-29 19:33:13.404 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-09-29 19:33:13.404 +07:00 [DBG] Executing controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:33:13.406 +07:00 [DBG] Executed controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:33:13.406 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:33:13.407 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' using the name '' in request data ...
+2026-09-29 19:33:13.407 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-09-29 19:33:13.409 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:33:13.409 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:33:13.409 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:33:13.409 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:33:13.410 +07:00 [DBG] The request has model state errors, returning an error response.
+2026-09-29 19:33:13.411 +07:00 [DBG] Request was short circuited at action filter 'Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter'.
+2026-09-29 19:33:13.412 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-09-29 19:33:13.412 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-09-29 19:33:13.413 +07:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/problem+json","application/problem+xml","application/problem+json","application/problem+xml"]'.
+2026-09-29 19:33:13.413 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response.
+2026-09-29 19:33:13.413 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-09-29 19:33:13.440 +07:00 [INF] Executed action API.Controllers.CustomerController.Create (API) in 36.1623ms
+2026-09-29 19:33:13.440 +07:00 [INF] Executed endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:33:13.441 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - 400 null application/problem+json; charset=utf-8 44.4602ms
+2026-09-29 19:34:00.484 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - application/json 0
+2026-09-29 19:34:00.484 +07:00 [DBG] POST requests are not supported
+2026-09-29 19:34:00.484 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Customer/create-item'
+2026-09-29 19:34:00.484 +07:00 [DBG] Endpoint 'API.Controllers.CustomerController.Create (API)' with route pattern 'api/Customer/create-item' is valid for the request path '/api/Customer/create-item'
+2026-09-29 19:34:00.484 +07:00 [DBG] Request matched endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:00.485 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-09-29 19:34:00.485 +07:00 [INF] Executing endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:00.485 +07:00 [INF] Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature Model.CustomerModel Create(Model.CustomerModel) on controller API.Controllers.CustomerController (API).
+2026-09-29 19:34:00.485 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-09-29 19:34:00.485 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-09-29 19:34:00.485 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-09-29 19:34:00.485 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-09-29 19:34:00.485 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-09-29 19:34:00.486 +07:00 [DBG] Executing controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:34:00.493 +07:00 [DBG] Executed controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:34:00.494 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:34:00.494 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' using the name '' in request data ...
+2026-09-29 19:34:00.494 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-09-29 19:34:00.494 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:00.494 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:00.494 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:34:00.494 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:00.494 +07:00 [DBG] The request has model state errors, returning an error response.
+2026-09-29 19:34:00.494 +07:00 [DBG] Request was short circuited at action filter 'Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter'.
+2026-09-29 19:34:00.514 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-09-29 19:34:00.515 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-09-29 19:34:00.515 +07:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/problem+json","application/problem+xml","application/problem+json","application/problem+xml"]'.
+2026-09-29 19:34:00.515 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response.
+2026-09-29 19:34:00.515 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-09-29 19:34:00.515 +07:00 [INF] Executed action API.Controllers.CustomerController.Create (API) in 29.9015ms
+2026-09-29 19:34:00.516 +07:00 [INF] Executed endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:00.516 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - 400 null application/problem+json; charset=utf-8 31.6758ms
+2026-09-29 19:34:21.791 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - application/json 0
+2026-09-29 19:34:21.792 +07:00 [DBG] POST requests are not supported
+2026-09-29 19:34:21.792 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Customer/create-item'
+2026-09-29 19:34:21.792 +07:00 [DBG] Endpoint 'API.Controllers.CustomerController.Create (API)' with route pattern 'api/Customer/create-item' is valid for the request path '/api/Customer/create-item'
+2026-09-29 19:34:21.792 +07:00 [DBG] Request matched endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:21.792 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-09-29 19:34:21.793 +07:00 [INF] Executing endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:21.793 +07:00 [INF] Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature Model.CustomerModel Create(Model.CustomerModel) on controller API.Controllers.CustomerController (API).
+2026-09-29 19:34:21.793 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-09-29 19:34:21.793 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-09-29 19:34:21.793 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-09-29 19:34:21.793 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-09-29 19:34:21.793 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-09-29 19:34:21.794 +07:00 [DBG] Executing controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:34:21.794 +07:00 [DBG] Executed controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:34:21.794 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:34:21.794 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' using the name '' in request data ...
+2026-09-29 19:34:21.794 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-09-29 19:34:21.795 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:21.795 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:21.795 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:34:21.795 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:21.795 +07:00 [DBG] The request has model state errors, returning an error response.
+2026-09-29 19:34:21.795 +07:00 [DBG] Request was short circuited at action filter 'Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter'.
+2026-09-29 19:34:21.795 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-09-29 19:34:21.795 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-09-29 19:34:21.795 +07:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/problem+json","application/problem+xml","application/problem+json","application/problem+xml"]'.
+2026-09-29 19:34:21.795 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response.
+2026-09-29 19:34:21.796 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-09-29 19:34:21.796 +07:00 [INF] Executed action API.Controllers.CustomerController.Create (API) in 2.8625ms
+2026-09-29 19:34:21.797 +07:00 [INF] Executed endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:21.797 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - 400 null application/problem+json; charset=utf-8 6.0051ms
+2026-09-29 19:34:43.283 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - application/json 87
+2026-09-29 19:34:43.283 +07:00 [DBG] POST requests are not supported
+2026-09-29 19:34:43.284 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Customer/create-item'
+2026-09-29 19:34:43.284 +07:00 [DBG] Endpoint 'API.Controllers.CustomerController.Create (API)' with route pattern 'api/Customer/create-item' is valid for the request path '/api/Customer/create-item'
+2026-09-29 19:34:43.284 +07:00 [DBG] Request matched endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:43.284 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-09-29 19:34:43.284 +07:00 [INF] Executing endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:43.284 +07:00 [INF] Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature Model.CustomerModel Create(Model.CustomerModel) on controller API.Controllers.CustomerController (API).
+2026-09-29 19:34:43.284 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-09-29 19:34:43.284 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-09-29 19:34:43.284 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-09-29 19:34:43.284 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-09-29 19:34:43.284 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-09-29 19:34:43.284 +07:00 [DBG] Executing controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:34:43.284 +07:00 [DBG] Executed controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:34:43.284 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:34:43.285 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' using the name '' in request data ...
+2026-09-29 19:34:43.285 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-09-29 19:34:43.285 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.CustomerModel'
+2026-09-29 19:34:43.285 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:43.285 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:43.286 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:34:43.286 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:34:43.368 +07:00 [INF] Executed action API.Controllers.CustomerController.Create (API) in 83.5726ms
+2026-09-29 19:34:43.369 +07:00 [INF] Executed endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:34:43.371 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_customer'. Cannot insert duplicate key in object 'dbo.customer'. The duplicate key value is (nguoilamemay@gmail.com).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at DAL.Helper.DatabaseHelper.ExecuteScalarSProcedureWithTransaction(String& msgError, String sprocedureName, Object[] paramObjects) in C:\Users\84352\source\repos\BanCoffee\DAL\Helper\DatabaseHelper.cs:line 665
+ClientConnectionId:32485159-3c57-491a-af0b-0c7d58e4fe54
+Error Number:2627,State:1,Class:14
+   at DAL.Repository.<>c__DisplayClass3_0.<ExecuteTransaction>b__0() in C:\Users\84352\source\repos\BanCoffee\DAL\Repository.cs:line 28
+   at DAL.Repository.Execute[T](Func`1 action) in C:\Users\84352\source\repos\BanCoffee\DAL\Repository.cs:line 16
+   at DAL.Repository.ExecuteTransaction(String spName, Object[] parameters) in C:\Users\84352\source\repos\BanCoffee\DAL\Repository.cs:line 23
+   at DAL.CustomerRepository.Create(CustomerModel model) in C:\Users\84352\source\repos\BanCoffee\DAL\CustomerRepository.cs:line 9
+   at BLL.CustomerBusiness.Create(CustomerModel model) in C:\Users\84352\source\repos\BanCoffee\BLL\CustomerBusiness.cs:line 13
+   at API.Controllers.CustomerController.Create(CustomerModel model) in C:\Users\84352\source\repos\BanCoffee\API\Controllers\CustomerController.cs:line 21
+   at lambda_method3(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-29 19:34:43.404 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - 500 null text/plain; charset=utf-8 120.878ms
+2026-09-29 19:56:58.271 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - application/json 89
+2026-09-29 19:56:58.276 +07:00 [DBG] POST requests are not supported
+2026-09-29 19:56:58.277 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Customer/create-item'
+2026-09-29 19:56:58.277 +07:00 [DBG] Endpoint 'API.Controllers.CustomerController.Create (API)' with route pattern 'api/Customer/create-item' is valid for the request path '/api/Customer/create-item'
+2026-09-29 19:56:58.278 +07:00 [DBG] Request matched endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:56:58.281 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-09-29 19:56:58.282 +07:00 [INF] Executing endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:56:58.286 +07:00 [INF] Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature Model.CustomerModel Create(Model.CustomerModel) on controller API.Controllers.CustomerController (API).
+2026-09-29 19:56:58.287 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-09-29 19:56:58.287 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-09-29 19:56:58.287 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-09-29 19:56:58.288 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-09-29 19:56:58.288 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-09-29 19:56:58.288 +07:00 [DBG] Executing controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:56:58.289 +07:00 [DBG] Executed controller factory for controller API.Controllers.CustomerController (API)
+2026-09-29 19:56:58.290 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:56:58.290 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.CustomerModel' using the name '' in request data ...
+2026-09-29 19:56:58.291 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-09-29 19:56:58.297 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.CustomerModel'
+2026-09-29 19:56:58.297 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:56:58.297 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:56:58.297 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.CustomerModel' ...
+2026-09-29 19:56:58.298 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.CustomerModel'.
+2026-09-29 19:56:58.314 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-09-29 19:56:58.314 +07:00 [DBG] No information found on request to perform content negotiation.
+2026-09-29 19:56:58.314 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-09-29 19:56:58.314 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-09-29 19:56:58.314 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-09-29 19:56:58.314 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.CustomerModel'.
+2026-09-29 19:56:58.319 +07:00 [INF] Executed action API.Controllers.CustomerController.Create (API) in 30.5844ms
+2026-09-29 19:56:58.319 +07:00 [INF] Executed endpoint 'API.Controllers.CustomerController.Create (API)'
+2026-09-29 19:56:58.320 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44334/api/Customer/create-item - 200 null application/json; charset=utf-8 49.6847ms

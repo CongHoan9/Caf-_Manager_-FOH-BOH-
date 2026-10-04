@@ -1,0 +1,44 @@
+body {
+    background-color: #f8f9fc;
+}
+
+/* Sidebar styling */
+.sidebar {
+    min-height: 100vh;
+    background-color: #4e73df;
+    background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
+    background-size: cover;
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,.8);
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+}
+
+/* Topbar */
+.topbar {
+    height: 4.375rem;
+    background-color: #fff;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+
+/* Main Content */
+#content-wrapper {
+    background-color: #f8f9fc;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.card-header {
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}

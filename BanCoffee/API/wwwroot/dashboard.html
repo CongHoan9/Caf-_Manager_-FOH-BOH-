@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BanCoffee - Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <div id="wrapper" class="d-flex">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center p-3 text-white text-decoration-none" href="dashboard.html">
+                <div class="sidebar-brand-text mx-3 fs-4 font-weight-bold">BanCoffee</div>
+            </a>
+            <hr class="sidebar-divider my-0 bg-white opacity-25">
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard.html">Tổng quan</a>
+            </li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Quản lý Bán hàng</div>
+            <li class="nav-item"><a class="nav-link" href="hoadon.html">Hóa Đơn</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Sản phẩm (Menu)</a></li>
+            <li class="nav-item"><a class="nav-link" href="tables.html">Bàn (Khu vực)</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Nội bộ</div>
+            <li class="nav-item admin-only"><a class="nav-link" href="kho.html">Kho (Nguyên Liệu)</a></li>
+            <li class="nav-item"><a class="nav-link" href="lichlam.html">Ca làm &amp; Lịch làm</a></li>
+            <li class="nav-item admin-only"><a class="nav-link" href="users.html">Tài khoản &amp; Nhân viên</a></li>
+        </ul>
+        
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow px-4">
+                <ul class="navbar-nav ms-auto">
+                    <!-- User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <span class="me-2 d-none d-lg-inline text-gray-600 small" id="userDropdownName">Loading...</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in">
+                            <a class="dropdown-item" href="#" id="btnLogout">
+                                Đăng xuất
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Main Content -->
+            <div class="container-fluid px-4">
+                <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Doanh thu (Tháng)</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">40,000,000đ</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/auth.js"></script>
+</body>
+</html>

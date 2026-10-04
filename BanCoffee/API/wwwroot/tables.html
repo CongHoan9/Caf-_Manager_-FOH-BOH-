@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Bàn - BanCoffee</title>
+    <!-- Bootstrap CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <style>
+        .table-card { transition: transform 0.2s; cursor: pointer; }
+        .table-card:hover { transform: scale(1.05); }
+        .bg-trong { background-color: #e2f0d9; border-color: #70ad47; }
+        .bg-dang-phuc-vu { background-color: #fff2cc; border-color: #ffc000; }
+        .bg-da-dat { background-color: #fce4d6; border-color: #ed7d31; }
+    </style>
+</head>
+<body id="page-top">
+    <div id="wrapper" class="d-flex">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center p-3 text-white text-decoration-none" href="dashboard.html">
+                <div class="sidebar-brand-text mx-3 fs-4 font-weight-bold">BanCoffee</div>
+            </a>
+            <hr class="sidebar-divider my-0 bg-white opacity-25">
+            <li class="nav-item"><a class="nav-link" href="dashboard.html">Tổng quan</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Quản lý Bán hàng</div>
+            <li class="nav-item"><a class="nav-link" href="hoadon.html">Hóa Đơn</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Sản phẩm (Menu)</a></li>
+            <li class="nav-item active"><a class="nav-link" href="tables.html">Bàn (Khu vực)</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Nội bộ</div>
+            <li class="nav-item admin-only"><a class="nav-link" href="kho.html">Kho (Nguyên Liệu)</a></li>
+            <li class="nav-item"><a class="nav-link" href="lichlam.html">Ca làm &amp; Lịch làm</a></li>
+            <li class="nav-item admin-only"><a class="nav-link" href="users.html">Tài khoản &amp; Nhân viên</a></li>
+        </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow px-4">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <span class="me-2 d-none d-lg-inline text-gray-600 small" id="userDropdownName">Loading...</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in">
+                            <a class="dropdown-item" href="#" id="btnLogout">Đăng xuất</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid px-4">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Sơ đồ Bàn</h1>
+                    <button class="btn btn-sm btn-primary shadow-sm admin-only" id="btnAddTable" data-bs-toggle="modal" data-bs-target="#tableModal">
+                        + Thêm Bàn Mới
+                    </button>
+                </div>
+                
+                <div class="row" id="tableContainer">
+                    <!-- Tables will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal Add/Edit Table -->
+    <div class="modal fade" id="tableModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tableModalTitle">Thêm bàn mới</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="tableId">
+                    <div class="mb-3">
+                        <label>Tên bàn:</label>
+                        <input type="text" class="form-control" id="tableName" placeholder="VD: Bàn 1">
+                    </div>
+                    <div class="mb-3">
+                        <label>Khu vực:</label>
+                        <input type="text" class="form-control" id="tableZone" placeholder="VD: Tầng 1, Sân vườn...">
+                    </div>
+                    <div class="mb-3">
+                        <label>Số chỗ:</label>
+                        <input type="number" class="form-control" id="tableCapacity" min="1" value="4">
+                    </div>
+                    <div class="mb-3">
+                        <label>Trạng thái:</label>
+                        <select class="form-select" id="tableStatus">
+                            <option value="Trống">Trống</option>
+                            <option value="Đang phục vụ">Đang phục vụ</option>
+                            <option value="Đã đặt">Đã đặt</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" onclick="saveTable()">Lưu lại</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/tables.js"></script>
+</body>
+</html>

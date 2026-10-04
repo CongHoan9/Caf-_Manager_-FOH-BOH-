@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Lịch Làm Việc - BanCoffee</title>
+    <!-- Bootstrap CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <div id="wrapper" class="d-flex">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center p-3 text-white text-decoration-none" href="dashboard.html">
+                <div class="sidebar-brand-text mx-3 fs-4 font-weight-bold">BanCoffee</div>
+            </a>
+            <hr class="sidebar-divider my-0 bg-white opacity-25">
+            <li class="nav-item"><a class="nav-link" href="dashboard.html">Tổng quan</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Quản lý Bán hàng</div>
+            <li class="nav-item"><a class="nav-link" href="hoadon.html">Hóa Đơn</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Sản phẩm (Menu)</a></li>
+            <li class="nav-item"><a class="nav-link" href="tables.html">Bàn (Khu vực)</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Nội bộ</div>
+            <li class="nav-item admin-only"><a class="nav-link" href="kho.html">Kho (Nguyên Liệu)</a></li>
+            <li class="nav-item active"><a class="nav-link" href="lichlam.html">Ca làm &amp; Lịch làm</a></li>
+            <li class="nav-item admin-only"><a class="nav-link" href="users.html">Tài khoản &amp; Nhân viên</a></li>
+        </ul>
+        
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow px-4">
+                <ul class="navbar-nav ms-auto">
+                    <!-- User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <span class="me-2 d-none d-lg-inline text-gray-600 small" id="userDropdownName">Loading...</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in">
+                            <a class="dropdown-item" href="#" id="btnLogout">Đăng xuất</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Main Content -->
+            <div class="container-fluid px-4">
+                <h1 class="h3 mb-4 text-gray-800">Quản lý Ca làm &amp; Lịch làm</h1>
+                
+                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="lichlam-tab" data-bs-toggle="tab" data-bs-target="#lichlam" type="button" role="tab">Phân công Lịch làm</button>
+                    </li>
+                    <li class="nav-item admin-only" role="presentation">
+                        <button class="nav-link" id="calam-tab" data-bs-toggle="tab" data-bs-target="#calam" type="button" role="tab">Cấu hình Ca làm</button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="myTabContent">
+                    <!-- Tab Lịch làm -->
+                    <div class="tab-pane fade show active" id="lichlam" role="tabpanel">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                                <h6 class="m-0 font-weight-bold text-primary">Danh sách Lịch làm việc</h6>
+                                <button class="btn btn-primary btn-sm admin-only" onclick="showAddLichModal()">+ Phân công</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover" id="lichTable" width="100%" cellspacing="0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Ngày làm</th>
+                                                <th>Nhân viên</th>
+                                                <th>Ca làm</th>
+                                                <th>Ghi chú</th>
+                                                <th class="admin-only" style="width: 130px;">Hành động</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td colspan="5" class="text-center">Đang tải dữ liệu...</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Ca làm -->
+                    <div class="tab-pane fade" id="calam" role="tabpanel">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                                <h6 class="m-0 font-weight-bold text-primary">Danh mục Ca làm</h6>
+                                <button class="btn btn-primary btn-sm admin-only" onclick="showAddCaModal()">+ Thêm Ca</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover" id="caTable" width="100%" cellspacing="0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Tên ca</th>
+                                                <th>Giờ bắt đầu</th>
+                                                <th>Giờ kết thúc</th>
+                                                <th class="admin-only" style="width: 130px;">Hành động</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td colspan="4" class="text-center">Đang tải dữ liệu...</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Lịch Làm -->
+    <div class="modal fade" id="lichModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lichModalLabel">Phân công Lịch làm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="lich_id">
+                    <div class="mb-3">
+                        <label class="form-label">Nhân viên *</label>
+                        <select class="form-select" id="lich_user_id" required>
+                            <option value="">-- Chọn nhân viên --</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ca làm *</label>
+                        <select class="form-select" id="lich_ca_lam_id" required>
+                            <option value="">-- Chọn ca làm --</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ngày làm *</label>
+                        <input type="date" class="form-control" id="lich_ngay_lam" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ghi chú</label>
+                        <textarea class="form-control" id="lich_ghi_chu" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" onclick="saveLich()">Lưu lại</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ca Làm -->
+    <div class="modal fade" id="caModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="caModalLabel">Cấu hình Ca làm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="ca_lam_id">
+                    <div class="mb-3">
+                        <label class="form-label">Tên ca *</label>
+                        <input type="text" class="form-control" id="ten_ca" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Giờ bắt đầu *</label>
+                        <input type="time" class="form-control" id="gio_bat_dau" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Giờ kết thúc *</label>
+                        <input type="time" class="form-control" id="gio_ket_thuc" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" onclick="saveCa()">Lưu lại</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/lichlam.js"></script>
+</body>
+</html>

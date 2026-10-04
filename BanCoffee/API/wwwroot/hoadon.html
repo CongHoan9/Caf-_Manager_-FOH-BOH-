@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Hóa Đơn - BanCoffee</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <div id="wrapper" class="d-flex">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center p-3 text-white text-decoration-none" href="dashboard.html">
+                <div class="sidebar-brand-text mx-3 fs-4 font-weight-bold">BanCoffee</div>
+            </a>
+            <hr class="sidebar-divider my-0 bg-white opacity-25">
+            <li class="nav-item"><a class="nav-link" href="dashboard.html">Tổng quan</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Quản lý Bán hàng</div>
+            <li class="nav-item active"><a class="nav-link" href="hoadon.html">Hóa Đơn</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Sản phẩm (Menu)</a></li>
+            <li class="nav-item"><a class="nav-link" href="tables.html">Bàn (Khu vực)</a></li>
+            <hr class="sidebar-divider bg-white opacity-25">
+            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Nội bộ</div>
+            <li class="nav-item admin-only"><a class="nav-link" href="kho.html">Kho (Nguyên Liệu)</a></li>
+            <li class="nav-item"><a class="nav-link" href="lichlam.html">Ca làm &amp; Lịch làm</a></li>
+            <li class="nav-item admin-only"><a class="nav-link" href="users.html">Tài khoản &amp; Nhân viên</a></li>
+        </ul>
+        
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column w-100">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow px-4">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <span class="me-2 d-none d-lg-inline text-gray-600 small" id="userDropdownName">Loading...</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in">
+                            <a class="dropdown-item" href="#" id="btnLogout">Đăng xuất</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Main Content -->
+            <div class="container-fluid px-4">
+                <h1 class="h3 mb-4 text-gray-800">Quản lý Hóa Đơn (Bán Hàng)</h1>
+                
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold text-primary">Danh sách Hóa đơn</h6>
+                        <button class="btn btn-primary btn-sm" onclick="showAddModal()">+ Tạo Hóa đơn</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="hoaDonTable" width="100%" cellspacing="0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Mã HĐ</th>
+                                        <th>Khách hàng</th>
+                                        <th>Ngày tạo</th>
+                                        <th>Thanh toán</th>
+                                        <th>Tổng tiền</th>
+                                        <th style="width: 130px;">Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td colspan="6" class="text-center">Đang tải dữ liệu...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hoa Don Modal -->
+    <div class="modal fade" id="hoaDonModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Lập Hóa Đơn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="ma_hoa_don">
+                    <div class="row">
+                        <!-- Thông tin chung -->
+                        <div class="col-md-4 border-end">
+                            <h6 class="font-weight-bold mb-3">Thông tin chung</h6>
+                            <div class="mb-2">
+                                <label class="form-label">Tên khách hàng</label>
+                                <input type="text" class="form-control" id="ho_ten">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Địa chỉ</label>
+                                <input type="text" class="form-control" id="dia_chi">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Hình thức thanh toán</label>
+                                <select class="form-select" id="hinh_thuc_thanh_toan">
+                                    <option value="Tiền mặt">Tiền mặt</option>
+                                    <option value="Chuyển khoản">Chuyển khoản</option>
+                                    <option value="Thẻ tín dụng">Thẻ tín dụng</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Chọn Bàn</label>
+                                <select class="form-select" id="ban_id">
+                                    <option value="">-- Mua mang đi / Không chọn bàn --</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Khuyến mãi</label>
+                                <select class="form-select" id="khuyen_mai_id">
+                                    <option value="">-- Không dùng --</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Ghi chú</label>
+                                <textarea class="form-control" id="ghi_chu" rows="2"></textarea>
+                            </div>
+                            
+                            <hr>
+                            <div class="bg-light p-3 rounded">
+                                <div class="d-flex justify-content-between mb-1"><span>Tổng tiền:</span> <strong id="lblTongTien">0đ</strong></div>
+                                <div class="d-flex justify-content-between mb-1 text-danger"><span>Giảm giá:</span> <strong id="lblGiamGia">0đ</strong></div>
+                                <div class="d-flex justify-content-between mt-2 pt-2 border-top fs-5"><span>Thành tiền:</span> <strong id="lblThanhTien" class="text-primary">0đ</strong></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Chi tiết hóa đơn (Menu items) -->
+                        <div class="col-md-8">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h6 class="font-weight-bold">Chi tiết món ăn / đồ uống</h6>
+                                <button type="button" class="btn btn-sm btn-success" onclick="addDetailRow()">+ Thêm món</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered" id="detailTable">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Tên món</th>
+                                            <th style="width: 100px">Số lượng</th>
+                                            <th style="width: 120px">Đơn giá</th>
+                                            <th style="width: 60px">Xóa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamic rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" onclick="saveHoaDon()">Lưu Hóa đơn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/hoadon.js"></script>
+</body>
+</html>

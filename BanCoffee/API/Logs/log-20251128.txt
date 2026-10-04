@@ -1,0 +1,333 @@
+2025-11-28 08:36:54.773 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-11-28 08:36:55.220 +07:00 [DBG] Hosting starting
+2025-11-28 08:36:55.302 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-28 08:36:55.307 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-221918a7-f5ac-4be9-88e5-f790d069c3d6.xml'.
+2025-11-28 08:36:55.342 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-26a9b3dd-f885-433e-9dc0-24622476c25e.xml'.
+2025-11-28 08:36:55.343 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-39901123-00da-4e86-9689-49ed5d66ca19.xml'.
+2025-11-28 08:36:55.344 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-462dcb40-6990-438d-8dac-78e6d4cbb0f8.xml'.
+2025-11-28 08:36:55.345 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-56efdf4b-14df-488a-bd35-c290fb386f8a.xml'.
+2025-11-28 08:36:55.346 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-739fa291-8131-4d88-b17a-341a66ff3d6e.xml'.
+2025-11-28 08:36:55.347 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-8df9a5d7-540a-464b-975b-101695e750ff.xml'.
+2025-11-28 08:36:55.348 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-8dff27e4-e111-4e80-bb5b-3a0e3f374998.xml'.
+2025-11-28 08:36:55.349 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-98031205-3c02-488f-ba99-9d27cb754e68.xml'.
+2025-11-28 08:36:55.349 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-9bfd7795-5284-473e-b7d6-ee71d9692504.xml'.
+2025-11-28 08:36:55.350 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-c826cde1-20ce-4467-9cc2-d02fce911f3f.xml'.
+2025-11-28 08:36:55.351 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-cfa7905e-38a8-411e-9ded-de39d6f389e7.xml'.
+2025-11-28 08:36:55.351 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-d56d367a-b600-4f9d-92b1-55a20672ee76.xml'.
+2025-11-28 08:36:55.352 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-e6571355-3a38-4e4e-866a-37b44ef05d11.xml'.
+2025-11-28 08:36:55.353 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-f1acebe9-cd6b-49b5-979c-3013f42293a4.xml'.
+2025-11-28 08:36:55.364 +07:00 [DBG] Found key {221918a7-f5ac-4be9-88e5-f790d069c3d6}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {26a9b3dd-f885-433e-9dc0-24622476c25e}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {39901123-00da-4e86-9689-49ed5d66ca19}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {462dcb40-6990-438d-8dac-78e6d4cbb0f8}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {56efdf4b-14df-488a-bd35-c290fb386f8a}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {739fa291-8131-4d88-b17a-341a66ff3d6e}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {8df9a5d7-540a-464b-975b-101695e750ff}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {8dff27e4-e111-4e80-bb5b-3a0e3f374998}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {98031205-3c02-488f-ba99-9d27cb754e68}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {9bfd7795-5284-473e-b7d6-ee71d9692504}.
+2025-11-28 08:36:55.380 +07:00 [DBG] Found key {c826cde1-20ce-4467-9cc2-d02fce911f3f}.
+2025-11-28 08:36:55.381 +07:00 [DBG] Found key {cfa7905e-38a8-411e-9ded-de39d6f389e7}.
+2025-11-28 08:36:55.381 +07:00 [DBG] Found key {d56d367a-b600-4f9d-92b1-55a20672ee76}.
+2025-11-28 08:36:55.381 +07:00 [DBG] Found key {e6571355-3a38-4e4e-866a-37b44ef05d11}.
+2025-11-28 08:36:55.381 +07:00 [DBG] Found key {f1acebe9-cd6b-49b5-979c-3013f42293a4}.
+2025-11-28 08:36:55.395 +07:00 [DBG] Considering key {462dcb40-6990-438d-8dac-78e6d4cbb0f8} with expiration date 2025-12-17 07:12:16Z as default key.
+2025-11-28 08:36:55.398 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-28 08:36:55.401 +07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-11-28 08:36:55.403 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-28 08:36:55.408 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-11-28 08:36:55.411 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-11-28 08:36:55.415 +07:00 [DBG] Using key {462dcb40-6990-438d-8dac-78e6d4cbb0f8} as the default key.
+2025-11-28 08:36:55.416 +07:00 [DBG] Key ring with default key {462dcb40-6990-438d-8dac-78e6d4cbb0f8} was loaded during application startup.
+2025-11-28 08:36:55.427 +07:00 [DBG] Middleware loaded
+2025-11-28 08:36:55.429 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16491 B).
+2025-11-28 08:36:55.430 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-11-28 08:36:55.660 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-11-28 08:36:55.668 +07:00 [DBG] Loaded hosting startup assembly API
+2025-11-28 08:36:55.675 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-11-28 08:36:55.675 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-11-28 08:36:55.675 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-11-28 08:36:55.754 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger - -
+2025-11-28 08:36:55.812 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-28 08:36:55.813 +07:00 [INF] Hosting environment: Development
+2025-11-28 08:36:55.813 +07:00 [INF] Content root path: D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\API\
+2025-11-28 08:36:55.814 +07:00 [DBG] Hosting started
+2025-11-28 08:36:56.638 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-11-28 08:36:56.715 +07:00 [DBG] Connection ID "18374686484771897345" disconnecting.
+2025-11-28 08:36:56.730 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger - - - 301 - - 985.6548ms
+2025-11-28 08:36:56.738 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - -
+2025-11-28 08:36:56.834 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-11-28 08:36:56.843 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-11-28 08:36:56.888 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-11-28 08:36:56.888 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-11-28 08:36:56.896 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - - - 200 - text/html;charset=utf-8 153.0255ms
+2025-11-28 08:36:56.904 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui-bundle.js - -
+2025-11-28 08:36:56.898 +07:00 [DBG] Connection ID "18086456121505087489" disconnecting.
+2025-11-28 08:36:56.909 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui.css - -
+2025-11-28 08:36:56.920 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui-standalone-preset.js - -
+2025-11-28 08:36:56.929 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - -
+2025-11-28 08:36:56.957 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-11-28 08:36:56.963 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-11-28 08:36:56.963 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-11-28 08:36:56.967 +07:00 [DBG] Connection ID "18230571318170877953" disconnecting.
+2025-11-28 08:36:56.971 +07:00 [DBG] Connection ID "18374686493361831937" disconnecting.
+2025-11-28 08:36:56.971 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - - - 200 16491 application/javascript;+charset=utf-8 41.5736ms
+2025-11-28 08:36:56.971 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui.css - - - 200 143821 text/css 61.6498ms
+2025-11-28 08:36:56.972 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui-standalone-preset.js - - - 200 319705 application/javascript 51.7367ms
+2025-11-28 08:36:56.978 +07:00 [DBG] Connection ID "18302628912208805889" disconnecting.
+2025-11-28 08:36:56.978 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-11-28 08:36:56.998 +07:00 [DBG] Connection ID "18302628895028936705" disconnecting.
+2025-11-28 08:36:56.999 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui-bundle.js - - - 200 1079362 application/javascript 94.5350ms
+2025-11-28 08:36:57.140 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - -
+2025-11-28 08:36:57.258 +07:00 [DBG] Connection ID "18374686493361831939" disconnecting.
+2025-11-28 08:36:57.258 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 118.4202ms
+2025-11-28 08:36:57.454 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - -
+2025-11-28 08:36:57.470 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.8631ms
+2025-11-28 08:36:57.470 +07:00 [DBG] Connection ID "18302628895028936707" disconnecting.
+2025-11-28 08:36:57.618 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/favicon-32x32.png - -
+2025-11-28 08:36:57.619 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-11-28 08:36:57.619 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/favicon-32x32.png - - - 200 628 image/png 0.7880ms
+2025-11-28 08:36:57.619 +07:00 [DBG] Connection ID "18014398527467159553" disconnecting.
+2025-11-28 08:38:10.018 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:52872/api/Users/login application/json 53
+2025-11-28 08:38:10.019 +07:00 [DBG] POST requests are not supported
+2025-11-28 08:38:10.087 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/login'
+2025-11-28 08:38:10.091 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.Login (API)' with route pattern 'api/Users/login' is valid for the request path '/api/Users/login'
+2025-11-28 08:38:10.092 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.Login (API)'
+2025-11-28 08:38:10.273 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-11-28 08:38:10.280 +07:00 [INF] Executing endpoint 'API.Controllers.UsersController.Login (API)'
+2025-11-28 08:38:10.333 +07:00 [INF] Route matched with {action = "Login", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Model.AuthenticateModel) on controller API.Controllers.UsersController (API).
+2025-11-28 08:38:10.335 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-11-28 08:38:10.335 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-11-28 08:38:10.336 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-11-28 08:38:10.336 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-11-28 08:38:10.337 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-11-28 08:38:10.339 +07:00 [DBG] Executing controller factory for controller API.Controllers.UsersController (API)
+2025-11-28 08:38:10.341 +07:00 [DBG] Executed controller factory for controller API.Controllers.UsersController (API)
+2025-11-28 08:38:10.354 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.AuthenticateModel' ...
+2025-11-28 08:38:10.358 +07:00 [DBG] Attempting to bind parameter 'model' of type 'Model.AuthenticateModel' using the name '' in request data ...
+2025-11-28 08:38:10.359 +07:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-11-28 08:38:10.388 +07:00 [DBG] JSON input formatter succeeded, deserializing to type 'Model.AuthenticateModel'
+2025-11-28 08:38:10.389 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.AuthenticateModel'.
+2025-11-28 08:38:10.390 +07:00 [DBG] Done attempting to bind parameter 'model' of type 'Model.AuthenticateModel'.
+2025-11-28 08:38:10.390 +07:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Model.AuthenticateModel' ...
+2025-11-28 08:38:10.410 +07:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Model.AuthenticateModel'.
+2025-11-28 08:38:11.493 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-11-28 08:38:11.495 +07:00 [DBG] No information found on request to perform content negotiation.
+2025-11-28 08:38:11.495 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-11-28 08:38:11.495 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-11-28 08:38:11.496 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-11-28 08:38:11.496 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`4[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-28 08:38:11.507 +07:00 [INF] Executed action API.Controllers.UsersController.Login (API) in 1164.0213ms
+2025-11-28 08:38:11.509 +07:00 [INF] Executed endpoint 'API.Controllers.UsersController.Login (API)'
+2025-11-28 08:38:11.509 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:52872/api/Users/login application/json 53 - 200 - application/json;+charset=utf-8 1490.7841ms
+2025-11-28 08:39:25.088 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:52872/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b - -
+2025-11-28 08:39:25.092 +07:00 [DBG] The request path  does not match the path filter
+2025-11-28 08:39:25.098 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b'
+2025-11-28 08:39:25.098 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.GetDatabyID (API)' with route pattern 'api/Users/get-by-id/{id}' is valid for the request path '/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b'
+2025-11-28 08:39:25.098 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.GetDatabyID (API)'
+2025-11-28 08:39:25.248 +07:00 [INF] Successfully validated the token.
+2025-11-28 08:39:25.249 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-11-28 08:39:25.256 +07:00 [DBG] Authorization was successful.
+2025-11-28 08:39:25.257 +07:00 [INF] Executing endpoint 'API.Controllers.UsersController.GetDatabyID (API)'
+2025-11-28 08:39:25.260 +07:00 [INF] Route matched with {action = "GetDatabyID", controller = "Users"}. Executing controller action with signature Model.UserModel GetDatabyID(System.String) on controller API.Controllers.UsersController (API).
+2025-11-28 08:39:25.260 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-11-28 08:39:25.260 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-11-28 08:39:25.260 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-11-28 08:39:25.260 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-11-28 08:39:25.260 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-11-28 08:39:25.260 +07:00 [DBG] Executing controller factory for controller API.Controllers.UsersController (API)
+2025-11-28 08:39:25.260 +07:00 [DBG] Executed controller factory for controller API.Controllers.UsersController (API)
+2025-11-28 08:39:25.260 +07:00 [DBG] Attempting to bind parameter 'id' of type 'System.String' ...
+2025-11-28 08:39:25.261 +07:00 [DBG] Attempting to bind parameter 'id' of type 'System.String' using the name 'id' in request data ...
+2025-11-28 08:39:25.262 +07:00 [DBG] Done attempting to bind parameter 'id' of type 'System.String'.
+2025-11-28 08:39:25.262 +07:00 [DBG] Done attempting to bind parameter 'id' of type 'System.String'.
+2025-11-28 08:39:25.262 +07:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.String' ...
+2025-11-28 08:39:25.262 +07:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.String'.
+2025-11-28 08:39:25.283 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-11-28 08:39:25.283 +07:00 [DBG] No information found on request to perform content negotiation.
+2025-11-28 08:39:25.283 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-11-28 08:39:25.283 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-11-28 08:39:25.283 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-11-28 08:39:25.283 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.UserModel'.
+2025-11-28 08:39:25.293 +07:00 [INF] Executed action API.Controllers.UsersController.GetDatabyID (API) in 32.9959ms
+2025-11-28 08:39:25.293 +07:00 [INF] Executed endpoint 'API.Controllers.UsersController.GetDatabyID (API)'
+2025-11-28 08:39:25.293 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:52872/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b - - - 200 - application/json;+charset=utf-8 206.1214ms
+2025-11-28 08:39:30.939 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:52872/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b - -
+2025-11-28 08:39:30.939 +07:00 [DBG] The request path  does not match the path filter
+2025-11-28 08:39:30.940 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b'
+2025-11-28 08:39:30.940 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.GetDatabyID (API)' with route pattern 'api/Users/get-by-id/{id}' is valid for the request path '/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b'
+2025-11-28 08:39:30.940 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.GetDatabyID (API)'
+2025-11-28 08:39:30.946 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-11-28 08:39:30.948 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-11-28 08:39:30.962 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-11-28 08:39:30.971 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:52872/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b - - - 401 - - 31.2995ms
+2025-11-28 08:40:17.826 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:52872/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b - -
+2025-11-28 08:40:17.852 +07:00 [DBG] The request path  does not match the path filter
+2025-11-28 08:40:17.852 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b'
+2025-11-28 08:40:17.852 +07:00 [DBG] Endpoint 'API.Controllers.UsersController.GetDatabyID (API)' with route pattern 'api/Users/get-by-id/{id}' is valid for the request path '/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b'
+2025-11-28 08:40:17.852 +07:00 [DBG] Request matched endpoint 'API.Controllers.UsersController.GetDatabyID (API)'
+2025-11-28 08:40:17.852 +07:00 [INF] Successfully validated the token.
+2025-11-28 08:40:17.852 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-11-28 08:40:17.852 +07:00 [DBG] Authorization was successful.
+2025-11-28 08:40:17.854 +07:00 [INF] Executing endpoint 'API.Controllers.UsersController.GetDatabyID (API)'
+2025-11-28 08:40:17.855 +07:00 [INF] Route matched with {action = "GetDatabyID", controller = "Users"}. Executing controller action with signature Model.UserModel GetDatabyID(System.String) on controller API.Controllers.UsersController (API).
+2025-11-28 08:40:17.855 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-11-28 08:40:17.855 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-11-28 08:40:17.855 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-11-28 08:40:17.855 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-11-28 08:40:17.855 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-11-28 08:40:17.855 +07:00 [DBG] Executing controller factory for controller API.Controllers.UsersController (API)
+2025-11-28 08:40:17.855 +07:00 [DBG] Executed controller factory for controller API.Controllers.UsersController (API)
+2025-11-28 08:40:17.855 +07:00 [DBG] Attempting to bind parameter 'id' of type 'System.String' ...
+2025-11-28 08:40:17.855 +07:00 [DBG] Attempting to bind parameter 'id' of type 'System.String' using the name 'id' in request data ...
+2025-11-28 08:40:17.855 +07:00 [DBG] Done attempting to bind parameter 'id' of type 'System.String'.
+2025-11-28 08:40:17.855 +07:00 [DBG] Done attempting to bind parameter 'id' of type 'System.String'.
+2025-11-28 08:40:17.855 +07:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.String' ...
+2025-11-28 08:40:17.856 +07:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.String'.
+2025-11-28 08:40:17.858 +07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-11-28 08:40:17.858 +07:00 [DBG] No information found on request to perform content negotiation.
+2025-11-28 08:40:17.858 +07:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-11-28 08:40:17.858 +07:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-11-28 08:40:17.858 +07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-11-28 08:40:17.858 +07:00 [INF] Executing ObjectResult, writing value of type 'Model.UserModel'.
+2025-11-28 08:40:17.859 +07:00 [INF] Executed action API.Controllers.UsersController.GetDatabyID (API) in 4.2774ms
+2025-11-28 08:40:17.859 +07:00 [INF] Executed endpoint 'API.Controllers.UsersController.GetDatabyID (API)'
+2025-11-28 08:40:17.859 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:52872/api/Users/get-by-id/14ff5489-9b84-4bd4-801d-55374bdbe15b - - - 200 - application/json;+charset=utf-8 33.4551ms
+2025-11-28 10:33:29.324 +07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-11-28 10:33:29.561 +07:00 [DBG] Hosting starting
+2025-11-28 10:33:29.637 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-28 10:33:29.642 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-221918a7-f5ac-4be9-88e5-f790d069c3d6.xml'.
+2025-11-28 10:33:29.673 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-26a9b3dd-f885-433e-9dc0-24622476c25e.xml'.
+2025-11-28 10:33:29.674 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-39901123-00da-4e86-9689-49ed5d66ca19.xml'.
+2025-11-28 10:33:29.674 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-462dcb40-6990-438d-8dac-78e6d4cbb0f8.xml'.
+2025-11-28 10:33:29.675 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-56efdf4b-14df-488a-bd35-c290fb386f8a.xml'.
+2025-11-28 10:33:29.676 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-739fa291-8131-4d88-b17a-341a66ff3d6e.xml'.
+2025-11-28 10:33:29.676 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-8df9a5d7-540a-464b-975b-101695e750ff.xml'.
+2025-11-28 10:33:29.677 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-8dff27e4-e111-4e80-bb5b-3a0e3f374998.xml'.
+2025-11-28 10:33:29.677 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-98031205-3c02-488f-ba99-9d27cb754e68.xml'.
+2025-11-28 10:33:29.678 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-9bfd7795-5284-473e-b7d6-ee71d9692504.xml'.
+2025-11-28 10:33:29.678 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-c826cde1-20ce-4467-9cc2-d02fce911f3f.xml'.
+2025-11-28 10:33:29.679 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-cfa7905e-38a8-411e-9ded-de39d6f389e7.xml'.
+2025-11-28 10:33:29.680 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-d56d367a-b600-4f9d-92b1-55a20672ee76.xml'.
+2025-11-28 10:33:29.680 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-e6571355-3a38-4e4e-866a-37b44ef05d11.xml'.
+2025-11-28 10:33:29.681 +07:00 [DBG] Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-f1acebe9-cd6b-49b5-979c-3013f42293a4.xml'.
+2025-11-28 10:33:29.689 +07:00 [DBG] Found key {221918a7-f5ac-4be9-88e5-f790d069c3d6}.
+2025-11-28 10:33:29.696 +07:00 [DBG] Found key {26a9b3dd-f885-433e-9dc0-24622476c25e}.
+2025-11-28 10:33:29.696 +07:00 [DBG] Found key {39901123-00da-4e86-9689-49ed5d66ca19}.
+2025-11-28 10:33:29.696 +07:00 [DBG] Found key {462dcb40-6990-438d-8dac-78e6d4cbb0f8}.
+2025-11-28 10:33:29.697 +07:00 [DBG] Found key {56efdf4b-14df-488a-bd35-c290fb386f8a}.
+2025-11-28 10:33:29.697 +07:00 [DBG] Found key {739fa291-8131-4d88-b17a-341a66ff3d6e}.
+2025-11-28 10:33:29.697 +07:00 [DBG] Found key {8df9a5d7-540a-464b-975b-101695e750ff}.
+2025-11-28 10:33:29.697 +07:00 [DBG] Found key {8dff27e4-e111-4e80-bb5b-3a0e3f374998}.
+2025-11-28 10:33:29.697 +07:00 [DBG] Found key {98031205-3c02-488f-ba99-9d27cb754e68}.
+2025-11-28 10:33:29.697 +07:00 [DBG] Found key {9bfd7795-5284-473e-b7d6-ee71d9692504}.
+2025-11-28 10:33:29.697 +07:00 [DBG] Found key {c826cde1-20ce-4467-9cc2-d02fce911f3f}.
+2025-11-28 10:33:29.697 +07:00 [DBG] Found key {cfa7905e-38a8-411e-9ded-de39d6f389e7}.
+2025-11-28 10:33:29.698 +07:00 [DBG] Found key {d56d367a-b600-4f9d-92b1-55a20672ee76}.
+2025-11-28 10:33:29.698 +07:00 [DBG] Found key {e6571355-3a38-4e4e-866a-37b44ef05d11}.
+2025-11-28 10:33:29.698 +07:00 [DBG] Found key {f1acebe9-cd6b-49b5-979c-3013f42293a4}.
+2025-11-28 10:33:29.706 +07:00 [DBG] Considering key {462dcb40-6990-438d-8dac-78e6d4cbb0f8} with expiration date 2025-12-17 07:12:16Z as default key.
+2025-11-28 10:33:29.707 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-28 10:33:29.710 +07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-11-28 10:33:29.711 +07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-28 10:33:29.715 +07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-11-28 10:33:29.719 +07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-11-28 10:33:29.721 +07:00 [DBG] Using key {462dcb40-6990-438d-8dac-78e6d4cbb0f8} as the default key.
+2025-11-28 10:33:29.722 +07:00 [DBG] Key ring with default key {462dcb40-6990-438d-8dac-78e6d4cbb0f8} was loaded during application startup.
+2025-11-28 10:33:29.729 +07:00 [DBG] Middleware loaded
+2025-11-28 10:33:29.732 +07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16491 B).
+2025-11-28 10:33:29.734 +07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-11-28 10:33:29.922 +07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-11-28 10:33:29.929 +07:00 [DBG] Loaded hosting startup assembly API
+2025-11-28 10:33:29.929 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-11-28 10:33:29.929 +07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-11-28 10:33:29.929 +07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-11-28 10:33:30.007 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger - -
+2025-11-28 10:33:30.061 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-28 10:33:30.061 +07:00 [INF] Hosting environment: Development
+2025-11-28 10:33:30.062 +07:00 [INF] Content root path: D:\Teaching\Lập trình hướng dich vụ\Demo WebAPI\BanOto\API\
+2025-11-28 10:33:30.062 +07:00 [DBG] Hosting started
+2025-11-28 10:33:30.335 +07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-11-28 10:33:30.405 +07:00 [DBG] Connection ID "17582052967534559233" disconnecting.
+2025-11-28 10:33:30.406 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/index.html - -
+2025-11-28 10:33:30.416 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger - - - 301 - - 417.8273ms
+2025-11-28 10:33:30.481 +07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-11-28 10:33:30.486 +07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-11-28 10:33:30.519 +07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-11-28 10:33:30.519 +07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-11-28 10:33:30.520 +07:00 [DBG] Connection ID "18230571300991008769" disconnecting.
+2025-11-28 10:33:30.520 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/index.html - - - 200 - text/html;charset=utf-8 113.5525ms
+2025-11-28 10:33:30.538 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui-bundle.js - -
+2025-11-28 10:33:30.548 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui-standalone-preset.js - -
+2025-11-28 10:33:30.552 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - -
+2025-11-28 10:33:30.573 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/swagger-ui.css - -
+2025-11-28 10:33:30.599 +07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-11-28 10:33:30.601 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_framework/aspnetcore-browser-refresh.js - - - 200 16491 application/javascript;+charset=utf-8 53.3173ms
+2025-11-28 10:33:30.620 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-11-28 10:33:30.621 +07:00 [DBG] Connection ID "17942340933429231617" disconnecting.
+2025-11-28 10:33:30.622 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui.css - - - 200 143821 text/css 48.4378ms
+2025-11-28 10:33:30.622 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-11-28 10:33:30.630 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui-standalone-preset.js - - - 200 319705 application/javascript 80.3992ms
+2025-11-28 10:33:30.635 +07:00 [DBG] Connection ID "17798225745353375745" disconnecting.
+2025-11-28 10:33:30.637 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-11-28 10:33:30.658 +07:00 [DBG] Connection ID "17870283339391303681" disconnecting.
+2025-11-28 10:33:30.659 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/swagger-ui-bundle.js - - - 200 1079362 application/javascript 120.8327ms
+2025-11-28 10:33:30.820 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/_vs/browserLink - -
+2025-11-28 10:33:30.913 +07:00 [DBG] Connection ID "18230571300991008771" disconnecting.
+2025-11-28 10:33:30.913 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 93.1236ms
+2025-11-28 10:33:31.175 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - -
+2025-11-28 10:33:31.190 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44334/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.2617ms
+2025-11-28 10:33:31.190 +07:00 [DBG] Connection ID "18374686493361831941" disconnecting.
+2025-11-28 10:34:16.225 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:52872/api/Item/get-by-id/a660345f-0330-4581-a3bd-30fbde34813f - -
+2025-11-28 10:34:16.225 +07:00 [DBG] The request path  does not match the path filter
+2025-11-28 10:34:16.300 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Item/get-by-id/a660345f-0330-4581-a3bd-30fbde34813f'
+2025-11-28 10:34:16.305 +07:00 [DBG] Endpoint 'API.Controllers.ItemController.GetDatabyID (API)' with route pattern 'api/Item/get-by-id/{id}' is valid for the request path '/api/Item/get-by-id/a660345f-0330-4581-a3bd-30fbde34813f'
+2025-11-28 10:34:16.306 +07:00 [DBG] Request matched endpoint 'API.Controllers.ItemController.GetDatabyID (API)'
+2025-11-28 10:34:16.412 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-11-28 10:34:16.415 +07:00 [INF] Executing endpoint 'API.Controllers.ItemController.GetDatabyID (API)'
+2025-11-28 10:34:16.441 +07:00 [INF] Route matched with {action = "GetDatabyID", controller = "Item"}. Executing controller action with signature Model.ItemModel GetDatabyID(System.String) on controller API.Controllers.ItemController (API).
+2025-11-28 10:34:16.442 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-11-28 10:34:16.442 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-11-28 10:34:16.443 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","API.ApiKeyAttribute"]
+2025-11-28 10:34:16.443 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-11-28 10:34:16.443 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-11-28 10:34:16.444 +07:00 [DBG] Executing controller factory for controller API.Controllers.ItemController (API)
+2025-11-28 10:34:16.446 +07:00 [DBG] Executed controller factory for controller API.Controllers.ItemController (API)
+2025-11-28 10:34:16.454 +07:00 [DBG] Attempting to bind parameter 'id' of type 'System.String' ...
+2025-11-28 10:34:16.455 +07:00 [DBG] Attempting to bind parameter 'id' of type 'System.String' using the name 'id' in request data ...
+2025-11-28 10:34:16.456 +07:00 [DBG] Done attempting to bind parameter 'id' of type 'System.String'.
+2025-11-28 10:34:16.456 +07:00 [DBG] Done attempting to bind parameter 'id' of type 'System.String'.
+2025-11-28 10:34:16.456 +07:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.String' ...
+2025-11-28 10:34:16.462 +07:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.String'.
+2025-11-28 10:34:16.466 +07:00 [DBG] Request was short circuited at action filter 'API.ApiKeyAttribute'.
+2025-11-28 10:34:16.467 +07:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2025-11-28 10:34:16.479 +07:00 [INF] Executed action API.Controllers.ItemController.GetDatabyID (API) in 29.9894ms
+2025-11-28 10:34:16.481 +07:00 [INF] Executed endpoint 'API.Controllers.ItemController.GetDatabyID (API)'
+2025-11-28 10:34:16.481 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:52872/api/Item/get-by-id/a660345f-0330-4581-a3bd-30fbde34813f - - - 401 36 text/plain;+charset=utf-8 256.6049ms
+2025-11-28 10:35:15.817 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:52872/api/Item/get-by-id/a660345f-0330-4581-a3bd-30fbde34813f - -
+2025-11-28 10:35:15.818 +07:00 [DBG] The request path  does not match the path filter
+2025-11-28 10:35:15.821 +07:00 [DBG] 1 candidate(s) found for the request path '/api/Item/get-by-id/a660345f-0330-4581-a3bd-30fbde34813f'
+2025-11-28 10:35:15.821 +07:00 [DBG] Endpoint 'API.Controllers.ItemController.GetDatabyID (API)' with route pattern 'api/Item/get-by-id/{id}' is valid for the request path '/api/Item/get-by-id/a660345f-0330-4581-a3bd-30fbde34813f'
+2025-11-28 10:35:15.822 +07:00 [DBG] Request matched endpoint 'API.Controllers.ItemController.GetDatabyID (API)'
+2025-11-28 10:35:15.857 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-11-28 10:35:15.858 +07:00 [INF] Executing endpoint 'API.Controllers.ItemController.GetDatabyID (API)'
+2025-11-28 10:35:15.862 +07:00 [INF] Route matched with {action = "GetDatabyID", controller = "Item"}. Executing controller action with signature Model.ItemModel GetDatabyID(System.String) on controller API.Controllers.ItemController (API).
+2025-11-28 10:35:15.862 +07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-11-28 10:35:15.862 +07:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-11-28 10:35:15.863 +07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","API.ApiKeyAttribute"]
+2025-11-28 10:35:15.872 +07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-11-28 10:35:15.872 +07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-11-28 10:35:15.872 +07:00 [DBG] Executing controller factory for controller API.Controllers.ItemController (API)
+2025-11-28 10:35:15.876 +07:00 [DBG] Executed controller factory for controller API.Controllers.ItemController (API)
+2025-11-28 10:35:15.876 +07:00 [DBG] Attempting to bind parameter 'id' of type 'System.String' ...
+2025-11-28 10:35:15.876 +07:00 [DBG] Attempting to bind parameter 'id' of type 'System.String' using the name 'id' in request data ...
+2025-11-28 10:35:15.877 +07:00 [DBG] Done attempting to bind parameter 'id' of type 'System.String'.
+2025-11-28 10:35:15.879 +07:00 [DBG] Done attempting to bind parameter 'id' of type 'System.String'.
+2025-11-28 10:35:15.879 +07:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.String' ...
+2025-11-28 10:35:15.880 +07:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.String'.
+2025-11-28 10:35:15.881 +07:00 [DBG] Request was short circuited at action filter 'API.ApiKeyAttribute'.
+2025-11-28 10:35:15.881 +07:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2025-11-28 10:35:15.885 +07:00 [INF] Executed action API.Controllers.ItemController.GetDatabyID (API) in 12.8889ms
+2025-11-28 10:35:15.919 +07:00 [INF] Executed endpoint 'API.Controllers.ItemController.GetDatabyID (API)'
+2025-11-28 10:35:15.919 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:52872/api/Item/get-by-id/a660345f-0330-4581-a3bd-30fbde34813f - - - 403 30 text/plain;+charset=utf-8 102.2995ms
