@@ -1,3 +1,4 @@
+﻿#pragma warning disable IDE1006
 namespace Model
 {
     /// <summary>Vai tro nguoi dung - luu varchar trong cot [user].role nen dung hang so thay enum.</summary>
@@ -7,3 +8,5 @@ namespace Model
         public const string Staff = "Staff";
     }
 }
+
+
