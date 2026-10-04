@@ -1,4 +1,4 @@
-using DAL.Helper;
+﻿using DAL.Helper;
 using Model;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,3 +16,13 @@ namespace DAL
         public NewsModel GetDatabyID(string id) => ExecuteQuery<NewsModel>("sp_news_get_by_id", "@news_id", id).FirstOrDefault();
     }
 }
+
+
+
+
+
+
+
+
+
+

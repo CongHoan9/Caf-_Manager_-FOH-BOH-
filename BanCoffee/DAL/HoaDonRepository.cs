@@ -1,4 +1,4 @@
-﻿using DAL.Helper;
+using DAL.Helper;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -36,14 +36,63 @@ namespace DAL
                                                                     "@listjson_chitiet", model.listjson_chitiet != null ? MessageConvert.SerializeObject(model.listjson_chitiet) : null);
         public HoaDonModel GetDatabyID(string id) => ExecuteQuery<HoaDonModel>("sp_hoa_don_get_by_id", "@ma_hoa_don", id).FirstOrDefault();
         public bool Delete(string id) => ExecuteTransaction("sp_hoa_don_delete", "@ma_hoa_don", id);
-        public List<HoaDonModel> Search(int pageIndex, int pageSize, out long total, string hoten, string diachi)
+        public List<HoaDonModel> Search(int pageIndex, int pageSize, out long total, string hoten, string diachi, string user_id)
         {
-            total = 0;
-            return ExecuteQuery<HoaDonModel>("sp_hoa_don_search",
+            return ExecuteSearch<HoaDonModel>(out total, "sp_hoa_don_search",
                                              "@page_index", pageIndex,
                                              "@page_size", pageSize,
                                              "@hoten", hoten,
-                                             "@diachi", diachi);
+                                             "@diachi", diachi, "@user_id_filter", user_id);
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-﻿using DAL.Helper;
+using DAL.Helper;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -26,8 +26,7 @@ namespace DAL
         public List<ItemModel> GetDataAll() => ExecuteQuery<ItemModel>("sp_item_all");
         public List<ItemModel> Search(int pageIndex, int pageSize, out long total, string item_group_id, string item_name)
         {
-            total = 0;
-            return ExecuteQuery<ItemModel>("sp_item_search",
+            return ExecuteSearch<ItemModel>(out total, "sp_item_search",
                                            "@page_index", pageIndex,
                                            "@page_size", pageSize,
                                            "@item_name", item_name,
@@ -35,3 +34,23 @@ namespace DAL
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

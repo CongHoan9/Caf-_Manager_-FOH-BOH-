@@ -29,7 +29,28 @@ namespace DAL
             }
             return true;
         });
-        public List<T> ExecuteQuery<T>(string spName, params object[] parameters) where T : new() => Execute(() =>
+                        public List<T> ExecuteSearch<T>(out long total, string spName, params object[] parameters) where T : new()
+        {
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out string msgError, spName, parameters);
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+                long t = 0;
+                if (dt != null && dt.Rows.Count > 0 && dt.Columns.Contains("RecordCount"))
+                {
+                    t = Convert.ToInt64(dt.Rows[0]["RecordCount"]);
+                }
+                total = t;
+                return dt != null ? dt.ConvertTo<T>().ToList() : new List<T>();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }public List<T> ExecuteQuery<T>(string spName, params object[] parameters) where T : new() => Execute(() =>
         {
             var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out string msgError, spName, parameters);
             if (!string.IsNullOrEmpty(msgError))
@@ -40,3 +61,5 @@ namespace DAL
         });
     }
 }
+
+
