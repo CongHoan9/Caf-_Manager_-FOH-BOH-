@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authorization;
+ï»¿using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +44,7 @@ namespace API.Controllers
             }
             if (!isAdmin && existing.user_id != currentUserId)
             {
-                return StatusCode(403, new { message = "B?n không có quy?n s?a hóa don c?a ngu?i khác" });
+                return StatusCode(403, new { message = "Ban khong co quyen nay" });
             }
             model.user_id = existing.user_id;
             _Business.Update(model);
@@ -54,12 +54,12 @@ namespace API.Controllers
         [HttpPost]
         public ResponseModel Search([FromBody] Dictionary<string, object> formData)
         {
-            var response = new ResponseModel();
-            try
+            return Execute(() =>
             {
+                var response = new ResponseModel();
                 int page = GetInt(formData, "page", 1);
                 var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-                var isAdmin = User.IsInRole(Model.Role.Admin);
+                var isAdmin = User.IsInRole(Role.Admin);
                 int pageSize = GetInt(formData, "pageSize", 10);
                 string hoten = GetString(formData, "hoten", "");
                 string diachi = GetString(formData, "diachi", "");
@@ -68,12 +68,8 @@ namespace API.Controllers
                 response.Data = data;
                 response.Page = page;
                 response.PageSize = pageSize;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return response;
+                return response;
+            });
         }
         [Route("get-by-id/{id}")]
         [HttpGet]
@@ -90,7 +86,7 @@ namespace API.Controllers
         {
             string ma_hoa_don = GetString(formData, "ma_hoa_don");
             _Business.Delete(ma_hoa_don);
-            return Ok(new { message = "Thành công" });
+            return Ok(new { message = "Thanh cong" });
         }
     }
 }

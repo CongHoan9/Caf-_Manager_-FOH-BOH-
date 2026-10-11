@@ -10,15 +10,13 @@ namespace API.Controllers
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class CaLamController(ICaLamBusiness business) : ControllerBase
+    public class CaLamController(ICaLamBusiness business) : ControllerBusiness<ICaLamBusiness>(business)
     {
-        private readonly ICaLamBusiness _business = business;
-
         [Authorize(Roles = "Admin")]
         [HttpPost("create")]
         public CaLamModel Create([FromBody] CaLamModel model)
         {
-            _business.Create(model);
+            _Business.Create(model);
             return model;
         }
 
@@ -26,7 +24,7 @@ namespace API.Controllers
         [HttpPost("update")]
         public CaLamModel Update([FromBody] CaLamModel model)
         {
-            _business.Update(model);
+            _Business.Update(model);
             return model;
         }
 
@@ -34,28 +32,24 @@ namespace API.Controllers
         [HttpPost("delete")]
         public IActionResult Delete([FromBody] Dictionary<string, object> formData)
         {
-            try
+            return Execute(() =>
             {
                 var id = GetString(formData, "id");
-                _business.Delete(id);
-                return Ok(new { message = "Thành công" });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+                _Business.Delete(id);
+                return Ok(new { message = "Thanh cong" });
+            });
         }
 
         [HttpGet("get-by-id/{id}")]
         public CaLamModel GetDatabyID(string id)
         {
-            return _business.GetDatabyID(id);
+            return _Business.GetDatabyID(id);
         }
 
         [HttpGet("get-all")]
         public List<CaLamModel> GetAll()
         {
-            return _business.GetAll();
+            return _Business.GetAll();
         }
     }
 }

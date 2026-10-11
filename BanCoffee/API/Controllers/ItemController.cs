@@ -59,7 +59,7 @@ namespace API.Controllers
                 item_id = Convert.ToString(value);
             }
             _Business.Delete(item_id);
-            return Ok(new { message = "Thành công" });
+            return Ok(new { message = "Thanh cong" });
         }
         [AllowAnonymous]
         [Route("get-all")]
@@ -83,25 +83,21 @@ namespace API.Controllers
         [HttpPost]
         public ResponseModel Search([FromBody] Dictionary<string, object> formData)
         {
-            var response = new ResponseModel();
-            try
+            return Execute(() =>
             {
+                var response = new ResponseModel();
                 int page = GetInt(formData, "page", 1);
                 int pageSize = GetInt(formData, "pageSize", 10);
                 string item_group_id = GetString(formData, "item_group_id", "");
                 string item_name = GetString(formData, "item_name", "");
-
+                
                 var data = _Business.Search(page, pageSize, out long total, item_group_id, item_name);
                 response.TotalItems = total;
                 response.Data = data;
                 response.Page = page;
                 response.PageSize = pageSize;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return response;
+                return response;
+            });
         }
 
     }

@@ -47,7 +47,7 @@ namespace API.Controllers
                 news_id = Convert.ToString(value);
             }
             _Business.Delete(news_id);
-            return Ok(new { message = "Thành công" });
+            return Ok(new { message = "Thanh cong" });
         }
     }
 }
