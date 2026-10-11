@@ -110,5 +110,80 @@
     <script src="/assets/js/api.js"></script>
     <script src="/assets/js/auth.js"></script>
     <script src="/assets/js/tables.js"></script>
+    <!-- Order POS Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Đơn hàng - Bàn: <span id="posTableName"></span></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="posTableId">
+                    <div class="d-flex justify-content-between mb-3">
+                        <button class="btn btn-success fw-bold" onclick="openAddItemModal()">+ Thêm Món</button>
+                        <button class="btn btn-danger" onclick="clearOrder()">Hủy Bàn</button>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Món</th>
+                                    <th>SL</th>
+                                    <th>Đơn giá</th>
+                                    <th>Ghi chú</th>
+                                    <th>Trạng thái bếp</th>
+                                </tr>
+                            </thead>
+                            <tbody id="posOrderList">
+                                <tr><td colspan="5" class="text-center">Chưa có dữ liệu</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="text-end">
+                        <h4 class="text-danger fw-bold">Tổng: <span id="posTotal">0</span> đ</h4>
+                    </div>
+                </div>
+                <div class="modal-footer" id="posFooter">
+                    <!-- Nút thanh toán dành cho Thu Ngân -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary fw-bold" id="btnCheckout" onclick="checkoutOrder()" style="display:none;">THANH TOÁN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Item Modal -->
+    <div class="modal fade" id="addItemModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Thêm món</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Chọn món:</label>
+                        <select class="form-select" id="addSelectMenu"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Số lượng:</label>
+                        <input type="number" class="form-control" id="addQty" value="1" min="1">
+                    </div>
+                    <div class="mb-3">
+                        <label>Ghi chú (Không đá, ít đường...):</label>
+                        <input type="text" class="form-control" id="addNote">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-success" onclick="confirmAddItem()">Xác nhận Gọi</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+

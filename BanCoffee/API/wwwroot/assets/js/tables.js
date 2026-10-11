@@ -1,13 +1,14 @@
-let currentTables = [];
+﻿let currentTables = [];
+let menuItems = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     loadTables();
+    loadMenuItems();
 
-    // Hook add button explicitly just in case
     const btnAdd = document.getElementById('btnAddTable');
     if (btnAdd) {
         btnAdd.addEventListener('click', () => {
-            openAddTableModal();
+            openAddTableModal(); // Danh cho admin/staff cu
         });
     }
 });
@@ -24,6 +25,10 @@ async function loadTables() {
             return;
         }
 
+        const userJson = localStorage.getItem('user');
+        const user = userJson ? JSON.parse(userJson) : null;
+        const role = user ? (user.Role || user.role) : '';
+
         currentTables.forEach(table => {
             let bgClass = 'bg-trong';
             if (table.trang_thai === 'Đang phục vụ' || table.trang_thai === 'Đang sử dụng') bgClass = 'bg-dang-phuc-vu';
@@ -34,9 +39,15 @@ async function loadTables() {
 
             const div = document.createElement('div');
             div.className = 'col-xl-3 col-md-4 col-sm-6 mb-4';
-            // We use standard onclick for simplicity since it's admin-only edit anyway
+            
+            let btnConfig = '';
+            if (role === 'Admin') {
+                btnConfig = `<button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1" onclick="event.stopPropagation(); openEditTableModal('${table.ban_id}')">⚙️</button>`;
+            }
+
             div.innerHTML = `
-                <div class="card shadow table-card ${bgClass} h-100 py-2" onclick="openEditTableModal('${table.ban_id}')" style="cursor:pointer">
+                <div class="card shadow table-card ${bgClass} h-100 py-2 position-relative" onclick="openOrderModal('${table.ban_id}')" style="cursor:pointer">
+                    ${btnConfig}
                     <div class="card-body text-center">
                         <h5 class="font-weight-bold text-dark mb-1">${table.ten_ban}</h5>
                         <div class="text-xs mb-2">${khuVuc} - ${soCho} chỗ</div>
@@ -52,10 +63,177 @@ async function loadTables() {
         }
     } catch (err) {
         console.error(err);
-        alert("Không thể tải danh sách bàn!");
     }
 }
 
+async function loadMenuItems() {
+    try {
+        menuItems = await fetchAPI('/Item/get-all', 'GET');
+    } catch(e) { console.error("Khong the tai Menu", e); }
+}
+
+window.openOrderModal = async function(id) {
+    const table = currentTables.find(t => t.ban_id === id);
+    if (!table) return;
+
+    document.getElementById('posTableName').innerText = table.ten_ban;
+    document.getElementById('posTableId').value = table.ban_id;
+    
+    const userJson = localStorage.getItem('user');
+    const user = userJson ? JSON.parse(userJson) : null;
+    const role = user ? (user.Role || user.role) : '';
+    
+    if (role === 'ThuNgan' || role === 'Admin') {
+        document.getElementById('btnCheckout').style.display = 'inline-block';
+    } else {
+        document.getElementById('btnCheckout').style.display = 'none';
+    }
+
+    await reloadOrderView(id);
+    new bootstrap.Modal(document.getElementById('orderModal')).show();
+};
+
+async function reloadOrderView(banId) {
+    try {
+        const order = await fetchAPI(`/Order/get-by-table/${banId}`, 'GET');
+        const tbody = document.getElementById('posOrderList');
+        const spanTotal = document.getElementById('posTotal');
+        
+        if (!order || !order.items || order.items.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" class="text-center">Chưa có order</td></tr>`;
+            spanTotal.innerText = '0';
+            return;
+        }
+
+        tbody.innerHTML = '';
+        let total = 0;
+        const states = ["Chờ làm", "Đang làm", "Xong", "Đã giao"];
+        
+        order.items.forEach(it => {
+            const tr = document.createElement('tr');
+            const tt = (it.price || 0) * (it.quantity || 1);
+            total += tt;
+            
+            let badgeClass = 'bg-secondary';
+            if (it.state === 1) badgeClass = 'bg-warning text-dark';
+            if (it.state === 2) badgeClass = 'bg-success';
+            
+            tr.innerHTML = `
+                <td>${it.item_name}</td>
+                <td>${it.quantity}</td>
+                <td>${(it.price||0).toLocaleString()}</td>
+                <td>${it.note || ''}</td>
+                <td><span class="badge ${badgeClass}">${states[it.state] || ''}</span></td>
+            `;
+            tbody.appendChild(tr);
+        });
+        
+        spanTotal.innerText = total.toLocaleString();
+    } catch(e) {
+        console.error(e);
+    }
+}
+
+window.openAddItemModal = function() {
+    const sel = document.getElementById('addSelectMenu');
+    sel.innerHTML = '';
+    menuItems.forEach(mi => {
+        const opt = document.createElement('option');
+        opt.value = mi.item_id;
+        opt.dataset.name = mi.item_name;
+        opt.dataset.price = mi.item_price;
+        opt.innerText = `${mi.item_name} - ${mi.item_price.toLocaleString()}đ`;
+        sel.appendChild(opt);
+    });
+    
+    document.getElementById('addQty').value = '1';
+    document.getElementById('addNote').value = '';
+    
+    new bootstrap.Modal(document.getElementById('addItemModal')).show();
+};
+
+window.confirmAddItem = async function() {
+    const banId = document.getElementById('posTableId').value;
+    const sel = document.getElementById('addSelectMenu');
+    const opt = sel.options[sel.selectedIndex];
+    
+    if(!opt) return alert("Chọn món trước");
+    
+    const qty = parseInt(document.getElementById('addQty').value) || 1;
+    const note = document.getElementById('addNote').value;
+    
+    const payload = {
+        ban_id: banId,
+        item_id: opt.value,
+        item_name: opt.dataset.name,
+        quantity: qty,
+        price: parseFloat(opt.dataset.price) || 0,
+        note: note
+    };
+    
+    try {
+        await fetchAPI('/Order/add-item', 'POST', payload);
+        bootstrap.Modal.getInstance(document.getElementById('addItemModal')).hide();
+        await reloadOrderView(banId);
+        
+        // Auto update table status to Dang phuc vu
+        const table = currentTables.find(t => t.ban_id === banId);
+        if (table && table.trang_thai === 'Trống') {
+            table.trang_thai = 'Đang phục vụ';
+            await fetchAPI('/Ban/update-ban', 'POST', table);
+            loadTables();
+        }
+    } catch(e) {
+        alert(e.message || "Không thể gọi món (Có thể hết nguyên liệu)");
+    }
+};
+
+window.checkoutOrder = async function() {
+    if(!confirm("Bạn có chắc chắn thanh toán bàn này?")) return;
+    const banId = document.getElementById('posTableId').value;
+    try {
+        const res = await fetchAPI('/Order/checkout', 'POST', {
+            ban_id: banId,
+            payment_method: 'Tiền mặt',
+            giam_gia: 0,
+            ghi_chu: ''
+        });
+        alert(res.message);
+        
+        // Update table back to Trống
+        const table = currentTables.find(t => t.ban_id === banId);
+        if (table) {
+            table.trang_thai = 'Trống';
+            await fetchAPI('/Ban/update-ban', 'POST', table);
+        }
+        
+        bootstrap.Modal.getInstance(document.getElementById('orderModal')).hide();
+        loadTables();
+    } catch(e) {
+        alert(e.message);
+    }
+};
+
+window.clearOrder = async function() {
+    if(!confirm("Hủy đơn hàng của bàn này (món đang làm cũng sẽ bị hủy)?")) return;
+    const banId = document.getElementById('posTableId').value;
+    try {
+        await fetchAPI(`/Order/clear/${banId}`, 'POST');
+        
+        const table = currentTables.find(t => t.ban_id === banId);
+        if (table) {
+            table.trang_thai = 'Trống';
+            await fetchAPI('/Ban/update-ban', 'POST', table);
+        }
+        
+        bootstrap.Modal.getInstance(document.getElementById('orderModal')).hide();
+        loadTables();
+    } catch(e) {
+        alert(e.message);
+    }
+};
+
+// ADMIN: Edit Table mapping
 window.openAddTableModal = function() {
     document.getElementById('tableId').value = '';
     document.getElementById('tableModalTitle').innerText = 'Thêm bàn mới';
@@ -64,10 +242,10 @@ window.openAddTableModal = function() {
     document.getElementById('tableCapacity').value = '4';
     document.getElementById('tableStatus').value = 'Trống';
     
-    // Bỏ khóa các trường
     document.getElementById('tableName').disabled = false;
     document.getElementById('tableZone').disabled = false;
     document.getElementById('tableCapacity').disabled = false;
+    new bootstrap.Modal(document.getElementById('tableModal')).show();
 };
 
 window.openEditTableModal = function(id) {
@@ -79,26 +257,11 @@ window.openEditTableModal = function(id) {
     document.getElementById('tableName').value = table.ten_ban;
     document.getElementById('tableZone').value = table.khu_vuc;
     document.getElementById('tableCapacity').value = table.so_cho;
+    document.getElementById('tableStatus').value = table.trang_thai;
     
-    let st = table.trang_thai;
-    if (st === 'Đang sử dụng') st = 'Đang phục vụ'; // map về option có sẵn
-    document.getElementById('tableStatus').value = st;
-    
-    const userJson = localStorage.getItem('user');
-    const user = userJson ? JSON.parse(userJson) : null;
-    const role = user ? (user.Role || user.role) : '';
-
-    // Nếu không phải admin thì chỉ được đổi trạng thái
-    if (role !== 'Admin') {
-        document.getElementById('tableName').disabled = true;
-        document.getElementById('tableZone').disabled = true;
-        document.getElementById('tableCapacity').disabled = true;
-    } else {
-        document.getElementById('tableName').disabled = false;
-        document.getElementById('tableZone').disabled = false;
-        document.getElementById('tableCapacity').disabled = false;
-    }
-
+    document.getElementById('tableName').disabled = false;
+    document.getElementById('tableZone').disabled = false;
+    document.getElementById('tableCapacity').disabled = false;
     new bootstrap.Modal(document.getElementById('tableModal')).show();
 };
 
@@ -119,10 +282,8 @@ window.saveTable = async function() {
 
     try {
         if (!id) {
-            // Thêm mới
             await fetchAPI('/Ban/create-ban', 'POST', model);
         } else {
-            // Sửa
             await fetchAPI('/Ban/update-ban', 'POST', model);
         }
         bootstrap.Modal.getInstance(document.getElementById('tableModal')).hide();
