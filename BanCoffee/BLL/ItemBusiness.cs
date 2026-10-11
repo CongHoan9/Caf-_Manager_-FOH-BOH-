@@ -37,7 +37,12 @@ namespace BLL
         {
             return _res.Search(pageIndex, pageSize, out total, item_group_id, item_name);
         }
-    }
+    
+        public bool DeductInventoryForOrder(string item_id, int quantity, out string error)
+        {
+            return _res.DeductInventoryForOrder(item_id, quantity, out error);
+        }
+}
 }
 
 
