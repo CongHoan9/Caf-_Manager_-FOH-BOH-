@@ -8,5 +8,6 @@ namespace BLL
         ItemModel GetDatabyID(string id);
         List<ItemModel> GetDataAll();
         List<ItemModel> Search(int pageIndex, int pageSize, out long total, string item_group_id, string item_name);
+        bool DeductInventoryForOrder(string item_id, int quantity, out string error);
     }
 }
