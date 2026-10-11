@@ -29,7 +29,7 @@ namespace DAL
             }
             return true;
         });
-                        public List<T> ExecuteSearch<T>(out long total, string spName, params object[] parameters) where T : new()
+        public List<T> ExecuteSearch<T>(out long total, string spName, params object[] parameters) where T : new()
         {
             try
             {
@@ -44,7 +44,7 @@ namespace DAL
                     t = Convert.ToInt64(dt.Rows[0]["RecordCount"]);
                 }
                 total = t;
-                return dt != null ? dt.ConvertTo<T>().ToList() : new List<T>();
+                return dt != null ? [.. dt.ConvertTo<T>()] : [];
             }
             catch (Exception)
             {
@@ -57,7 +57,7 @@ namespace DAL
             {
                 throw new Exception(msgError);
             }
-            return dt != null ? dt.ConvertTo<T>().ToList() : new List<T>();
+            return dt != null ? dt.ConvertTo<T>().ToList() : [];
         });
     }
 }

@@ -32,7 +32,35 @@ namespace DAL
                                            "@item_name", item_name,
                                            "@item_group_id", item_group_id);
         }
-    }
+    
+        public bool DeductInventoryForOrder(string item_id, int quantity, out string error)
+        {
+            error = string.Empty;
+            string msgError = "";
+            try
+            {
+                string sql = "DECLARE @err NVARCHAR(500); EXEC sp_kiem_tra_tru_ton_kho_theo_mon '" + item_id + "', " + quantity + ", @out_error=@err OUTPUT; SELECT @err;";
+                var res = _dbHelper.ExecuteScalar(sql, out msgError);
+                if (!string.IsNullOrEmpty(msgError)) {
+                    error = msgError;
+                    return false;
+                }
+                if (res != null && res != DBNull.Value) {
+                    string spError = res.ToString();
+                    if (!string.IsNullOrEmpty(spError)) {
+                        error = spError;
+                        return false;
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+        }
+}
 }
 
 
