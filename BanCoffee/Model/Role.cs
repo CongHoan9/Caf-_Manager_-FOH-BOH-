@@ -1,12 +1,13 @@
 ﻿#pragma warning disable IDE1006
 namespace Model
 {
-    /// <summary>Vai tro nguoi dung - luu varchar trong cot [user].role nen dung hang so thay enum.</summary>
     public static class Role
     {
         public const string Admin = "Admin";
-        public const string Staff = "Staff";
+        public const string ThuNgan = "ThuNgan"; // Thu ngân
+        public const string PhucVu = "PhucVu";   // Phục vụ
+        public const string Bep = "Bep";         // Bếp / Pha chế
+        
+        public const string Staff = "Staff";     // (Tương thích dữ liệu cũ)
     }
 }
-
-
