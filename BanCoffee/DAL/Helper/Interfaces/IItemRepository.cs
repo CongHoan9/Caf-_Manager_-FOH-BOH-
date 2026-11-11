@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace DAL
 {
-    public partial interface IItemRepository : ICreate<ItemModel, bool>, IUpdate<ItemModel, bool>, IDelete<string, bool>
+    public partial interface IItemRepository : ICreate<ItemModel, bool>, IUpdate<ItemModel, bool>
     {
         ItemModel GetDatabyID(string id);
         List<ItemModel> GetDataAll();

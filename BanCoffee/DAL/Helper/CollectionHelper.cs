@@ -150,7 +150,7 @@ namespace DAL
                 obj = Activator.CreateInstance<T>();
                 foreach (DataColumn column in row.Table.Columns)
                 {
-                    PropertyInfo prop = obj.GetType().GetProperty(column.ColumnName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+                    PropertyInfo prop = obj.GetType().GetProperty(column.ColumnName);
                     if (prop == null) continue;
                     Type type = prop.PropertyType;
                     try
@@ -207,5 +207,3 @@ namespace DAL
         }
     }
 }
-
-

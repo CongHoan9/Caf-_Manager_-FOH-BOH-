@@ -1,4 +1,4 @@
-using DAL.Helper;
+﻿using DAL.Helper;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,64 +21,16 @@ namespace DAL
                                                                   "@item_image", model.item_image,
                                                                   "@item_name", model.item_name,
                                                                   "@item_price", model.item_price);
-        public bool Delete(string id) => ExecuteTransaction("sp_item_delete", "@item_id", id);
         public ItemModel GetDatabyID(string id) => ExecuteQuery<ItemModel>("sp_item_get_by_id", "@item_id", id).FirstOrDefault();
         public List<ItemModel> GetDataAll() => ExecuteQuery<ItemModel>("sp_item_all");
         public List<ItemModel> Search(int pageIndex, int pageSize, out long total, string item_group_id, string item_name)
         {
-            return ExecuteSearch<ItemModel>(out total, "sp_item_search",
+            total = 0;
+            return ExecuteQuery<ItemModel>("sp_item_search",
                                            "@page_index", pageIndex,
                                            "@page_size", pageSize,
                                            "@item_name", item_name,
                                            "@item_group_id", item_group_id);
         }
-    
-        public bool DeductInventoryForOrder(string item_id, int quantity, out string error)
-        {
-            error = string.Empty;
-            string msgError = "";
-            try
-            {
-                string sql = "DECLARE @err NVARCHAR(500); EXEC sp_kiem_tra_tru_ton_kho_theo_mon '" + item_id + "', " + quantity + ", @out_error=@err OUTPUT; SELECT @err;";
-                var res = _dbHelper.ExecuteScalar(sql, out msgError);
-                if (!string.IsNullOrEmpty(msgError)) {
-                    error = msgError;
-                    return false;
-                }
-                if (res != null && res != DBNull.Value) {
-                    string spError = res.ToString();
-                    if (!string.IsNullOrEmpty(spError)) {
-                        error = spError;
-                        return false;
-                    }
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-                return false;
-            }
-        }
+    }
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
