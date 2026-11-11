@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
@@ -33,9 +33,7 @@ namespace DAL
 
         public static T DeserializeObject<T>(this string json)
         {
-
             return JsonConvert.DeserializeObject<T>(json, Settings);
-
         }
 
         public static Object DeserializeObject(this string json, Type type)
@@ -84,11 +82,6 @@ namespace DAL
             return rows.ToList();
         }
 
-        //public static T DeepClone<T>(this T a)
-        //{
-        //    string mess = MessageConvert.SerializeObject(a);
-        //    return mess.DeserializeObject<T>();
-        //}
         public static DataTable ConvertTo<T>(this IList<T> list)
         {
             DataTable table = CreateTable<T>();
@@ -150,7 +143,7 @@ namespace DAL
                 obj = Activator.CreateInstance<T>();
                 foreach (DataColumn column in row.Table.Columns)
                 {
-                    PropertyInfo prop = obj.GetType().GetProperty(column.ColumnName);
+                    PropertyInfo prop = obj.GetType().GetProperty(column.ColumnName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
                     if (prop == null) continue;
                     Type type = prop.PropertyType;
                     try
@@ -170,11 +163,20 @@ namespace DAL
                             {
                                 prop.SetValue(obj, Convert.ToSingle(value), null);
                             }
+                            else if (type.Name == "TimeSpan")
+                            {
+                                var tsValue = value is TimeSpan ts ? ts : TimeSpan.Parse(Convert.ToString(value));
+                                prop.SetValue(obj, tsValue, null);
+                            }
                             else if (type.Name == "Nullable`1" || type.Name == "DateTime")
                             {
                                 var t = Nullable.GetUnderlyingType(type) ?? type;
-                                var safeValue = (value == null) ? null : Convert.ChangeType(value, t);
+                                object safeValue = value == null ? null : (t == typeof(TimeSpan) ? (value is TimeSpan ts2 ? ts2 : TimeSpan.Parse(Convert.ToString(value))) : Convert.ChangeType(value, t));
                                 prop.SetValue(obj, safeValue, null);
+                            }
+                            else if (type.IsPrimitive || type == typeof(decimal))
+                            {
+                                prop.SetValue(obj, Convert.ChangeType(value, type), null);
                             }
                             else
                             {
@@ -184,7 +186,6 @@ namespace DAL
                     }
                     catch
                     {
-                        // You can log something here
                         throw;
                     }
                 }

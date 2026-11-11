@@ -120,7 +120,7 @@ namespace DAL.Helper
             try
             {
                 OpenConnection();
-                var sqlCommand = new SqlCommand(strquery, SqlConnection);
+                var sqlCommand = new SqlCommand(strquery, SqlConnection) { CommandType = CommandType.StoredProcedure };
                 sqlCommand.ExecuteNonQuery();
                 sqlCommand.Dispose();
             }
@@ -140,6 +140,7 @@ namespace DAL.Helper
             msgError = "";
             var result = new DataTable();
             var sqlDataAdapter = new SqlDataAdapter(strquery, StrConnection);
+            sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             try
             {
                 sqlDataAdapter.Fill(result);
@@ -162,7 +163,7 @@ namespace DAL.Helper
             try
             {
                 OpenConnection();
-                var npgsqlCommand = new SqlCommand(strquery, SqlConnection);
+                var npgsqlCommand = new SqlCommand(strquery, SqlConnection) { CommandType = CommandType.StoredProcedure };
                 result = npgsqlCommand.ExecuteScalar();
                 npgsqlCommand.Dispose();
                 msgError = "";
@@ -201,13 +202,13 @@ namespace DAL.Helper
                         cmd.Parameters.Add(new SqlParameter()
                         {
                             ParameterName = paramName,
-                            Value = value ?? DBNull.Value,
+                            Value = GetSafeSqlValue(value),
                             SqlDbType = SqlDbType.NVarChar
                         });
                     }
                     else
                     {
-                        cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                     }
                 }
                 cmd.ExecuteNonQuery();
@@ -257,13 +258,13 @@ namespace DAL.Helper
                                 cmd.Parameters.Add(new SqlParameter()
                                 {
                                     ParameterName = paramName,
-                                    Value = value ?? DBNull.Value,
+                                    Value = GetSafeSqlValue(value),
                                     SqlDbType = SqlDbType.NVarChar
                                 });
                             }
                             else
                             {
-                                cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                                cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                             }
                         }
                         cmd.ExecuteNonQuery();
@@ -323,13 +324,13 @@ namespace DAL.Helper
                                     cmd.Parameters.Add(new SqlParameter()
                                     {
                                         ParameterName = paramName,
-                                        Value = value ?? DBNull.Value,
+                                        Value = GetSafeSqlValue(value),
                                         SqlDbType = SqlDbType.NVarChar
                                     });
                                 }
                                 else
                                 {
-                                    cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                                    cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                                 }
                             }
 
@@ -385,13 +386,13 @@ namespace DAL.Helper
                                         cmd.Parameters.Add(new SqlParameter()
                                         {
                                             ParameterName = paramName,
-                                            Value = value ?? DBNull.Value,
+                                            Value = GetSafeSqlValue(value),
                                             SqlDbType = SqlDbType.NVarChar
                                         });
                                     }
                                     else
                                     {
-                                        cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                                        cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                                     }
                                 }
 
@@ -447,7 +448,7 @@ namespace DAL.Helper
                         cmd.Parameters.Add(new SqlParameter()
                         {
                             ParameterName = paramName,
-                            Value = value ?? DBNull.Value,
+                            Value = GetSafeSqlValue(value),
                             SqlDbType = SqlDbType.NVarChar
                         });
                     }
@@ -456,13 +457,13 @@ namespace DAL.Helper
                         cmd.Parameters.Add(new SqlParameter()
                         {
                             ParameterName = paramName,
-                            Value = value ?? DBNull.Value,
+                            Value = GetSafeSqlValue(value),
                             SqlDbType = SqlDbType.NVarChar
                         });
                     }
                     else
                     {
-                        cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                     }
                 }
 
@@ -517,13 +518,13 @@ namespace DAL.Helper
                                     cmd.Parameters.Add(new SqlParameter()
                                     {
                                         ParameterName = paramName,
-                                        Value = value ?? DBNull.Value,
+                                        Value = GetSafeSqlValue(value),
                                         SqlDbType = SqlDbType.NVarChar
                                     });
                                 }
                                 else
                                 {
-                                    cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                                    cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                                 }
                             }
 
@@ -582,13 +583,13 @@ namespace DAL.Helper
                                         cmd.Parameters.Add(new SqlParameter()
                                         {
                                             ParameterName = paramName,
-                                            Value = value ?? DBNull.Value,
+                                            Value = GetSafeSqlValue(value),
                                             SqlDbType = SqlDbType.NVarChar
                                         });
                                     }
                                     else
                                     {
-                                        cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                                        cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                                     }
                                 }
 
@@ -652,13 +653,13 @@ namespace DAL.Helper
                                 cmd.Parameters.Add(new SqlParameter()
                                 {
                                     ParameterName = paramName,
-                                    Value = value ?? DBNull.Value,
+                                    Value = GetSafeSqlValue(value),
                                     SqlDbType = SqlDbType.NVarChar
                                 });
                             }
                             else
                             {
-                                cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                                cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                             }
                         }
 
@@ -714,13 +715,13 @@ namespace DAL.Helper
                         cmd.Parameters.Add(new SqlParameter()
                         {
                             ParameterName = paramName,
-                            Value = value ?? DBNull.Value,
+                            Value = GetSafeSqlValue(value),
                             SqlDbType = SqlDbType.NVarChar
                         });
                     }
                     else
                     {
-                        cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                     }
                 }
 
@@ -767,13 +768,13 @@ namespace DAL.Helper
                         cmd.Parameters.Add(new SqlParameter()
                         {
                             ParameterName = paramName,
-                            Value = value ?? DBNull.Value,
+                            Value = GetSafeSqlValue(value),
                             SqlDbType = SqlDbType.NVarChar
                         });
                     }
                     else
                     {
-                        cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                     }
                 }
 
@@ -823,13 +824,13 @@ namespace DAL.Helper
                         cmd.Parameters.Add(new SqlParameter()
                         {
                             ParameterName = paramName,
-                            Value = value ?? DBNull.Value,
+                            Value = GetSafeSqlValue(value),
                             SqlDbType = SqlDbType.NVarChar
                         });
                     }
                     else
                     {
-                        cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                     }
                 }
                 cmd.ExecuteNonQuery();
@@ -873,13 +874,13 @@ namespace DAL.Helper
                         cmd.Parameters.Add(new SqlParameter()
                         {
                             ParameterName = paramName,
-                            Value = value ?? DBNull.Value,
+                            Value = GetSafeSqlValue(value),
                             SqlDbType = SqlDbType.NVarChar
                         });
                     }
                     else
                     {
-                        cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value));
+                        cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)));
                     }
                 }
 
@@ -887,7 +888,7 @@ namespace DAL.Helper
                 {
                     string paramName = Convert.ToString(paramObjects[j++]);
                     object value = paramObjects[j++];
-                    cmd.Parameters.Add(new SqlParameter(paramName, value ?? DBNull.Value) { Direction = ParameterDirection.Output, Size = 1000, IsNullable = true });
+                    cmd.Parameters.Add(new SqlParameter(paramName, GetSafeSqlValue(value)) { Direction = ParameterDirection.Output, Size = 1000, IsNullable = true });
                 }
 
                 cmd.ExecuteNonQuery();
@@ -910,6 +911,15 @@ namespace DAL.Helper
             return result;
         }
         #endregion
-    }
+    
+        private object GetSafeSqlValue(object value)
+        {
+            if (value is DateTime dt && dt < new DateTime(1753, 1, 1))
+                return new DateTime(1753, 1, 1);
+            if (value is TimeSpan ts)
+                return ts.ToString();
+            return value ?? DBNull.Value;
+        }
+}
 
 }

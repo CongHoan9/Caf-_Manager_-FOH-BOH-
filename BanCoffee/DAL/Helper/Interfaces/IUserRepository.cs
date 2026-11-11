@@ -1,4 +1,4 @@
-﻿using Model;
+using Model;
 using System.Collections.Generic;
 namespace DAL
 {
@@ -6,6 +6,9 @@ namespace DAL
     {
         UserModel GetUser(string username, string password);
         UserModel GetDatabyID(string id);
+        List<UserModel> GetAll();
+        bool ChangePassword(string userId, string oldPassword, string newPassword);
+        bool CheckExists(string taikhoan);
         List<UserModel> Search(int pageIndex, int pageSize, out long total, string hoten, string taikhoan);
     }
 }
