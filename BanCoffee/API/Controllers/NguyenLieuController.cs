@@ -43,24 +43,25 @@ namespace API.Controllers
                 var id = GetString(formData, "nguyen_lieu_id");
                 if (string.IsNullOrEmpty(id)) id = GetString(formData, "id");
                 _Business.Delete(id);
-                return Ok(new { message = "Thanh cong" });
+                return Ok(new { message = "Thành công" });
             });
         }
 
+        [Authorize]
         [HttpGet("get-by-id/{id}")]
         public NguyenLieuModel GetDatabyID(string id)
         {
             return _Business.GetDatabyID(id);
         }
 
+        [Authorize]
         [HttpGet("get-all")]
         public List<NguyenLieuModel> GetAll()
         {
             return _Business.GetAll();
         }
 
-        /// <summary>Nhập thêm hàng vào kho: cộng dồn số lượng, cập nhật giá nhập mới và ngày nhập cuối.</summary>
-        [Authorize(Roles = Role.Admin)]
+        [Authorize]
         [HttpPost("nhap-them")]
         public IActionResult NhapThem([FromBody] Dictionary<string, object> formData)
         {
@@ -70,10 +71,11 @@ namespace API.Controllers
                 double soLuong = GetDouble(formData, "so_luong");
                 double giaNhap = GetDouble(formData, "gia_nhap");
                 _Business.NhapThem(id, soLuong, giaNhap);
-                return Ok(new { message = "Thanh cong" });
+                return Ok(new { message = "Thành công" });
             });
         }
 
+        [Authorize]
         [Route("search")]
         [HttpPost]
         public ResponseModel Search([FromBody] Dictionary<string, object> formData)

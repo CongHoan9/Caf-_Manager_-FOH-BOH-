@@ -1,50 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý Bàn - BanCoffee</title>
-    <!-- Bootstrap CSS -->
+    <title>Sơ đồ Bàn (POS) - BanCoffee</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
     <style>
-        .table-card { transition: transform 0.2s; cursor: pointer; }
-        .table-card:hover { transform: scale(1.05); }
-        .bg-trong { background-color: #e2f0d9; border-color: #70ad47; }
-        .bg-dang-phuc-vu { background-color: #fff2cc; border-color: #ffc000; }
-        .bg-da-dat { background-color: #fce4d6; border-color: #ed7d31; }
+        .table-card { cursor: pointer; }
+        .bg-trong { background-color: #e2f0d9; }
+        .bg-dang-phuc-vu { background-color: #fff2cc; }
+        .bg-da-dat { background-color: #fce4d6; }
     </style>
 </head>
 <body id="page-top">
     <div id="wrapper" class="d-flex">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center p-3 text-white text-decoration-none" href="dashboard.html">
-                <div class="sidebar-brand-text mx-3 fs-4 font-weight-bold">BanCoffee</div>
-            </a>
-            <hr class="sidebar-divider my-0 bg-white opacity-25">
-            <li class="nav-item"><a class="nav-link" href="dashboard.html">Tổng quan</a></li>
-            <hr class="sidebar-divider bg-white opacity-25">
-            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Quản lý Bán hàng</div>
-            <li class="nav-item"><a class="nav-link" href="hoadon.html">Hóa Đơn</a></li>
-            <li class="nav-item"><a class="nav-link" href="menu.html">Sản phẩm (Menu)</a></li>
-            <li class="nav-item active"><a class="nav-link" href="tables.html">Bàn (Khu vực)</a></li>
-            <hr class="sidebar-divider bg-white opacity-25">
-            <div class="sidebar-heading px-3 text-white-50 text-uppercase" style="font-size: 0.75rem;">Nội bộ</div>
-            <li class="nav-item admin-only"><a class="nav-link" href="kho.html">Kho (Nguyên Liệu)</a></li>
-            <li class="nav-item"><a class="nav-link" href="lichlam.html">Ca làm &amp; Lịch làm</a></li>
-            <li class="nav-item admin-only"><a class="nav-link" href="users.html">Tài khoản &amp; Nhân viên</a></li>
-        </ul>
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"></ul>
 
         <div id="content-wrapper" class="d-flex flex-column w-100">
             <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow px-4">
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top px-4">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
                             <span class="me-2 d-none d-lg-inline text-gray-600 small" id="userDropdownName">Loading...</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in">
+                        <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" href="#" id="btnLogout">Đăng xuất</a>
                         </div>
                     </li>
@@ -54,21 +36,20 @@
             <!-- Main Content -->
             <div class="container-fluid px-4">
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Sơ đồ Bàn</h1>
-                    <button class="btn btn-sm btn-primary shadow-sm admin-only" id="btnAddTable" data-bs-toggle="modal" data-bs-target="#tableModal">
-                        + Thêm Bàn Mới
-                    </button>
+                    <div>
+                        <h1 class="h3 mb-0 text-gray-800">Sơ đồ Bàn &amp; Order tại Bàn</h1>
+                        <small class="text-muted">Click vào bàn để gọi món hoặc thanh toán.</small>
+                    </div>
+                    <div id="tableHeaderActions"></div>
                 </div>
                 
-                <div class="row" id="tableContainer">
-                    <!-- Tables will be loaded here -->
-                </div>
+                <div class="row" id="tableContainer"></div>
             </div>
         </div>
     </div>
 
-        <!-- Modal Add/Edit Table -->
-    <div class="modal fade" id="tableModal" tabindex="-1">
+    <!-- Modal Add/Edit Table (chỉ giữ trong DOM khi là Admin) -->
+    <div class="modal fade" id="tableModal" tabindex="-1" data-roles="Admin">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -78,19 +59,19 @@
                 <div class="modal-body">
                     <input type="hidden" id="tableId">
                     <div class="mb-3">
-                        <label>Tên bàn:</label>
-                        <input type="text" class="form-control" id="tableName" placeholder="VD: Bàn 1">
+                        <label class="form-label">Tên bàn *</label>
+                        <input type="text" class="form-control" id="tableName" value="" placeholder="VD: Bàn 04">
                     </div>
                     <div class="mb-3">
-                        <label>Khu vực:</label>
-                        <input type="text" class="form-control" id="tableZone" placeholder="VD: Tầng 1, Sân vườn...">
+                        <label class="form-label">Khu vực</label>
+                        <input type="text" class="form-control" id="tableZone" value="" placeholder="VD: Tầng 1, Sân vườn...">
                     </div>
                     <div class="mb-3">
-                        <label>Số chỗ:</label>
-                        <input type="number" class="form-control" id="tableCapacity" min="1" value="4">
+                        <label class="form-label">Số chỗ</label>
+                        <input type="number" class="form-control" id="tableCapacity" min="1" value="" placeholder="VD: 4">
                     </div>
                     <div class="mb-3">
-                        <label>Trạng thái:</label>
+                        <label class="form-label">Trạng thái</label>
                         <select class="form-select" id="tableStatus">
                             <option value="Trống">Trống</option>
                             <option value="Đang phục vụ">Đang phục vụ</option>
@@ -98,42 +79,51 @@
                         </select>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary" onclick="saveTable()">Lưu lại</button>
+                <div class="modal-footer d-flex justify-content-between" id="tableModalFooter">
+                    <div id="deleteTableSlot"></div>
+                    <div class="ms-auto">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-primary" onclick="saveTable()">Lưu lại</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/api.js"></script>
-    <script src="/assets/js/auth.js"></script>
-    <script src="/assets/js/tables.js"></script>
     <!-- Order POS Modal -->
     <div class="modal fade" id="orderModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title">Đơn hàng - Bàn: <span id="posTableName"></span></h5>
+                    <h5 class="modal-title">Đơn hàng - <span id="posTableName"></span></h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <input type="hidden" id="posTableId">
-                    <div class="d-flex justify-content-between mb-3">
-                        <button class="btn btn-success fw-bold" onclick="openAddItemModal()">+ Thêm Món</button>
-                        <button class="btn btn-danger" onclick="clearOrder()">Hủy Bàn</button>
+                    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-success fw-bold" onclick="openAddItemModal()">+ Thêm Món</button>
+                            <button class="btn btn-danger" onclick="clearOrder()">Hủy Đơn / Trả Bàn</button>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="small text-muted">Đổi trạng thái bàn:</span>
+                            <select class="form-select form-select-sm" id="posTableQuickStatus" style="width: 150px;" onchange="quickChangeTableStatus(this.value)">
+                                <option value="Trống">Trống</option>
+                                <option value="Đang phục vụ">Đang phục vụ</option>
+                                <option value="Đã đặt">Đã đặt</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table align-middle">
                             <thead class="table-light">
                                 <tr>
                                     <th>Món</th>
-                                    <th>SL</th>
-                                    <th>Đơn giá</th>
+                                    <th class="text-center">SL</th>
+                                    <th class="text-end">Đơn giá</th>
                                     <th>Ghi chú</th>
-                                    <th>Trạng thái bếp</th>
+                                    <th class="text-center">Trạng thái Bếp</th>
                                 </tr>
                             </thead>
                             <tbody id="posOrderList">
@@ -142,14 +132,16 @@
                         </table>
                     </div>
                     
-                    <div class="text-end">
-                        <h4 class="text-danger fw-bold">Tổng: <span id="posTotal">0</span> đ</h4>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-md-6" id="posPaymentMethodSlot"></div>
+                        <div class="col-md-6 text-end ms-auto">
+                            <h4 class="text-danger fw-bold mb-0">Tổng cộng: <span id="posTotal">0</span> đ</h4>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer" id="posFooter">
-                    <!-- Nút thanh toán dành cho Thu Ngân -->
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                    <button type="button" class="btn btn-primary fw-bold" id="btnCheckout" onclick="checkoutOrder()" style="display:none;">THANH TOÁN</button>
+                    <span id="posCheckoutSlot"></span>
                 </div>
             </div>
         </div>
@@ -160,30 +152,34 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-success text-white">
-                    <h5 class="modal-title">Thêm món</h5>
+                    <h5 class="modal-title">Thêm món vào Bàn</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label>Chọn món:</label>
+                        <label class="form-label">Chọn món *</label>
                         <select class="form-select" id="addSelectMenu"></select>
                     </div>
                     <div class="mb-3">
-                        <label>Số lượng:</label>
-                        <input type="number" class="form-control" id="addQty" value="1" min="1">
+                        <label class="form-label">Số lượng *</label>
+                        <input type="number" class="form-control" id="addQty" value="" min="1" placeholder="Nhập số lượng (VD: 1)">
                     </div>
                     <div class="mb-3">
-                        <label>Ghi chú (Không đá, ít đường...):</label>
-                        <input type="text" class="form-control" id="addNote">
+                        <label class="form-label">Ghi chú (Ít đá, ít đường...)</label>
+                        <input type="text" class="form-control" id="addNote" value="">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-success" onclick="confirmAddItem()">Xác nhận Gọi</button>
+                    <button type="button" class="btn btn-success fw-bold" onclick="confirmAddItem()">Gửi xuống Bếp</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/tables.js"></script>
 </body>
 </html>
-

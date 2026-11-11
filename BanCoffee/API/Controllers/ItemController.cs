@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,19 +12,14 @@ using Model;
 
 namespace API.Controllers
 {
-    //[Authorize]
-    //[ApiKey]
-    //http://localhost:52872/api/Item/get-by-id/1
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ItemController : ControllerBusiness<IItemBusiness>
+    public class ItemController(IItemBusiness itemBusiness, IMemoryCache memoryCache) : ControllerBusiness<IItemBusiness>(itemBusiness)
     {
-        private readonly IMemoryCache _memoryCache;
-        public ItemController(IItemBusiness itemBusiness, IMemoryCache memoryCache) : base(itemBusiness)
-        {
-            _memoryCache = memoryCache;
-        }
+        private readonly IMemoryCache _memoryCache = memoryCache;
 
+        [AllowAnonymous]
         [Route("get-by-id/{id}")]
         [HttpGet]
         public ItemModel GetDatabyID(string id)
@@ -32,23 +27,45 @@ namespace API.Controllers
             return _Business.GetDatabyID(id);
         }
 
+        [Authorize(Roles = Role.Admin)]
         [Route("create-item")]
         [HttpPost]
         public ItemModel CreateItem([FromBody] ItemModel model)
         {
-            //_memoryCache.Remove("all-item");
+            _memoryCache.Remove("all-item");
             model.item_id = Guid.NewGuid().ToString();
+            if (string.IsNullOrWhiteSpace(model.item_group_id)) model.item_group_id = null;
             _Business.Create(model);
             return model;
         }
+
+        [Authorize(Roles = Role.Admin)]
         [Route("update-item")]
         [HttpPost]
         public ItemModel UpdateItem([FromBody] ItemModel model)
         {
-            //_memoryCache.Remove("all-item");
+            _memoryCache.Remove("all-item");
+            if (string.IsNullOrWhiteSpace(model.item_group_id)) model.item_group_id = null;
             _Business.Update(model);
             return model;
         }
+
+        [Authorize(Roles = Role.Admin)]
+        [Route("delete")]
+        [HttpPost]
+        public IActionResult DeleteItem([FromBody] Dictionary<string, object> formData)
+        {
+            return Execute(() =>
+            {
+                _memoryCache.Remove("all-item");
+                string item_id = GetString(formData, "item_id");
+                if (string.IsNullOrEmpty(item_id)) item_id = GetString(formData, "id");
+                _Business.Delete(item_id);
+                return Ok(new { message = "Thanh cong" });
+            });
+        }
+
+        [AllowAnonymous]
         [Route("get-all")]
         [HttpGet]
         public IEnumerable<ItemModel> GetDatabAll()
@@ -66,42 +83,26 @@ namespace API.Controllers
             }
         }
 
+        [AllowAnonymous]
         [Route("search")]
         [HttpPost]
         public ResponseModel Search([FromBody] Dictionary<string, object> formData)
         {
-            var response = new ResponseModel();
-            try
+            return Execute(() =>
             {
-                if (int.TryParse(formData["page"].ToString(), out int page) && 
-                    int.TryParse(formData["pageSize"].ToString(), out int pageSize))
-                {
-                    string item_group_id = "";
-                    if (formData.TryGetValue("item_group_id", out object value) && 
-                        !string.IsNullOrEmpty(Convert.ToString(value))) 
-                    { 
-                        item_group_id = Convert.ToString(value); 
-                    }
-                    string item_name = "";
-                    if (formData.TryGetValue("item_name", out object value1) && 
-                       !string.IsNullOrEmpty(Convert.ToString(value1))) 
-                    { 
-                        item_name = Convert.ToString(value1); 
-                    }
-                    var data = _Business.Search(page, pageSize, out long total, item_group_id, item_name);
-                    response.TotalItems = total;
-                    response.Data = data;
-                    response.Page = page;
-                    response.PageSize = pageSize;
-                }
+                var response = new ResponseModel();
+                int page = GetInt(formData, "page", 1);
+                int pageSize = GetInt(formData, "pageSize", 10);
+                string item_group_id = GetString(formData, "item_group_id", "");
+                string item_name = GetString(formData, "item_name", "");
                 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return response;
+                var data = _Business.Search(page, pageSize, out long total, item_group_id, item_name);
+                response.TotalItems = total;
+                response.Data = data;
+                response.Page = page;
+                response.PageSize = pageSize;
+                return response;
+            });
         }
-
     }
 }

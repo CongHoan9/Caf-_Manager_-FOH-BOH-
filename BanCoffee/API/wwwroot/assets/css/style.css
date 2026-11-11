@@ -2,33 +2,35 @@ body {
     background-color: #f8f9fc;
 }
 
-/* Sidebar styling */
+/* Disable hover zoom/scale and decorative transitions */
+*, *::before, *::after {
+    transition: none !important;
+    transform: none !important;
+}
+
+/* Sidebar layout */
 .sidebar {
     min-height: 100vh;
-    background-color: #4e73df;
-    background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
-    background-size: cover;
+    background-color: #224abe;
 }
 
 .sidebar .nav-link {
-    color: rgba(255,255,255,.8);
+    color: #fff;
     font-weight: 700;
     padding: 1rem;
 }
 
-.sidebar .nav-link:hover {
-    color: #fff;
-}
-
+.sidebar .nav-link:hover,
+.sidebar .nav-link:focus,
 .sidebar .nav-link.active {
     color: #fff;
+    background-color: transparent;
 }
 
 /* Topbar */
 .topbar {
     height: 4.375rem;
     background-color: #fff;
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
 }
 
 /* Main Content */
@@ -38,7 +40,36 @@ body {
     overflow-x: hidden;
 }
 
+/* Remove decorative borders across layout components */
+.card,
+.card-header,
+.card-body,
+.card-footer,
+.modal-content,
+.modal-header,
+.modal-body,
+.modal-footer,
+.table,
+.table th,
+.table td,
+.table thead th,
+.table tbody td,
+.nav-tabs,
+.nav-tabs .nav-link,
+.btn,
+.form-control,
+.form-select,
+.input-group-text {
+    border: none !important;
+    box-shadow: none !important;
+}
+
 .card-header {
     background-color: #f8f9fc;
-    border-bottom: 1px solid #e3e6f0;
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+    background-color: #eef1f6;
 }

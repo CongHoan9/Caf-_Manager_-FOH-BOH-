@@ -12,36 +12,43 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class LichLamViecController(ILichLamViecBusiness business) : ControllerBusiness<ILichLamViecBusiness>(business)
     {
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("create")]
         public LichLamViecModel Create([FromBody] LichLamViecModel model)
         {
             _Business.Create(model);
             return model;
         }
-        [Authorize(Roles = "Admin")]
+
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("update")]
         public LichLamViecModel Update([FromBody] LichLamViecModel model)
         {
             _Business.Update(model);
             return model;
         }
-        [Authorize(Roles = "Admin")]
+
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("delete")]
         public IActionResult Delete([FromBody] Dictionary<string, object> formData)
         {
             return Execute(() =>
             {
-                var id = GetString(formData, "id");
+                var id = GetString(formData, "lich_id");
+                if (string.IsNullOrEmpty(id)) id = GetString(formData, "id");
                 _Business.Delete(id);
                 return Ok(new { message = "Thanh cong" });
             });
         }
+
+        [Authorize]
         [HttpGet("get-by-id/{id}")]
         public LichLamViecModel GetDatabyID(string id)
         {
             return _Business.GetDatabyID(id);
         }
+
+        [Authorize]
         [Route("search")]
         [HttpPost]
         public ResponseModel Search([FromBody] Dictionary<string, object> formData)
@@ -67,11 +74,3 @@ namespace API.Controllers
         }
     }
 }
-
-
-
-
-
-
-
-

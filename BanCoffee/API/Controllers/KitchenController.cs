@@ -1,4 +1,4 @@
-﻿using BLL;
+using BLL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -11,8 +11,7 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class KitchenController(IOrderBusiness orderBusiness) : ControllerBusiness<IOrderBusiness>(orderBusiness)
     {
-        // Bếp lấy danh sách món cần làm
-        [Authorize(Roles = Role.Admin + "," + Role.Bep)]
+        [Authorize(Roles = Role.Admin + "," + Role.Bep + "," + Role.PhucVu + "," + Role.Staff)]
         [HttpGet("queue")]
         public IActionResult GetQueue()
         {
@@ -23,8 +22,7 @@ namespace API.Controllers
             });
         }
 
-        // Bếp/Phục vụ chuyển trạng thái món (0: chờ, 1: đang làm, 2: xong, 3: đã giao)
-        [Authorize(Roles = Role.Admin + "," + Role.Bep + "," + Role.PhucVu)]
+        [Authorize(Roles = Role.Admin + "," + Role.Bep + "," + Role.PhucVu + "," + Role.Staff)]
         [HttpPost("update-state")]
         public IActionResult UpdateState([FromBody] Dictionary<string, object> formData)
         {
@@ -36,9 +34,9 @@ namespace API.Controllers
 
                 bool success = _Business.UpdateItemState(order_id, item_id, state);
                 if (success)
-                    return Ok(new { message = "Cap nhat thanh cong" });
+                    return Ok(new { message = "Cập nhật thành công" });
                 
-                return BadRequest(new { message = "Khong tim thay mon hoac don hang" });
+                return BadRequest(new { message = "Không tìm thấy món hoặc đơn hàng" });
             });
         }
     }

@@ -24,7 +24,7 @@ namespace API
 
             var apiKey = configuration["AppSettings:MyApiKey"];  
 
-            if (!apiKey.Equals(extractedApiKey))
+            if (apiKey == null || !apiKey.Equals(extractedApiKey))
             {
                 context.Result = new ContentResult
                 {

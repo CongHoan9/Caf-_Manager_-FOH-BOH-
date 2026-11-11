@@ -1,4 +1,4 @@
-﻿using BLL;
+using BLL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -15,7 +15,8 @@ namespace API.Controllers
     {
         private readonly IHoaDonBusiness _hoaDonBusiness = hoaDonBusiness;
         private readonly IItemBusiness _itemBusiness = itemBusiness;
-        [Authorize(Roles = Role.Admin + "," + Role.ThuNgan + "," + Role.PhucVu)]
+
+        [Authorize(Roles = Role.Admin + "," + Role.ThuNgan + "," + Role.PhucVu + "," + Role.Staff)]
         [HttpPost("add-item")]
         public IActionResult AddItem([FromBody] Dictionary<string, object> formData)
         {
@@ -38,7 +39,7 @@ namespace API.Controllers
                     item_id = GetString(formData, "item_id"),
                     item_name = GetString(formData, "item_name"),
                     quantity = GetInt(formData, "quantity", 1),
-                    price = (decimal)GetInt(formData, "price", 0), 
+                    price = (decimal)GetDouble(formData, "price", 0), 
                     note = GetString(formData, "note", "")
                 };
                 
@@ -51,7 +52,7 @@ namespace API.Controllers
             });
         }
 
-        [Authorize(Roles = Role.Admin + "," + Role.ThuNgan + "," + Role.PhucVu)]
+        [Authorize(Roles = Role.Admin + "," + Role.ThuNgan + "," + Role.PhucVu + "," + Role.Staff)]
         [HttpGet("get-by-table/{banId}")]
         public IActionResult GetByTable(string banId)
         {
@@ -62,21 +63,21 @@ namespace API.Controllers
             });
         }
 
-        [Authorize(Roles = Role.Admin + "," + Role.ThuNgan)]
+        [Authorize(Roles = Role.Admin + "," + Role.ThuNgan + "," + Role.Staff)]
         [HttpPost("checkout")]
         public IActionResult Checkout([FromBody] Dictionary<string, object> formData)
         {
             return Execute(() =>
             {
                 string ban_id = GetString(formData, "ban_id");
-                string paymentMethod = GetString(formData, "payment_method", "Tien mat");
+                string paymentMethod = GetString(formData, "payment_method", "Tiền mặt");
                 string khuyen_mai_id = GetString(formData, "khuyen_mai_id", "");
-                double giam_gia = (double)GetInt(formData, "giam_gia", 0);
+                double giam_gia = GetDouble(formData, "giam_gia", 0);
                 string ghi_chu = GetString(formData, "ghi_chu", "");
 
                 var order = _Business.GetOrderByBanId(ban_id);
                 if (order == null || !order.items.Any())
-                    return BadRequest(new { message = "Ban chua co order hoac khong co mon" });
+                    return BadRequest(new { message = "Bàn chưa có order hoặc không có món" });
 
                 var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 
@@ -87,6 +88,8 @@ namespace API.Controllers
                 var invoice = new HoaDonModel
                 {
                     ma_hoa_don = Guid.NewGuid().ToString(),
+                    ho_ten = GetString(formData, "ho_ten", "Khách tại bàn"),
+                    dia_chi = "",
                     ngay_tao = DateTime.Now,
                     tong_tien = tongTien,
                     giam_gia = giam_gia,
@@ -110,18 +113,18 @@ namespace API.Controllers
                 _hoaDonBusiness.Create(invoice);
                 _Business.ClearOrder(ban_id);
 
-                return Ok(new { message = "Thanh toan thanh cong", hoadon = invoice });
+                return Ok(new { message = "Thanh toán thành công", hoadon = invoice });
             });
         }
         
-        [Authorize(Roles = Role.Admin + "," + Role.PhucVu)]
+        [Authorize(Roles = Role.Admin + "," + Role.PhucVu + "," + Role.ThuNgan + "," + Role.Staff)]
         [HttpPost("clear/{banId}")]
         public IActionResult ClearOrder(string banId)
         {
             return Execute(() =>
             {
                 _Business.ClearOrder(banId);
-                return Ok(new { message = "Da huy order" });
+                return Ok(new { message = "Đã hủy order" });
             });
         }
     }

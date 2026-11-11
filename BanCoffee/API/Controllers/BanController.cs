@@ -12,7 +12,7 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class BanController(IBanBusiness business) : ControllerBusiness<IBanBusiness>(business)
     {
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("create-ban")]
         public BanModel CreateBan([FromBody] BanModel model)
         {
@@ -20,7 +20,7 @@ namespace API.Controllers
             return model;
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("update-ban")]
         public BanModel UpdateBan([FromBody] BanModel model)
         {
@@ -28,30 +28,34 @@ namespace API.Controllers
             return model;
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("delete-ban")]
         public IActionResult DeleteBan([FromBody] Dictionary<string, object> formData)
         {
             return Execute(() =>
             {
-                var id = GetString(formData, "id");
+                var id = GetString(formData, "ban_id");
+                if (string.IsNullOrEmpty(id)) id = GetString(formData, "id");
                 _Business.Delete(id);
                 return Ok(new { message = "Thanh cong" });
             });
         }
 
+        [Authorize]
         [HttpGet("get-by-id/{id}")]
         public BanModel GetDatabyID(string id)
         {
             return _Business.GetDatabyID(id);
         }
 
+        [Authorize]
         [HttpGet("get-all")]
         public List<BanModel> GetAll()
         {
             return _Business.GetAll();
         }
 
+        [Authorize]
         [HttpPost("update-trang-thai")]
         public IActionResult UpdateTrangThai([FromBody] Dictionary<string, object> formData)
         {
@@ -64,6 +68,7 @@ namespace API.Controllers
             });
         }
 
+        [Authorize]
         [Route("search")]
         [HttpPost]
         public ResponseModel Search([FromBody] Dictionary<string, object> formData)
@@ -84,6 +89,3 @@ namespace API.Controllers
         }
     }
 }
-
-
-

@@ -12,7 +12,7 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class CaLamController(ICaLamBusiness business) : ControllerBusiness<ICaLamBusiness>(business)
     {
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("create")]
         public CaLamModel Create([FromBody] CaLamModel model)
         {
@@ -20,7 +20,7 @@ namespace API.Controllers
             return model;
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("update")]
         public CaLamModel Update([FromBody] CaLamModel model)
         {
@@ -28,24 +28,27 @@ namespace API.Controllers
             return model;
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("delete")]
         public IActionResult Delete([FromBody] Dictionary<string, object> formData)
         {
             return Execute(() =>
             {
-                var id = GetString(formData, "id");
+                var id = GetString(formData, "ca_lam_id");
+                if (string.IsNullOrEmpty(id)) id = GetString(formData, "id");
                 _Business.Delete(id);
                 return Ok(new { message = "Thanh cong" });
             });
         }
 
+        [Authorize]
         [HttpGet("get-by-id/{id}")]
         public CaLamModel GetDatabyID(string id)
         {
             return _Business.GetDatabyID(id);
         }
 
+        [Authorize]
         [HttpGet("get-all")]
         public List<CaLamModel> GetAll()
         {
@@ -53,6 +56,3 @@ namespace API.Controllers
         }
     }
 }
-
-
-

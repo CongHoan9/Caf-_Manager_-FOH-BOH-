@@ -12,46 +12,57 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class KhuyenMaiController(IKhuyenMaiBusiness business) : ControllerBusiness<IKhuyenMaiBusiness>(business)
     {
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("create")]
         public KhuyenMaiModel Create([FromBody] KhuyenMaiModel model)
         {
             _Business.Create(model);
             return model;
         }
-        [Authorize(Roles = "Admin")]
+
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("update")]
         public KhuyenMaiModel Update([FromBody] KhuyenMaiModel model)
         {
             _Business.Update(model);
             return model;
         }
-        [Authorize(Roles = "Admin")]
+
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("delete")]
         public IActionResult Delete([FromBody] Dictionary<string, object> formData)
         {
             return Execute(() =>
             {
-                var id = GetString(formData, "id");
+                var id = GetString(formData, "khuyen_mai_id");
+                if (string.IsNullOrEmpty(id)) id = GetString(formData, "id");
                 _Business.Delete(id);
                 return Ok(new { message = "Thanh cong" });
             });
         }
+
+        [Authorize]
         [HttpGet("get-by-id/{id}")]
         public KhuyenMaiModel GetDatabyID(string id)
         {
             return _Business.GetDatabyID(id);
         }
+
+        [Authorize]
         [HttpGet("get-all")]
         public List<KhuyenMaiModel> GetAll()
         {
             return _Business.GetAll();
         }
+
+        [Authorize]
         [HttpGet("get-by-code/{code}")]
         public KhuyenMaiModel GetByCode(string code)
         {
             return _Business.GetByCode(code);
         }
+
+        [Authorize]
         [Route("search")]
         [HttpPost]
         public ResponseModel Search([FromBody] Dictionary<string, object> formData)
@@ -74,6 +85,3 @@ namespace API.Controllers
         }
     }
 }
-
-
-

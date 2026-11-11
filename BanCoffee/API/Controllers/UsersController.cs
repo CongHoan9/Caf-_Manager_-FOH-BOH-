@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -17,24 +17,21 @@ namespace API.Controllers
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class UsersController(IUserBusiness userBusiness, IConfiguration configuration, IWebHostEnvironment env) : ControllerBase
+    public class UsersController(IUserBusiness userBusiness, IConfiguration configuration, IWebHostEnvironment env) : ControllerBusiness<IUserBusiness>(userBusiness)
     {
-        private readonly IUserBusiness _userBusiness = userBusiness;
         private readonly string _path = configuration["AppSettings:PATH"];
         private readonly IWebHostEnvironment _env = env ?? throw new ArgumentNullException(nameof(env));
-
+        
         [AllowAnonymous]
         [HttpPost("login")]
         public IActionResult Login([FromBody] AuthenticateModel model)
         {
-            var user = _userBusiness.Authenticate(model.Username, model.Password);
-
+            var user = _Business.Authenticate(model.Username, model.Password);
             if (user == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
-            return Ok(new { user.user_id, user.Hoten, user.taikhoan, user.token });
+                return BadRequest(new { message = "Tài khoản hoặc mật khẩu không đúng" });
+            return Ok(new { user.user_id, user.hoten, user.taikhoan, user.role, user.token });
         }
-
-
+        
         [NonAction]
         public string SaveFileFromBase64String(string RelativePathFileName, string dataFromBase64String)
         {
@@ -44,7 +41,7 @@ namespace API.Controllers
             }
             return WriteFileToAuthAccessFolder(RelativePathFileName, dataFromBase64String);
         }
-
+        
         [NonAction]
         public string WriteFileToAuthAccessFolder(string RelativePathFileName, string base64StringData)
         {
@@ -64,191 +61,234 @@ namespace API.Controllers
                 return ex.Message;
             }
         }
-
+        
+        [Authorize(Roles = Role.Admin)]
         [Route("delete-user")]
         [HttpPost]
         public IActionResult DeleteUser([FromBody] Dictionary<string, object> formData)
         {
-            string user_id = "";
-            if (formData.TryGetValue("user_id", out object value) && !string.IsNullOrEmpty(Convert.ToString(value))) { user_id = Convert.ToString(value); }
-            _userBusiness.Delete(user_id);
-            return Ok();
-        }
-
-        [Route("download/{filename}")]
-        [HttpGet]
-        public IActionResult DownloadSetupSataProduct(string filename)
-        {
-            try
+            return Execute(() =>
             {
-                var webRoot = _env.ContentRootPath;
-                var filePath = Path.Combine(webRoot + @$"/upload/", filename);
-                var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-                return File(stream, "application/octet-stream");
-            }
-            catch (Exception)
-            {
-                throw new Exception("Có lỗi trong quá trình download.");
-            }
-        }
-
-        [Route("upload")]
-        [HttpPost, DisableRequestSizeLimit]
-        public async Task<IActionResult> Upload(IFormFile file)
-        {
-            try
-            {
-                if (file.Length > 0)
+                string user_id = GetString(formData, "user_id");
+                if (string.IsNullOrEmpty(user_id)) user_id = GetString(formData, "id");
+                var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                if (user_id == currentUserId)
                 {
-                    string filePath = $"upload/{file.FileName}";
-                    var fullPath = CreatePathFile(filePath);
-                    using (var fileStream = new FileStream(fullPath, FileMode.Create))
-                    {
-                        await file.CopyToAsync(fileStream);
-                    }
-                    return Ok(new { filePath });
+                    throw new Exception("Không được xóa tài khoản của chính mình!");
                 }
-                else
-                {
-                    return BadRequest();
-                }
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Không tìm thây");
-            }
+                _Business.Delete(user_id);
+                return Ok(new { message = "Thành công" });
+            });
         }
-
-        [NonAction]
-        private string CreatePathFile(string RelativePathFileName)
+        
+        public class UserCreateRequest
         {
-            try
-            {
-                string serverRootPathFolder = _path;
-                string fullPathFile = $@"{serverRootPathFolder}\{RelativePathFileName}";
-                string fullPathFolder = Path.GetDirectoryName(fullPathFile);
-                if (!Directory.Exists(fullPathFolder))
-                    Directory.CreateDirectory(fullPathFolder);
-                return fullPathFile;
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
+            public string HoTen { get; set; }
+            public DateTime? NgaySinh { get; set; }
+            public string TaiKhoan { get; set; }
+            public string MatKhau { get; set; }
+            public string Role { get; set; } = Model.Role.Staff;
+            public string Email { get; set; }
+            public string Sdt { get; set; }
+            public string DiaChi { get; set; }
+            public string GioiTinh { get; set; } = "Nam";
+            public IFormFile Avatar { get; set; }
         }
-
+        
+        [Authorize(Roles = Role.Admin)]
+        [Route("create-user")]
+        [HttpPost]
+        public async Task<IActionResult> CreateUser([FromForm] UserCreateRequest request)
+        {
+            string filePath = null;
+            if (request.Avatar != null && request.Avatar.Length > 0)
+            {
+                string uniqueFileName = $"{Guid.NewGuid()}_{Path.GetFileName(request.Avatar.FileName)}";
+                filePath = Path.Combine("upload", uniqueFileName);
+                var fullPath = CreatePathFile(filePath);
+                using (var fileStream = new FileStream(fullPath, FileMode.Create))
+                {
+                    await request.Avatar.CopyToAsync(fileStream);
+                }
+            }
+            
+            var model = new UserModel
+            {
+                user_id = Guid.NewGuid().ToString(),
+                hoten = request.HoTen,
+                ngaysinh = request.NgaySinh ?? (DateTime.TryParse("2000-01-01", out var d) ? d : DateTime.Now),
+                taikhoan = request.TaiKhoan,
+                matkhau = request.MatKhau,
+                role = string.IsNullOrEmpty(request.Role) ? Model.Role.Staff : request.Role,
+                email = request.Email,
+                diachi = request.DiaChi ?? "",
+                gioitinh = string.IsNullOrEmpty(request.GioiTinh) ? "Nam" : request.GioiTinh,
+                image_url = filePath
+            };
+            
+            _Business.Create(model);
+            model.matkhau = null;
+            return Ok(model);
+        }
+        
+        [Authorize(Roles = Role.Admin)]
         [Route("create-user1")]
         [HttpPost]
         public UserModel CreateUser1([FromBody] UserModel model)
         {
             model.user_id = Guid.NewGuid().ToString();
-            _userBusiness.Create(model);
+            if (model.ngaysinh == default || model.ngaysinh < new DateTime(1753, 1, 1))
+            {
+                model.ngaysinh = new DateTime(2000, 1, 1);
+            }
+            if (string.IsNullOrEmpty(model.diachi)) model.diachi = "";
+            if (string.IsNullOrEmpty(model.gioitinh)) model.gioitinh = "Nam";
+            if (string.IsNullOrEmpty(model.role)) model.role = Model.Role.Staff;
+            _Business.Create(model);
+            model.matkhau = null;
             return model;
         }
-
-
-        [Route("create-user2")]
-        [HttpPost]
-        public async Task<UserModel> CreateUser2([FromForm] IFormFile file, [FromForm] string hoten, [FromForm] DateTime? ngaysinh, [FromForm] string taikhoan, [FromForm] string matkhau)
-        {
-            if (file.Length > 0)
-            {
-                string filePath = $"upload/{file.FileName}";
-                var fullPath = CreatePathFile(filePath);
-                using (var fileStream = new FileStream(fullPath, FileMode.Create))
-                {
-                    await file.CopyToAsync(fileStream);
-                }
-                var model = new UserModel
-                {
-                    Hoten = hoten,
-                    ngaysinh = ngaysinh,
-                    taikhoan = taikhoan,
-                    matkhau = matkhau,
-                    user_id = Guid.NewGuid().ToString(),
-                    image_url = filePath
-                };
-                _userBusiness.Create(model);
-                return model;
-            }
-            else
-            {
-                var model = new UserModel
-                {
-                    Hoten = hoten,
-                    ngaysinh = ngaysinh,
-                    taikhoan = taikhoan,
-                    matkhau = matkhau,
-                    user_id = Guid.NewGuid().ToString(),
-                    image_url = null
-                };
-                model.user_id = Guid.NewGuid().ToString();
-                model.image_url = null;
-                _userBusiness.Create(model);
-                return model;
-            }
-        }
-
+        
+        [Authorize]
         [Route("update-user")]
         [HttpPost]
-        public UserModel UpdateUser([FromBody] UserModel model)
+        public IActionResult UpdateUser([FromBody] UserModel model)
         {
-            if (model.image_url != null)
+            return Execute(() =>
             {
-                var arrData = model.image_url.Split(';');
-                if (arrData.Length == 3)
+                var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var currentRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+                
+                if (currentRole != Role.Admin && currentUserId != model.user_id)
                 {
-                    var savePath = $@"assets/images/{arrData[0]}";
-                    model.image_url = $"{savePath}";
-                    SaveFileFromBase64String(savePath, arrData[2]);
-                }
-            }
-            _userBusiness.Update(model);
-            return model;
-        }
-
-        [Route("get-by-id/{id}")]
-        [HttpGet]
-        public UserModel GetDatabyID(string id)
-        {
-            return _userBusiness.GetDatabyID(id);
-        }
-
-        [Route("search")]
-        [HttpPost]
-        public ResponseModel Search([FromBody] Dictionary<string, object> formData)
-        {
-            var response = new ResponseModel();
-            try
-            {
-                if (int.TryParse(formData["page"].ToString(), out int page) && 
-                    int.TryParse(formData["pageSize"].ToString(), out int pageSize))
-                {
-                    string hoten = "";
-                    if (formData.TryGetValue("hoten", out object value1) && 
-                        !string.IsNullOrEmpty(Convert.ToString(value1))) 
-                    { 
-                        hoten = Convert.ToString(value1); 
-                    }
-                    string taikhoan = "";
-                    if (formData.TryGetValue("taikhoan", out object value) && 
-                        !string.IsNullOrEmpty(Convert.ToString(value))) 
-                    { 
-                        taikhoan = Convert.ToString(value); 
-                    }
-                    var data = _userBusiness.Search(page, pageSize, out long total, hoten, taikhoan);
-                    response.TotalItems = total;
-                    response.Data = data;
-                    response.Page = page;
-                    response.PageSize = pageSize;
+                    return StatusCode(403, new { message = "Bạn không có quyền thực hiện thao tác này" });
                 }
                 
-            }
-            catch (Exception ex)
+                var existing = _Business.GetDatabyID(model.user_id);
+                if (existing == null)
+                {
+                    return NotFound(new { message = "Tài khoản không tồn tại" });
+                }
+                
+                if (currentRole != Role.Admin)
+                {
+                    model.role = existing.role;
+                }
+                
+                if (string.IsNullOrEmpty(model.matkhau))
+                {
+                    model.matkhau = existing.matkhau;
+                }
+                
+                if (model.ngaysinh == default || model.ngaysinh < new DateTime(1753, 1, 1))
+                {
+                    model.ngaysinh = existing.ngaysinh > new DateTime(1753, 1, 1) ? existing.ngaysinh : new DateTime(2000, 1, 1);
+                }
+                
+                if (string.IsNullOrEmpty(model.diachi)) model.diachi = existing.diachi ?? "";
+                if (string.IsNullOrEmpty(model.gioitinh)) model.gioitinh = existing.gioitinh ?? "Nam";
+                if (string.IsNullOrEmpty(model.image_url)) model.image_url = existing.image_url;
+                
+                if (model.image_url != null && model.image_url.Contains(";"))
+                {
+                    var arrData = model.image_url.Split(';');
+                    if (arrData.Length == 3)
+                    {
+                        var savePath = $@"assets/images/{arrData[0]}";
+                        model.image_url = $"{savePath}";
+                        SaveFileFromBase64String(savePath, arrData[2]);
+                    }
+                }
+                _Business.Update(model);
+                model.matkhau = null;
+                return Ok(model);
+            });
+        }
+        
+        [Authorize]
+        [Route("get-by-id/{id}")]
+        [HttpGet]
+        public IActionResult GetDatabyID(string id)
+        {
+            var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var currentRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+            if (currentRole != Role.Admin && currentUserId != id)
             {
-                throw new Exception(ex.Message);
+                return StatusCode(403, new { message = "Bạn không có quyền thực hiện thao tác này" });
             }
-            return response;
+            var u = _Business.GetDatabyID(id);
+            if (u != null) u.matkhau = null;
+            return Ok(u);
+        }
+        
+        [Authorize(Roles = Role.Admin)]
+        [Route("search")]
+        [HttpPost]
+        public IActionResult Search([FromBody] Dictionary<string, object> formData)
+        {
+            return Execute(() =>
+            {
+                var response = new ResponseModel();
+                int page = GetInt(formData, "page", 1);
+                int pageSize = GetInt(formData, "pageSize", 10);
+                string hoten = GetString(formData, "hoten", "");
+                string taikhoan = GetString(formData, "taikhoan", "");
+                
+                var data = _Business.Search(page, pageSize, out long total, hoten, taikhoan);
+                response.TotalItems = total;
+                response.Data = data;
+                response.Page = page;
+                response.PageSize = pageSize;
+                return Ok(response);
+            });
+        }
+        
+        [Authorize(Roles = Role.Admin)]
+        [Route("get-all")]
+        [HttpGet]
+        public List<UserModel> GetAll()
+        {
+            return _Business.GetAll();
+        }
+        
+        [Authorize]
+        [Route("change-password")]
+        [HttpPost]
+        public IActionResult ChangePassword([FromBody] ChangePasswordModel model)
+        {
+            return Execute(() =>
+            {
+                var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var currentRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+
+                if (currentRole != Role.Admin && currentUserId != model.UserId)
+                {
+                    return StatusCode(403, new { message = "Bạn không có quyền thực hiện thao tác này" });
+                }
+
+                _Business.ChangePassword(model.UserId, model.OldPassword, model.NewPassword);
+                return Ok(new { message = "Thành công" });
+            });
+        }
+        
+        [Authorize]
+        [Route("check-exists/{taikhoan}")]
+        [HttpGet]
+        public IActionResult CheckExists(string taikhoan)
+        {
+            var exists = _Business.CheckExists(taikhoan);
+            return Ok(new { exists });
+        }
+        
+        [NonAction]
+        private string CreatePathFile(string RelativePathFileName)
+        {
+            string serverRootPathFolder = _path;
+            string fullPathFile = $@"{serverRootPathFolder}\{RelativePathFileName}";
+            string fullPathFolder = Path.GetDirectoryName(fullPathFile);
+            if (!Directory.Exists(fullPathFolder))
+                Directory.CreateDirectory(fullPathFolder);
+            return fullPathFile;
         }
     }
 }

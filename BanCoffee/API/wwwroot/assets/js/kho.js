@@ -1,28 +1,52 @@
 // ===== QUẢN LÝ KHO NGUYÊN LIỆU =====
-const NGUONG_SAP_HET = 10; // Tồn <= ngưỡng này được coi là sắp hết
+const NGUONG_SAP_HET = 10;
 
 let nlModal, nhapModal;
 let dsNguyenLieu = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    nlModal = new bootstrap.Modal(document.getElementById('nlModal'));
+    const role = typeof getCurrentRole === 'function' ? getCurrentRole() : '';
+    const isAdmin = (role === 'Admin');
+
+    const addSlot = document.getElementById('khoAddBtnSlot');
+    if (addSlot) {
+        addSlot.innerHTML = '';
+        if (isAdmin) {
+            const btnAdd = document.createElement('button');
+            btnAdd.className = 'btn btn-primary btn-sm text-nowrap';
+            btnAdd.id = 'btnAdd';
+            btnAdd.textContent = '+ Thêm nguyên liệu';
+            btnAdd.addEventListener('click', showAddModal);
+            addSlot.appendChild(btnAdd);
+        }
+    }
+
+    const nlModalEl = document.getElementById('nlModal');
+    if (nlModalEl && isAdmin) {
+        nlModal = new bootstrap.Modal(nlModalEl);
+        const btnSaveNL = document.getElementById('btnSaveNL');
+        if (btnSaveNL) btnSaveNL.addEventListener('click', saveNguyenLieu);
+    } else if (nlModalEl) {
+        nlModalEl.remove();
+    }
+
     nhapModal = new bootstrap.Modal(document.getElementById('nhapModal'));
     document.getElementById('lblNguong').innerText = NGUONG_SAP_HET;
 
-    document.getElementById('btnAdd').addEventListener('click', showAddModal);
-    document.getElementById('btnSaveNL').addEventListener('click', saveNguyenLieu);
     document.getElementById('btnSaveNhap').addEventListener('click', saveNhapKho);
     document.getElementById('cboLoc').addEventListener('change', renderTable);
     document.getElementById('nhap_so_luong').addEventListener('input', capNhatTomTatNhap);
     document.getElementById('nhap_gia').addEventListener('input', capNhatTomTatNhap);
 
+    const searchInput = document.getElementById('txtSearch');
+    if (searchInput) searchInput.value = '';
+
     let timer;
-    document.getElementById('txtSearch').addEventListener('input', () => {
+    searchInput.addEventListener('input', () => {
         clearTimeout(timer);
         timer = setTimeout(loadKho, 300);
     });
 
-    // Event delegation cho các nút trong bảng (không dùng onclick inline)
     document.querySelector('#khoTable tbody').addEventListener('click', (e) => {
         const btn = e.target.closest('button[data-action]');
         if (!btn) return;
@@ -76,6 +100,8 @@ function capNhatThongKe() {
 function renderTable() {
     const tbody = document.querySelector('#khoTable tbody');
     const loc = document.getElementById('cboLoc').value;
+    const role = typeof getCurrentRole === 'function' ? getCurrentRole() : '';
+    const isAdmin = (role === 'Admin');
 
     const rows = dsNguyenLieu.filter(x => {
         const k = trangThai(x.so_luong_ton || 0).key;
@@ -92,6 +118,10 @@ function renderTable() {
     tbody.innerHTML = rows.map(x => {
         const tt = trangThai(x.so_luong_ton || 0);
         const id = escapeHtml(x.nguyen_lieu_id);
+        const adminBtns = isAdmin
+            ? `<button class="btn btn-sm btn-warning me-1" data-action="edit" data-id="${id}">Sửa</button>
+               <button class="btn btn-sm btn-danger" data-action="delete" data-id="${id}">Xóa</button>`
+            : '';
         return `
             <tr class="${tt.key === 'out' ? 'table-danger' : (tt.key === 'low' ? 'table-warning' : '')}">
                 <td class="fw-bold">${escapeHtml(x.ten_nguyen_lieu)}</td>
@@ -101,30 +131,29 @@ function renderTable() {
                 <td class="text-end">${fmtTien((x.so_luong_ton || 0) * (x.gia_nhap || 0))}</td>
                 <td>${fmtNgay(x.ngay_nhap_cuoi)}</td>
                 <td>${tt.html}</td>
-                <td class="admin-only text-nowrap">
+                <td class="text-nowrap">
                     <button class="btn btn-sm btn-success me-1" data-action="nhap" data-id="${id}">Nhập kho</button>
-                    <button class="btn btn-sm btn-warning me-1" data-action="edit" data-id="${id}">Sửa</button>
-                    <button class="btn btn-sm btn-danger" data-action="delete" data-id="${id}">Xóa</button>
+                    ${adminBtns}
                 </td>
             </tr>`;
     }).join('');
-
-    if (typeof loadUserInfo === 'function') loadUserInfo(); // ẩn cột admin-only nếu là Staff
 }
 
 // ---------- Thêm / Sửa ----------
 function showAddModal() {
+    if (!nlModal) return;
     document.getElementById('nguyen_lieu_id').value = '';
     document.getElementById('ten_nguyen_lieu').value = '';
     document.getElementById('don_vi').value = '';
-    document.getElementById('so_luong_ton').value = 0;
-    document.getElementById('gia_nhap').value = 0;
+    document.getElementById('so_luong_ton').value = '';
+    document.getElementById('gia_nhap').value = '';
     document.getElementById('so_luong_ton').disabled = false;
     document.getElementById('nlModalLabel').innerText = 'Thêm nguyên liệu';
     nlModal.show();
 }
 
 async function editNguyenLieu(id) {
+    if (!nlModal) return;
     try {
         const x = await fetchAPI(`/NguyenLieu/get-by-id/${encodeURIComponent(id)}`, 'GET');
         if (!x) return;
@@ -155,9 +184,11 @@ async function saveNguyenLieu() {
     try {
         if (!id) {
             await fetchAPI('/NguyenLieu/create', 'POST', payload);
+            alert('Thêm nguyên liệu thành công!');
         } else {
             payload.nguyen_lieu_id = id;
             await fetchAPI('/NguyenLieu/update', 'POST', payload);
+            alert('Cập nhật nguyên liệu thành công!');
         }
         nlModal.hide();
         loadKho();
@@ -171,6 +202,7 @@ async function deleteNguyenLieu(id) {
     if (!confirm(`Xóa nguyên liệu "${x ? x.ten_nguyen_lieu : ''}"?`)) return;
     try {
         await fetchAPI('/NguyenLieu/delete', 'POST', { nguyen_lieu_id: id });
+        alert('Xóa nguyên liệu thành công!');
         loadKho();
     } catch (err) {
         alert('Lỗi: ' + err.message);
@@ -211,6 +243,7 @@ async function saveNhapKho() {
     }
     try {
         await fetchAPI('/NguyenLieu/nhap-them', 'POST', { nguyen_lieu_id: id, so_luong: soLuong, gia_nhap: giaNhap });
+        alert('Nhập kho thành công!');
         nhapModal.hide();
         loadKho();
     } catch (err) {
