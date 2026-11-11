@@ -1,14 +1,13 @@
 ﻿using DAL;
 using Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BLL
 {
-    public partial class ItemGroupBusiness(IItemGroupRepository ItemGroupRes) : Business<IItemGroupRepository>(ItemGroupRes), IItemGroupBusiness
+    public partial class ItemGroupBusiness(IItemGroupRepository res) : Business<IItemGroupRepository>(res), IItemGroupBusiness
     {
+        /// <summary>Dung cay phan cap nhom do uong tu danh sach phang tra ve tu SP.</summary>
         public List<ItemGroupModel> GetData()
         {
             var allItemGroups = _res.GetData();
@@ -19,6 +18,7 @@ namespace BLL
             }
             return lstParent;
         }
+
         public static List<ItemGroupModel> GetHiearchyList(List<ItemGroupModel> lstAll, ItemGroupModel node)
         {
             var lstChilds = lstAll.Where(ds => ds.parent_item_group_id == node.item_group_id).ToList();
@@ -30,9 +30,21 @@ namespace BLL
                 lstChilds[i].type = (childs == null || childs.Count == 0) ? "leaf" : "";
                 lstChilds[i].children = childs;
             }
-            return lstChilds.OrderBy(s => s.seq_num).ToList();
+            return [.. lstChilds.OrderBy(s => s.seq_num)];
         }
-        
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
