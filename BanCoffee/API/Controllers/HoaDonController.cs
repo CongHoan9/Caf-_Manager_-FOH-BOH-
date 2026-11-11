@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -15,62 +14,67 @@ using Model;
 namespace API.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
-    public class HoaDonController(IHoaDonBusiness hoaDonBusiness, ILogger<ItemGroupBusiness> logger) : ControllerBusiness<IHoaDonBusiness>(hoaDonBusiness), ICreate<HoaDonModel, HoaDonModel>
+    public class HoaDonController : ControllerBusiness<IHoaDonBusiness>, ICreate<HoaDonModel, HoaDonModel>
     {
-        private readonly ILogger<ItemGroupBusiness> _logger = logger;
+        private readonly ILogger<ItemGroupBusiness> _logger;
+        public HoaDonController(IHoaDonBusiness hoaDonBusiness, ILogger<ItemGroupBusiness> logger) : base(hoaDonBusiness)
+        {
+            _logger = logger;
+        }
+
         [Route("create-hoa-don")]
         [HttpPost]
         public HoaDonModel Create([FromBody] HoaDonModel model)
         {
-            var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            if (!string.IsNullOrEmpty(currentUserId)) {
-                model.user_id = currentUserId;
-            }
             _Business.Create(model);
             return model;
         }
+
         [Route("update-hoa-don")]
         [HttpPost]
-        public IActionResult UpdateItem([FromBody] HoaDonModel model)
+        public HoaDonModel UpdateItem([FromBody] HoaDonModel model)
         {
-            var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var isAdmin = User.IsInRole(Model.Role.Admin);
-            var existing = _Business.GetDatabyID(model.ma_hoa_don);
-            if (existing == null)
-            {
-                return NotFound();
-            }
-            if (!isAdmin && existing.user_id != currentUserId)
-            {
-                return StatusCode(403, new { message = "Ban khong co quyen nay" });
-            }
-            model.user_id = existing.user_id;
             _Business.Update(model);
-            return Ok(model);
+            return model;
         }
+
         [Route("search")]
         [HttpPost]
         public ResponseModel Search([FromBody] Dictionary<string, object> formData)
         {
-            return Execute(() =>
+            var response = new ResponseModel();
+            try
             {
-                var response = new ResponseModel();
-                int page = GetInt(formData, "page", 1);
-                var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-                var isAdmin = User.IsInRole(Role.Admin);
-                int pageSize = GetInt(formData, "pageSize", 10);
-                string hoten = GetString(formData, "hoten", "");
-                string diachi = GetString(formData, "diachi", "");
-                var data = _Business.Search(page, pageSize, out long total, hoten, diachi, isAdmin ? "" : currentUserId);
-                response.TotalItems = total;
-                response.Data = data;
-                response.Page = page;
-                response.PageSize = pageSize;
-                return response;
-            });
+                if (int.TryParse(formData["page"].ToString(), out int page) && 
+                    int.TryParse(formData["pageSize"].ToString(), out int pageSize))
+                {
+                    string hoten = "";
+                    if (formData.ContainsKey("hoten") && 
+                        !string.IsNullOrEmpty(Convert.ToString(formData["hoten"]))) 
+                    { 
+                        hoten = Convert.ToString(formData["hoten"]) ?? ""; 
+                    }
+                    string diachi = "";
+                    if (formData.ContainsKey("diachi") && 
+                        !string.IsNullOrEmpty(Convert.ToString(formData["diachi"]))) 
+                    { 
+                        diachi = Convert.ToString(formData["diachi"]) ?? ""; 
+                    }
+                    var data = _Business.Search(page, pageSize, out long total, hoten, diachi);
+                    response.TotalItems = total;
+                    response.Data = data;
+                    response.Page = page;
+                    response.PageSize = pageSize;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return response;
         }
+
         [Route("get-by-id/{id}")]
         [HttpGet]
         public HoaDonModel GetDatabyID(string id)
@@ -79,26 +83,15 @@ namespace API.Controllers
             _logger.LogInformation(MessageConvert.SerializeObject(kq));
             return _Business.GetDatabyID(id);
         }
-        [Authorize(Roles = Role.Admin)]
+
         [Route("delete")]
         [HttpPost]
-        public IActionResult DeleteHoaDon([FromBody] Dictionary<string, object> formData)
+        public IActionResult DeleteUser([FromBody] Dictionary<string, object> formData)
         {
-            string ma_hoa_don = GetString(formData, "ma_hoa_don");
+            string ma_hoa_don = "";
+            if (formData.ContainsKey("ma_hoa_don") && !string.IsNullOrEmpty(Convert.ToString(formData["ma_hoa_don"]))) { ma_hoa_don = Convert.ToString(formData["ma_hoa_don"]) ?? ""; }
             _Business.Delete(ma_hoa_don);
-            return Ok(new { message = "Thanh cong" });
+            return Ok();
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

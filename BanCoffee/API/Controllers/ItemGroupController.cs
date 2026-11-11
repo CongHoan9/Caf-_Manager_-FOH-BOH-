@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +14,9 @@ namespace API.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ItemGroupController(IItemGroupBusiness itemGroupBusiness) : ControllerBusiness<IItemGroupBusiness>(itemGroupBusiness)
+    public class ItemGroupController : ControllerBusiness<IItemGroupBusiness>
     {
-        [AllowAnonymous]
+        public ItemGroupController(IItemGroupBusiness itemGroupBusiness) : base(itemGroupBusiness) { }
         [Route("get-menu")]
         [HttpGet]
         public IEnumerable<ItemGroupModel> GetAllMenu()
@@ -25,5 +25,3 @@ namespace API.Controllers
         }
     }
 }
-
-

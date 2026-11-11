@@ -1,4 +1,4 @@
-using API;
+﻿using API;
 using BLL;
 using DAL;
 using DAL.Helper;
@@ -39,16 +39,6 @@ builder.Services.AddTransient<IUserBusiness, UserBusiness>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<INewsBusiness, NewsBusiness>();
 builder.Services.AddTransient<INewsRepository, NewsRepository>();
-builder.Services.AddTransient<IBanBusiness, BanBusiness>();
-builder.Services.AddTransient<IBanRepository, BanRepository>();
-builder.Services.AddTransient<INguyenLieuBusiness, NguyenLieuBusiness>();
-builder.Services.AddTransient<INguyenLieuRepository, NguyenLieuRepository>();
-builder.Services.AddTransient<ICaLamBusiness, CaLamBusiness>();
-builder.Services.AddTransient<ICaLamRepository, CaLamRepository>();
-builder.Services.AddTransient<ILichLamViecBusiness, LichLamViecBusiness>();
-builder.Services.AddTransient<ILichLamViecRepository, LichLamViecRepository>();
-builder.Services.AddTransient<IKhuyenMaiBusiness, KhuyenMaiBusiness>();
-builder.Services.AddTransient<IKhuyenMaiRepository, KhuyenMaiRepository>();
 
 // configure strongly typed settings objects
 IConfiguration configuration = builder.Configuration;
@@ -89,26 +79,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseDefaultFiles();
-app.UseStaticFiles();
-app.UseExceptionHandler(c => c.Run(async context =>
-{
-    var exception = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerPathFeature>()?.Error;
-    context.Response.StatusCode = 400; // Return 400 Bad Request for standard database/business errors
-    context.Response.ContentType = "application/json";
-    
-    string errorMsg = exception?.Message ?? "Có lỗi xảy ra từ máy chủ";
-    
-    // Thân thiện hóa lỗi ràng buộc khóa ngoại (ví dụ xóa dữ liệu đang được sử dụng ở bảng khác)
-    if (errorMsg.Contains("DELETE statement conflicted with the REFERENCE constraint") || errorMsg.Contains("FK_"))
-    {
-        errorMsg = "Dữ liệu này đang được sử dụng ở nơi khác (ví dụ: đã có hóa đơn hoặc chi tiết liên quan). Không thể xóa để đảm bảo toàn vẹn dữ liệu!";
-    }
-
-    var result = System.Text.Json.JsonSerializer.Serialize(new { message = errorMsg });
-    await context.Response.WriteAsync(result);
-}));
-
 app.UseRouting();
 app.UseCors(x => x
     .AllowAnyOrigin()
@@ -118,6 +88,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
-
 
 

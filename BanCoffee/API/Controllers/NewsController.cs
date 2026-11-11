@@ -1,58 +1,36 @@
-using Microsoft.AspNetCore.Authorization;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
 using BLL;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Model;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class NewsController(INewsBusiness newsBusiness) : ControllerBusiness<INewsBusiness>(newsBusiness)
+    public class NewsController : ControllerBase
     {
-        [Authorize(Roles = Role.Admin)]
+        private readonly INewsBusiness _newsBusiness;
+        private readonly string _path;
+        public NewsController(INewsBusiness newsBusiness, IConfiguration configuration)
+        {
+            _newsBusiness = newsBusiness;
+            _path = configuration["AppSettings:PATH"];
+        }
+
         [Route("create-news")]
         [HttpPost]
-        public NewsModel CreateNews([FromBody] NewsModel model)
+        public NewsModel CreateUser([FromBody] NewsModel model)
         {
             model.news_id = Guid.NewGuid().ToString();
-            _Business.Create(model);
+            _newsBusiness.Create(model);
             return model;
-        }
-        [AllowAnonymous]
-        [Route("get-all")]
-        [HttpGet]
-        public List<NewsModel> GetAll()
-        {
-            return _Business.GetDataAll();
-        }
-        [AllowAnonymous]
-        [Route("get-by-id/{id}")]
-        [HttpGet]
-        public NewsModel GetDatabyID(string id)
-        {
-            return _Business.GetDatabyID(id);
-        }
-
-        [Authorize(Roles = Role.Admin)]
-        [Route("delete")]
-        [HttpPost]
-        public IActionResult DeleteNews([FromBody] Dictionary<string, object> formData)
-        {
-            string news_id = "";
-            if (formData.TryGetValue("news_id", out object value) &&
-                !string.IsNullOrEmpty(Convert.ToString(value)))
-            {
-                news_id = Convert.ToString(value);
-            }
-            _Business.Delete(news_id);
-            return Ok(new { message = "Thanh cong" });
-        }
+        } 
     }
 }
-
-
-
-
-
